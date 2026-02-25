@@ -1,35 +1,35 @@
 ---
-import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Nav from '../components/Nav.astro';
 
-interface Props {
-  title?: string;
-  description?: string;
-}
+export type Props = HeadProps & { showHeader?: boolean };
 
-const {
-  title = 'Jacqueline Yue',
-  description = 'Product builder & leader with a design foundation. Currently Product Director at The New York Times Games.',
-} = Astro.props;
+const { showHeader = true, ...head } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <!-- Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-  </body>
+<html lang="en" class="wrap-break-words antialiased">
+    <head>
+        <BaseHead {...head} />
+        <script>
+            if (localStorage.theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
+        <ClientRouter />
+        <script is:inline src="/theme-toggle.js"></script>
+    </head>
+    <body class="bg-main text-main">
+        <div class="flex min-h-screen flex-col px-4 md:px-8">
+            <Nav />
+            {showHeader && <Header />}
+            <main class="mx-auto w-full max-w-3xl grow">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+    </body>
 </html>
