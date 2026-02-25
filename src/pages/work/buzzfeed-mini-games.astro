@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const project = {
+  title: 'BuzzFeed Mini Games',
+  role: 'Product Lead',
+  timeline: '18 months',
+  company: 'BuzzFeed',
+  tags: ['Product', 'Games', 'Mobile', 'Experimentation'],
+  summary: 'Led the conception, design, and launch of 60 experimental mini games over 18 months — testing what casual game formats could drive repeat engagement on BuzzFeed.',
+};
+---
+
+<BaseLayout
+  title={`${project.title} — Jacqueline Yue`}
+  description={project.summary}
+>
+  <article class="case-study">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="/work" class="back">&larr; Work</a>
+
+      <!-- Header -->
+      <header class="cs-header">
+        <div class="cs-meta">
+          <span>{project.company}</span>
+          <span>{project.role}</span>
+          <span>{project.timeline}</span>
+        </div>
+        <h1>{project.title}</h1>
+        <p class="cs-summary">{project.summary}</p>
+        <div class="tags">
+          {project.tags.map(t => <span class="tag">{t}</span>)}
+        </div>
+      </header>
+
+      <!-- Hero image slot -->
+      <div class="hero-img-wrap">
+        <!-- Replace with: <img src="/work/buzzfeed-mini-games-hero.jpg" alt="BuzzFeed Mini Games" /> -->
+        <div class="img-placeholder" aria-hidden="true">
+          <span>Add hero image here</span>
+        </div>
+      </div>
+
+      <!-- Case study body -->
+      <div class="cs-body">
+        <section>
+          <h2>Context</h2>
+          <p>
+            Add your case study content here. Describe the problem, your approach,
+            the decisions made, and the outcome. Replace the placeholder images
+            with real project screenshots.
+          </p>
+        </section>
+
+        <section>
+          <h2>Approach</h2>
+          <p>
+            What was your process? How did you collaborate with the team?
+            What frameworks or principles guided your decisions?
+          </p>
+        </section>
+
+        <section>
+          <h2>Outcome</h2>
+          <p>
+            What did you ship? What were the results? What did you learn?
+          </p>
+        </section>
+      </div>
+
+      <!-- Footer nav -->
+      <nav class="cs-nav" aria-label="Project navigation">
+        <a href="/work" class="cs-nav-link">&larr; All work</a>
+        <a href="/work/data-tool" class="cs-nav-link">Next: Data Tool &rarr;</a>
+      </nav>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-study {
+    padding-top: calc(var(--header-h) + 48px);
+    padding-bottom: 120px;
+  }
+
+  .back {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    transition: opacity 0.15s ease;
+  }
+
+  .back:hover {
+    opacity: 0.6;
+  }
+
+  /* Header ───────────────────────────── */
+  .cs-header {
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+
+  .cs-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .cs-meta span + span::before {
+    content: '·';
+    margin-right: 16px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cs-summary {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* Hero image ───────────────────────── */
+  .hero-img-wrap {
+    width: 100%;
+    margin-bottom: 72px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-placeholder span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* Body ─────────────────────────────── */
+  .cs-body {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-bottom: 80px;
+  }
+
+  .cs-body h2 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .cs-body p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* Footer nav ───────────────────────── */
+  .cs-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cs-nav-link {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: opacity 0.15s ease;
+  }
+
+  .cs-nav-link:hover {
+    opacity: 0.5;
+  }
+</style>

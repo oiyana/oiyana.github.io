@@ -1,0 +1,70 @@
+---
+const navLinks = [
+  { label: 'LINKEDIN', href: 'https://www.linkedin.com/in/jacqueline-yue/', external: true },
+  { label: 'WORK WITH ME', href: 'mailto:hello@jacqueline-yue.com', external: false },
+];
+---
+
+<header>
+  <div class="container">
+    <a href="/" class="wordmark">JAC YUE</a>
+    <nav aria-label="Main navigation">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          {...link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-h);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  nav a {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    transition: opacity 0.15s ease;
+  }
+
+  nav a:hover {
+    opacity: 0.5;
+  }
+</style>
