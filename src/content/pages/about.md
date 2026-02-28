@@ -9,4 +9,4 @@ seo:
 ---
 
 
-[Reach out on LinkedIn](https://www.linkedin.com/in/jacqueline-yue/)
+[Reach out on LinkedIn](https://www.linkedin.com/in/jacquelineyue/)

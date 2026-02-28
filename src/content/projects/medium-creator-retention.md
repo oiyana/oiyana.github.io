@@ -3,6 +3,7 @@ title: 'Medium: Creator Retention'
 description: Creator-focused initiatives at Medium to give writers audience ownership and control, retain them on the platform, and rebuild trust after years of algorithm and business model changes.
 publishDate: 'May 01 2022'
 isFeatured: true
+icon: 'tabler:hexagon-number-2-filled'
 seo:
   image:
     src: '../../assets/images/project-3.jpg'

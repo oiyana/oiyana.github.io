@@ -12,5 +12,5 @@ I'm opening up a few spots for women in product, engineering, and design — ear
 
 We'll talk about work, career moves, ideas, and pivots. I'll bring curious questions and a coaching mindset. You bring yourself.
 
-Interested? DM me on [LinkedIn](https://www.linkedin.com/in/jacqueline-yue/).
+Interested? DM me on [LinkedIn](https://www.linkedin.com/in/jacquelineyue/).
 

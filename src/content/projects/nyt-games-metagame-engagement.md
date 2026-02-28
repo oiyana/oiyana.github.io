@@ -3,9 +3,10 @@ title: 'NYT Games: Metagame Engagement System'
 description: Product strategy and systems for deepening engagement and retention across the New York Times Games portfolio, transforming daily puzzles into a compounding metagame.
 publishDate: 'Jan 01 2025'
 isFeatured: true
+icon: 'tabler:hexagon-number-1-filled'
 seo:
   image:
-    src: '../../assets/images/project-4.jpg'
+    src: '../../assets/images/project-1.jpg'
     alt: NYT Games metagame engagement system
 ---
 

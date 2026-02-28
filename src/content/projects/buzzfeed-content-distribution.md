@@ -3,6 +3,7 @@ title: 'BuzzFeed: Content Distribution at Scale'
 description: Internal smart publishing and distribution system that automated publishing, surfaced high-performing content, and drove significant traffic and revenue growth for BuzzFeed.
 publishDate: 'Jan 01 2020'
 isFeatured: true
+icon: 'tabler:hexagon-number-3-filled'
 seo:
   image:
     src: '../../assets/images/project-2.jpg'
