@@ -11,6 +11,7 @@ export type Link = {
 
 export type Hero = {
     title?: string;
+    subtitle?: string;
     text?: string;
     image?: ImageInput;
     actions?: Link[];
