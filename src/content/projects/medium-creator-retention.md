@@ -6,7 +6,7 @@ isFeatured: true
 icon: 'tabler:hexagon-number-2-filled'
 seo:
   image:
-    src: '../../assets/images/project-3.jpg'
+    src: '../../assets/images/avatar.jpg'
     alt: Medium creator tools and email subscriptions
 ---
 

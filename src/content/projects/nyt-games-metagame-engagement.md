@@ -6,7 +6,7 @@ isFeatured: true
 icon: 'tabler:hexagon-number-1-filled'
 seo:
   image:
-    src: '../../assets/images/project-1.jpg'
+    src: '../../assets/images/avatar.jpg'
     alt: NYT Games metagame engagement system
 ---
 

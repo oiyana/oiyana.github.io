@@ -4,7 +4,7 @@ seo:
   title: About Jacqueline Yue
   description: Product builder and leader with a design foundation. Currently Product Director at The New York Times Games.
   image:
-    src: '../../assets/images/about.jpg'
+    src: '../../assets/images/avatar.jpg'
     alt: Jacqueline Yue
 ---
 

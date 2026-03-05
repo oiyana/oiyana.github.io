@@ -6,7 +6,7 @@ isFeatured: true
 icon: 'tabler:hexagon-number-3-filled'
 seo:
   image:
-    src: '../../assets/images/project-2.jpg'
+    src: '../../assets/images/avatar.jpg'
     alt: BuzzFeed smart publishing system
 ---
 
