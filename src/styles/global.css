@@ -54,7 +54,7 @@ html.dark {
 
 @theme inline {
     --font-sans: 'Libre Franklin Variable', sans-serif;
-    --font-serif: 'Literata Variable', serif;
+    --font-serif: 'Bitter Variable', serif;
     --text-color-main: var(--text-main);
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
