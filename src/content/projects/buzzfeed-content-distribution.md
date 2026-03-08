@@ -10,86 +10,93 @@ seo:
     alt: BuzzFeed smart publishing system
 ---
 
-**Role:** Product Manager → Senior Product Manager, Distribution Intelligence
+**Role:** Product Manager → Senior Product Manager, Distribution Intelligent @BuzzFeed
 **Timeline:** 18 months (2018–2020)
 
 ---
 
 ## Challenge
 
-BuzzFeed's growth model depends on distributing viral content at scale—listicles, quizzes, videos—to drive traffic, watch time, and affiliate revenue. Around 40% of traffic comes from social platforms, making distribution velocity critical.
+BuzzFeed's growth model depends on distributing viral content at scale - listicles, quizzes, videos—to drive traffic, watch time, and affiliate revenue. At the time, more than 50% of traffic comes from social platforms, making distribution velocity critical.
 
-Then social platforms changed their algorithms. Traffic plummeted. The publishing team was downsized while scope expanded: from 3 platforms to 6, from 2 content types to 3. Manual workflows couldn't keep pace—human curation missed viral windows, leaving traffic and revenue on the table.
+Then, social platforms changed their algorithms. Traffic plummeted. The publishing team was downsized. Their scope grew from 3 platforms and 2 content types to 6 platforms and 3 content types. Manual workflows couldn't keep pace. Human curation missed viral windows, leaving traffic and revenue on the table.
 
-Two core problems:
+Two core problems emerged:
 
-- **Fragmented tools:** Publishers juggled external platforms, internal systems, and spreadsheets just to plan and publish a single piece of content.
-- **No systematic re-promotion:** There was no reliable way to surface high-performing content and re-promote it at the right time.
+- **Fragmented workflows:** Publishers juggled external platforms, internal systems, and spreadsheets just to plan and publish.
+- **No systematic re-promotion:** There was no reliable way to surface relevant, high-performing content to re-promote at the right time.
 
 ---
 
 ## My Role
 
-I inherited this platform after my manager left, three months into the job. What started as executing an inherited roadmap became a strategy reset: transforming the tool from a publishing utility into an **automation and intelligent distribution system**.
+I inherited this platform after my manager left after 3 months of joining. As traffic goal becomes more aggressive and platform video ad revenue are at risk due to algorithm change, I evolved the original strategy from a "publishing tool automating low-risk content" to an **smart distribution system** that supercharge publishing team to distribute for all types of content.
 
-I aligned engineering, data science, design, and editorial on a unified direction—then shipped it over 18 months.
-
----
-
-## Strategy
-
-The core bet: automation and ML could handle high-volume, predictable publishing, freeing editors to focus on judgment-heavy work—breaking news, topical moments, creative calls.
-
-Getting there required rebuilding trust with the editorial team first. Automation only works when people believe it supports their judgment, not replaces it. I ran discovery sessions with publishers, walked through real workflows, and validated the approach before building. The system was designed with user controls—toggles, runtime configuration, override options—so editors stayed in the driver's seat at every step.
-
-With alignment in place, we built on four pillars.
+I partnered with data science, engineering and design, to ship the integrated workflow and multiple content recommendation model (rule based and ML).
 
 ---
 
-## How I Built It
+## Approach
 
-### 1. Integrated Publishing Hub
+Automation and ML could handle high-volume, predictable publishing, freeing humans to focus on editorial judgment for breaking news and topical content.
 
-Replaced the spreadsheets and platform-switching that slowed every decision. Consolidated sourcing, planning, and publishing into one tool, with a recommendation queue and drag-and-drop scheduling into a publishing calendar. Performance scores and event triggers were surfaced inline so publishers could evaluate and act without leaving the tool.
+**1. Integrated Workflow & Publishing Hub:** Consolidated sourcing, planning, and publishing into a single tool. Built a recommendation queue with drag-and-drop functionality for organizing and scheduling content in a publishing calendar. Surfaced rich context (performance scores, event triggers) to help publishers curate and evaluate effectively.
 
 <!-- IMAGE PLACEHOLDER
 <figure class="case-study-image">
-  <img src="/buzzfeed-publishing-hub.png" alt="Unified publishing hub — recommendation queue and drag-and-drop calendar" class="w-full" />
-  <figcaption>Unified publishing hub — recommendation queue and drag-and-drop calendar</figcaption>
+  <img src="/buzzfeed-pubhub.png" alt="Publishing hub — unified workflow" class="w-full" />
+  <figcaption>Publishing hub — unified workflow and recommendation queue</figcaption>
 </figure>
 -->
 
-### 2. Automation at Scale
+### Problem
 
-Introduced rules-based automation for content that maps predictably to channels—food videos to all lifestyle channels, for example. Built user controls so editorial maintained creative authority: toggle rules on or off, configure by platform, adjust at runtime.
+Publishers juggled fragmented tools—external platforms, internal systems, spreadsheets—just to plan and publish. There was no systematic way to surface relevant, high-performing content to re-promote at the right time. The publishing team had been downsized while scope grew from 3 platforms to 6 and from 2 content types to 3.
 
-**65% of weekly publishing automated**—2,600 of 4,000 weekly assets handled by 781 automation rules.
+### Strategic Bet
 
-<!-- IMAGE PLACEHOLDER
-<figure class="case-study-image">
-  <img src="/buzzfeed-automation-rules.png" alt="Automation rules configuration UI" class="w-full" />
-  <figcaption>Automation rules — channel mapping and runtime controls</figcaption>
-</figure>
--->
+If we could centralize workflows and add ML-driven recommendations, we could scale distribution without scaling headcount. We focused on three pillars:
 
-### 3. ML-Driven Recommendations
-
-Scaled recommendation bots from 2 to 24. Built an evergreen model to surface older, still-relevant content for re-promotion. Migrated from a pull-based to push-based pipeline, cutting recommendation latency from hours to real time—so publishers could act on trending content before the window closed.
+1. **Integrated workflow:** One tool for sourcing, planning, and publishing.
+2. **Recommendation queue:** Surfaces content with performance scores and event triggers; publishers drag-and-drop into a calendar.
+3. **Pipeline architecture:** Migrated from pull-based to push-based to reduce recommendation latency from hours to real time.
 
 <!-- IMAGE PLACEHOLDER
 <figure class="case-study-image">
-  <img src="/buzzfeed-recommendation-queue.png" alt="ML recommendation queue with performance context" class="w-full" />
+  <img src="/buzzfeed-recs.png" alt="Recommendation queue with performance context" class="w-full" />
   <figcaption>Recommendation queue — content scored by performance, event triggers, and recency</figcaption>
 </figure>
 -->
 
-### 4. Shopping Content Distribution
+### Cross-functional Execution
 
-Launched link-in-bio automation and a CMS for Instagram and TikTok to maximize affiliate revenue. Saved **90% of the publishing team's time** on manual link updates—and opened a scalable channel for affiliate-driven traffic.
+- Drove adoption and trust with editorial through user controls, demos, and training sessions.
+- Partnered with data science to scale recommendation bots from 2 to 24 and build an evergreen model.
+- Balanced automation efficiency with editorial creative authority via toggles and runtime configuration.
+
+**2. Advanced Rule to Set Automation:** Introduced rules-based publishing for content that maps cleanly to channels (e.g., food videos → all lifestyle channels). Built user controls so the editorial team maintained creative authority. Set threhold per automated worfklow,
 
 <!-- IMAGE PLACEHOLDER
 <figure class="case-study-image">
-  <img src="/buzzfeed-linkinbio.png" alt="Link-in-bio automation for shopping content" class="w-full" />
+  <img src="/buzzfeed-rule.png" alt="Automation rules configuration" class="w-full" />
+  <figcaption>Automation rules — channel mapping and runtime controls</figcaption>
+</figure>
+-->
+
+**3. ML-Driven Recommendations:** Scaled recommendation bots from 2 to 24. Built an evergreen model to surface old but relevant content for re-promotion.
+
+<!-- IMAGE PLACEHOLDER
+<figure class="case-study-image">
+  <img src="/buzzfeed-auto.png" alt="Recommendation queue" class="w-full" />
+  <figcaption>ML-driven recommendation queue</figcaption>
+</figure>
+-->
+
+**4. Shopping Content Distribution for Affiliate Revenue:** Launched link-in-bio automation and a CMS for Instagram and TikTok to maximize affiliate revenue.
+
+<!-- IMAGE PLACEHOLDER
+<figure class="case-study-image">
+  <img src="/buzzfeed-bio.png" alt="Link-in-bio automation for shopping content" class="w-full" />
   <figcaption>Link-in-bio automation — shopping content CMS for Instagram and TikTok</figcaption>
 </figure>
 -->
@@ -125,7 +132,7 @@ Launched link-in-bio automation and a CMS for Instagram and TikTok to maximize a
 
 - **Prioritize impact over completeness.** Shopping content automation drove outsized impact compared to chasing feature parity.
 - **Trust is the real blocker for adoption.** Editorial buy-in was critical—automation only works when users believe it augments their judgment, not replaces it.
-- **It's okay to do things that don't scale early.** We updated automation rules in JSON and validated model output manually to speed up learning and reduce risk.
+- **It's okay to do things that don't scale early.** We updated automation rules in JSON or validated model output manually to speed up learning and reduce risk.
 
 ---
 

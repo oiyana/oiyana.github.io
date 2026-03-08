@@ -13,6 +13,7 @@
         "@astrojs/mdx": "^4.3.10",
         "@astrojs/rss": "^4.0.13",
         "@astrojs/sitemap": "^3.6.0",
+        "@fontsource-variable/bitter": "^5.2.10",
         "@fontsource-variable/inter": "^5.2.8",
         "@fontsource-variable/libre-franklin": "^5.2.8",
         "@fontsource-variable/literata": "^5.2.8",

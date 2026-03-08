@@ -48,9 +48,52 @@ html.dark {
         @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
     }
 
+    .prose-hero a {
+        font-weight: 700;
+    }
+
     .prose :where(h1, h2, h3, h4, h5, h6) {
         @apply font-serif font-bold;
     }
+
+    .prose figcaption {
+        text-align: center;
+    }
+
+    .deep-dive-details {
+        margin: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color-main);
+        border-top: 1px solid var(--border-color-main);
+        padding: 0.5rem 0.5rem;
+    }
+
+    .deep-dive-details summary {
+        padding: 0.75rem 1rem;
+        font-family: var(--font-serif);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .deep-dive-details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .deep-dive-details summary::before {
+        content: '+';
+        font-size: 1em;
+        margin-right: 0.5rem;
+        transition: transform 0.2s;
+    }
+
+    .deep-dive-details[open] summary::before {
+        transform: rotate(90deg);
+    }
+
+    .deep-dive-details[open] {
+        padding-bottom: 1rem;
+    }
+
     .prose h2, .prose h3 {
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
