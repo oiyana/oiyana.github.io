@@ -38,6 +38,14 @@ const pages = defineCollection({
         })
 });
 
+const hero = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/hero' }),
+    schema: () =>
+        z.object({
+            subtitle: z.string().optional()
+        })
+});
+
 const projects = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
     schema: ({ image }) =>
@@ -51,4 +59,4 @@ const projects = defineCollection({
         })
 });
 
-export const collections = { blog, pages, projects };
+export const collections = { blog, hero, pages, projects };

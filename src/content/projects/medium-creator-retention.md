@@ -1,7 +1,7 @@
 ---
 
-title: 'Writer Retention'
-description: Launch or relaunch creator-focused initiatives at Medium to give hundreds of thousands of independent writers tools to grow their audience.
+title: 'Medium: Writer Growth'
+description: Enable hundreds of thousands of independent writers to expand their audiences and earnings with effective tools.
 publishDate: 'May 01 2022'
 isFeatured: true
 icon: 'tabler:hexagon-number-2-filled'
@@ -14,25 +14,24 @@ seo:
 
 **Role:** Group Product Manager, Creators Team at Medium  
 **Timeline:** May 2021–March 2022  
-**Team:** 12 people (cross-functional team across multiple initiatives)
 
 ---
 
-## Challenge
+### Challenge
 
-Medium was losing writers to Substack. Years of algorithm changes had eroded trust—writers saw their reach fluctuate unpredictably as the platform prioritized different signals (claps, read time, curation, publications). With payouts tied to the traffic their articles generated, many creators felt they'd lost control over their livelihoods.
+Medium was losing writers to competitors like Substack. Years of algorithm changes had eroded trust. Writers saw their articles receive fewer views, and many noticed their new followers were bots. The platform's ranking had changed to use different engagement signals (Claps, readtime, views), causing readership to fluctuate month by month. Since payouts are tied to the traffic their articles generate, many creators felt they had lost control over their livelihoods.
 
-Writers wanted what Substack offered: guaranteed audience ownership and direct reader relationships, independent of algorithmic distribution. This wasn't just a creator problem—it was an existential threat. Medium is a lifeline for indie writers. With 700,000 paying subscribers and 85–100 million monthly readers in 2021, the platform's value proposition depended on a thriving creator ecosystem. Without writers, we'd lose readership and community.
-
----
-
-## My Role
-
-I joined to lead the Creators initiatives, partnering with design leadership and UX research to understand writer needs and execute solutions. Many of the problems were already known—my role was execution-focused: ship the right features fast, coordinate cross-functional work, and measure impact.
+Writers wanted guaranteed audience ownership and direct reader relationships, independent of algorithmic distribution. This was not just a problem for creators — it was an existential threat for Medium. With 700,000 paying subscribers and 85–100 million monthly readers in 2021, the platform's value depended on a vibrant creator ecosystem. Without writers, we risk losing readership and community.
 
 ---
 
-## Approach
+### My Role
+
+I joined to lead the Creators growth, partnering with design leadership and UX research to understand writer needs and execute solutions. Many of the problems were already known—my role was execution-focused: ship the right features fast, coordinate cross-functional work, and measure impact.
+
+---
+
+### Approach
 
 The strategy was to **give writers audience ownership and control** *within* Medium so they didn't have to leave the platform to build durable relationships with readers.
 
@@ -127,7 +126,7 @@ If we could give writers **direct audience ownership within Medium**, we could r
 
 ---
 
-## Impact
+### Impact
 
 **Improve the Adoption of Email Subscription**
 
@@ -154,7 +153,7 @@ If we could give writers **direct audience ownership within Medium**, we could r
 
 ---
 
-## LEARNING
+### What I Learned
 
 Rebuilding trust is harder than building a product. With writers already skeptical after years of algorithm changes, shipping feature parity with competitors wasn't enough. We had to **earn back their trust** by investing in product marketing, detailed help documentation, and Creator Relations outreach. We communicated transparently about what we were changing and why.  We showed through data and lived experience, that Medium was committed to writer success. Lastly, working alongside Product Design, Product Marketing, and Creator Relations—teams deeply committed to writers—reinforced that **trust requires relentless effort and true cross-functional collaboration**.
 

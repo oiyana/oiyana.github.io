@@ -1,6 +1,6 @@
 ---
-title: 'Content Distribution at BuzzFeed'
-description: Internal smart publishing and distribution system that automated publishing, surfaced high-performing content, and drove significant traffic and revenue growth for BuzzFeed.
+title: 'BuzzFeed: Content Distribution at Scale'
+description: Transform an internal tool into a system that automates publishing and recommends content to drive traffic and revenue growth.
 publishDate: 'Jan 01 2020'
 isFeatured: true
 icon: 'tabler:hexagon-number-3-filled'
@@ -12,44 +12,39 @@ seo:
 ---
 
 **Role:** Product Manager → Senior Product Manager, Distribution Intelligent @BuzzFeed
+
 **Timeline:** 18 months (2018–2020)
 
 ---
 
-## Challenge
+### Challenge
 
 BuzzFeed's growth model depends on distributing viral content at scale — listicles, quizzes, videos—to drive traffic, watch time, and affiliate revenue. Around 40% of traffic comes from social platforms, making distribution velocity critical.
 
-Then social platforms changed their algorithms. Traffic plummeted. The publishing team was downsized while scope expanded: from 3 platforms to 6, from 2 content types to 3. Manual workflows couldn't keep pace—human curation missed viral windows, leaving traffic and revenue on the table.
-
-Two core problems:
+Then social platforms changed their algorithms. Traffic plummeted. The publishing team was downsized while scope expanded: from 3 platforms to 6, from 2 content types to 3. Manual workflows couldn't keep pace—human curation missed viral windows, leaving traffic and revenue on the table. There are two core problems to solve:
 - **Fragmented tools:** Publishers juggled 12 different sporadic platform tools, dashboards, internal tools, and spreadsheets just to plan and publish a single piece of content.
 - **No systematic re-promotion:** There was no reliable way to surface high-performing content and re-promote it at the right time.
 
 ---
 
-## My Role
+### My Role
 
-I inherited this platform after my manager left, three months into the job. What started as executing an inherited roadmap became a strategy reset: transforming the tool from a publishing utility into an automation and intelligent distribution system.
-
-I aligned engineering, data science, design, and editorial on a unified direction—then shipped it over 18 months.
+I inherited this platform after my manager left three months into the job. What started as executing an inherited roadmap turned into a strategy reset: transforming the tool from scheduling and publishing into an automation and intelligent distribution system. I led a talented team of engineers, data scientists, and partnered with editorial leadership to execute a unified vision — then delivered it over 18 months.
 
 ---
 
-## Strategy
+### Strategy
 
 The core bet: automation and ML could handle high-volume, predictable publishing, freeing editors to focus on judgment-heavy work—breaking news, topical moments, creative calls. 
 
-Getting there required rebuilding trust with the editorial team first. Automation only works when people believe it supports their judgment, not replaces it. I ran discovery sessions with publishers, walked through real workflows, and validated the approach before building. The system was designed with user controls—toggles, runtime configuration, override options—so editors stayed in the driver's seat at every step.
-
-With alignment in place, we built on four pillars.
+Getting there required rebuilding trust with the editorial team first. Automation only works when people believe it supports their judgment, not replaces it. I ran discovery sessions at least once a week with publishers, tested with prototypes, walked through real workflows, and validated the approach before building. The system was designed with user controls—toggles, runtime configuration, override options—so editors stayed in the driver's seat at every step. With alignment in place, we built on four pillars.
 
 ---
 
-### How I Built It
+### How We Built It
 
 **1. Integrated Publishing Hub**
-Replaced the spreadsheets and platform-switching that slowed every decision. Consolidated sourcing, planning, and publishing into one tool, with a recommendation queue and drag-and-drop scheduling into a publishing calendar. Performance scores and event triggers were surfaced inline so publishers could evaluate and act without leaving the tool.
+Replaced the spreadsheets and fragmented tools. Consolidated sourcing, planning, and publishing into one tool, with a recommendation queue and drag-and-drop scheduling into a publishing calendar. Performance scores and event triggers were surfaced inline so publishers could evaluate and act without leaving the tool.
 
 <figure class="case-study-image">
   <img src="/buzzfeed-pubhub.png" alt="Publishing hub — unified workflow" class="w-full" />
@@ -58,9 +53,7 @@ Replaced the spreadsheets and platform-switching that slowed every decision. Con
 
 
 **2. Automation at Scale**
-Introduced rules-based automation for content that maps predictably to channels—food videos to all lifestyle channels, for example. Built user controls so editorial maintained creative authority: toggle rules on or off, configure by platform, adjust at runtime.
-
-65% of weekly publishing automated—2,600 of 4,000 weekly assets handled by 781 automation rules.
+Introduced rules-based automation for content that maps predictably to channels—food videos to all lifestyle channels, for example. Built user controls so editorial maintained creative authority: toggle rules on or off, configure by platform, adjust at runtime. Result: 65% of weekly content publishing automated—2,600 out of 4,000 assets handled by 781 automation rules.Result: 65% of weekly content publishing automated—2,600 out of 4,000 assets handled by 781 automation rules.
 
 <figure class="case-study-image">
   <img src="/buzzfeed-auto.png" alt="Automation workflow" class="w-full" />
@@ -91,19 +84,20 @@ Launched link-in-bio automation and a CMS for Instagram and TikTok to maximize a
 
 ---
 
-## Impact
+### Impact
 
 **Traffic and revenue**
-- Enabled a small team to handle **4K assets/week across 6 platforms** that resulted in **3.2B monthly content views** at peak and **$25M platform video ad revenue**.
-- **500% YoY increase in affiliate revenue on Instagram and TikTok** through shopping content auto-publishing.
-- **300% YoY increase in pageviews** repromoting high-performing old, evergreen content**.
-- Increased engagement on Instagram and TikTok engagement by **15%** and **98%** through link-in-bio & auto-publishing integration.
+- Enabled a downsized team to handle **4K assets/week across 6 platforms** 
+- Resulted in **3.2B monthly content views** at peak and **$25M platform video ad revenue**.
+- **500% YoY increase in affiliate revenue** on Instagram and TikTok through link-in-bio auto-publishing.
+- **300% YoY increase in pageviews** repromoting high-performing old, evergreen content.
+- **15% YoY** increase in Instagram engagement and a **98% YoY** boost on TikTok 
 
 **Workflow efficiency**
-- Automated **65% of weekly publishing** (2,600 of 4K assets) through 781 automation rules.
-- Reduced workflow for sourcing content by **30%** by integrating the recommendation queue with the content calendar.
+- Automated **65% of weekly publishing** (2,600/4,000 assets) through 781 config rules.
+- Reduced workflow for sourcing content across multiple tools by **30%**  
 - Reduced recommendation bot deployment time from **7 to 3 days**, enabling strategy shifts.
-- Saved **90% of the publishing team's time** on manual link updates through link-in-bio automation.
+- Automated link-in-bio publishing saved users **90% of their time** on manual link updates.
 
 **Strategic investment**
 - The smart publishing system was featured in BuzzFeed's IPO deck as a proof point of its tech-led strategy.
@@ -111,7 +105,7 @@ Launched link-in-bio automation and a CMS for Instagram and TikTok to maximize a
 
 ---
 
-## Learning
+### What I Learned
 - **Co-design with users from operator to leadership to build trust** Ensure the tools augments their editorial judgment, not replaces it.
 - **Prioritize impact over completeness.** Shopping content automation drove outsized impact compared to chasing feature parity to reach wider.
 - **It's okay to do things that don't scale early.** Configure automation rules in JSON or manually validate machine learning model output via a spreadsheet is not sustainbale but speed up learning and reduce risk.

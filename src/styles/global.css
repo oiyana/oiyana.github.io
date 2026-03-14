@@ -1,7 +1,6 @@
 @import '@fontsource-variable/libre-franklin' layer(base);
 @import '@fontsource-variable/bitter' layer(base);
 @import '@fontsource-variable/bitter/wght-italic.css' layer(base);
-
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -23,7 +22,6 @@ html.dark {
 
 @theme inline {
     --font-sans: 'Libre Franklin Variable', sans-serif;
-    --font-serif: 'Bitter Variable', serif;
     --text-color-main: var(--text-main);
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
@@ -45,7 +43,7 @@ html.dark {
     }
 
     .prose a {
-        @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
+        @apply underline font-normal decoration-1 underline-offset-6 decoration-dotted hover:decoration-solid;
     }
 
     .prose-hero a {
@@ -53,11 +51,15 @@ html.dark {
     }
 
     .prose :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-serif font-bold;
+        @apply font-sans font-bold;
     }
 
     .prose figcaption {
         text-align: center;
+    }
+
+    .prose blockquote {
+        font-style: normal;
     }
 
     .deep-dive-details {
@@ -69,7 +71,7 @@ html.dark {
 
     .deep-dive-details summary {
         padding: 0.75rem 1rem;
-        font-family: var(--font-serif);
+        font-family: var(--font-sans);
         font-weight: 700;
         cursor: pointer;
         list-style: none;

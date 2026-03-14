@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
@@ -9,6 +8,16 @@ import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 
+const heroEntries = await getCollection('hero');
+const heroContent = heroEntries[0];
+const heroProps = {
+    ...siteConfig.hero,
+    ...(heroContent && {
+        subtitle: heroContent.data.subtitle,
+        text: heroContent.body
+    })
+};
+
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 
@@ -17,24 +26,21 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
 <BaseLayout description={siteConfig.description}>
-    <Hero {...siteConfig.hero} />
+    <Hero {...heroProps} />
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 font-serif text-xl sm:mb-16 sm:text-5xl"></h2>
+                <h2 class="mb-12 font-sans text-xl sm:mb-16 sm:text-5xl"></h2>
                 {featuredProjects.map((project) => (
                     <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}
             </div>
         )
     }
-    <div class="mb-16 sm:mb-24">
-        <Icon name="ph:hand-waving-light" class="w-12 h-12 sm:w-16 sm:h-16" />
-    </div>
     {
         featuredPosts?.length > 0 && (
             <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">Writing</h2>
+                <h2 class="mb-12 font-sans text-xl italic sm:mb-16 sm:text-2xl">Writing</h2>
                 {featuredPosts.map((post) => (
                     <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
                 ))}

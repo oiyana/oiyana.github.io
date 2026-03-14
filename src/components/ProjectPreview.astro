@@ -6,17 +6,22 @@ import ArrowRight from '../assets/icons/arrow-right.svg';
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, icon } = project.data;
+const { title, description, icon } = project.data;
 const TitleTag = headingLevel;
 ---
 
 <a class:list={['group flex items-start justify-between gap-8', className]} href={`/projects/${project.id}/`}>
     <div class="grow">
-        <TitleTag class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl">
-            {icon && <Icon name={icon} class="inline-block w-6 h-6 sm:w-7 sm:h-7 mr-2 align-middle" />}{title}
+        <TitleTag class="font-sans text-xl leading-tight font-bold group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-1xl">
+            {icon && <Icon name={icon} class="inline-block w-5 h-5 sm:w-7 sm:h-7 mr-2 align-middle" />}{title}
         </TitleTag>
+        {description && (
+            <p class="mt-1 font-sans text-base font-normal leading-relaxed text-main sm:text-lg">
+                {description}
+            </p>
+        )}
     </div>
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:shrink-0 sm:items-center sm:gap-1">
+    <div class="hidden font-sans opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:shrink-0 sm:items-center sm:gap-1">
         View Project <ArrowRight class="h-4 w-4 fill-current" />
     </div>
 </a>
