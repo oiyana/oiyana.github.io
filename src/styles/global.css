@@ -6,11 +6,21 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.9;
+}
+
 :root {
     --text-main: #171717;
     --bg-main: rgb(255, 255, 234);
     --bg-muted: #eae9e1;
     --border-main: #171717;
+    --link-underline: #ead770;
+    --link-underline-hover: #171717;
 }
 
 html.dark {
@@ -18,6 +28,8 @@ html.dark {
     --bg-main: rgb(19, 19, 0);
     --bg-muted: #eae9e1;
     --border-main: #171717;
+    --link-underline: #b4a34b;
+    --link-underline-hover: #ffffff;
 }
 
 @theme inline {
@@ -28,30 +40,97 @@ html.dark {
     --border-color-main: var(--border-main);
 }
 
+@keyframes run-on-run-bg {
+    from {
+        background-color: rgb(255, 255, 234);
+    }
+    to {
+        background-color: #d2dff4;
+    }
+}
+
+@keyframes run-on-run-bg-dark {
+    from {
+        background-color: rgb(19, 19, 0);
+    }
+    to {
+        background-color: #2a3548;
+    }
+}
+
+.page-run-on-run {
+    animation: run-on-run-bg 1.2s ease-out forwards;
+}
+
+html.dark .page-run-on-run {
+    animation-name: run-on-run-bg-dark;
+}
+
 @layer utilities {
     .prose {
         --tw-prose-body: var(--text-color-main);
         --tw-prose-headings: var(--text-color-main);
         --tw-prose-links: var(--text-color-main);
-        --tw-prose-hr: #000000;
+        /* Typography defaults --tw-prose-bold to a dark gray; without this, <strong> is invisible in dark mode */
+        --tw-prose-bold: var(--text-color-main);
+        --tw-prose-quotes: var(--text-color-main);
+        --tw-prose-code: var(--text-color-main);
+        --tw-prose-hr: var(--border-color-main);
+        --tw-prose-bullets: var(--text-color-main);
+    }
+
+    .prose :where(p, li, blockquote) {
+        line-height: 1.9;
     }
 
     .prose hr {
-        border-color: #000000;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
+        border-color: var(--border-color-main);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     .prose a {
-        @apply underline font-normal decoration-1 underline-offset-6 decoration-dotted hover:decoration-solid;
+        @apply underline font-normal decoration-2 underline-offset-6 decoration-solid;
+        text-decoration-color: var(--link-underline);
+        transition: text-decoration-color 0.15s ease;
+    }
+
+    .prose a:hover {
+        text-decoration-color: var(--link-underline-hover);
     }
 
     .prose-hero a {
+        font-weight: 600;
+    }
+
+    .prose-hero a.hero-inline-logo-link {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.3em;
         font-weight: 700;
+        vertical-align: baseline;
+        text-underline-offset: 0.3em;
+    }
+
+    .prose-hero .hero-inline-logo-img {
+        display: inline-block;
+        height: 1em;
+        width: auto;
+        flex-shrink: 0;
+        align-self: center;
+        vertical-align: -0.12em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0.4em;
+    }
+
+    .dark .prose-hero .hero-inline-logo-img {
+        filter: invert(1);
     }
 
     .prose :where(h1, h2, h3, h4, h5, h6) {
         @apply font-sans font-bold;
+        line-height: 1.4;
     }
 
     .prose figcaption {
@@ -105,7 +184,7 @@ html.dark {
         margin-top: 0em;
         margin-bottom: 0.125em;
         padding-left: 1.5em;
-        --tw-prose-bullets: #000000;
+        --tw-prose-bullets: var(--text-color-main);
     }
     .prose li {
         margin-top: 0em;
@@ -113,6 +192,6 @@ html.dark {
         list-style-type: disc;
     }
     .prose li::marker {
-        color: #000000;
+        color: var(--text-color-main);
     }
 }

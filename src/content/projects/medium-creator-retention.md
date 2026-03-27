@@ -1,7 +1,7 @@
 ---
 
-title: 'Medium: Writer Growth'
-description: Enable hundreds of thousands of independent writers to expand their audiences and earnings with effective tools.
+title: 'Medium Writer Growth'
+description: Help writers to grow audiences and earnings.
 publishDate: 'May 01 2022'
 isFeatured: true
 icon: 'tabler:hexagon-number-2-filled'
@@ -11,151 +11,95 @@ seo:
     alt: Medium creator tools and email subscriptions
 
 ---
+**Role:** Group Product Manager, Creators — May 2021–March 2022
 
-**Role:** Group Product Manager, Creators Team at Medium  
-**Timeline:** May 2021–March 2022  
+---
+### What I Built
+
+Medium was losing writers to competitors. Years of algorithm changes had eroded trust — payouts fluctuated with traffic, follower counts were polluted by bots, and writers felt they had no control over their own audiences.
+
+I led the Creators team to ship a mix of new and improved features that gave writers more control and transparency over who sees and reads their stories within Medium, so they didn't have to leave to build sustainable reader relationships elsewhere. What I delivered in under a year:
+
+**1. Email Subscription Redesign** — Took a low-adoption feature, diagnosed the friction, and rebuilt the end-to-end experience: better CTAs across the reading surface, personalized landing pages, simplified opt-in, reader reply support, and an audience dashboard. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)
+<figure class="case-study-image">
+  <img src="/medium-email-opt-in.png" alt="Email subscription opt-in" class="w-full" />
+  <figcaption>Writer opt-in to automatically send each story to the subscriber's inbox with one click.
+</figcaption>
+</figure>
+
+
+
+**2. Referred Membership Program** — Built a creator-forward signup flow and landing page that lets writers earn revenue share from reader conversions, creating income beyond traffic-based payouts. [(Announcement)](https://medium.com/blog/evolving-the-partner-program-2613708f9f3c)
+<figure class="case-study-image">
+  <img src="/medium-referral.png" alt="Referral program" class="w-full" />
+  <figcaption> Creator landing page and referral payout
+</figcaption>
+</figure>
+
+
+
+**3. Lists** — Worked with the Book team to bring a curation feature from design concept to launch. Writers and readers can save, annotate, and publish collections of stories by topic. [(Announcement)](https://medium.com/blog/curate-and-share-stories-with-lists-2c27326d096)
+<figure class="case-study-image">
+  <img src="/medium-list.png" alt="List" class="w-full" />
+  <figcaption> Lists - Curate stories and publish to profile
+</figcaption>
+</figure>
+
+
+
+**4. Customizable About Page** — Modernized the profile CMS to support rich formatting, embedded images, and more expressive tools so writers could better represent their brand. [(Announcement)](https://medium.com/blog/elevate-your-brand-with-a-new-customizable-about-page-3392eb9fba7d)
+<figure class="case-study-image">
+  <img src="/medium-profile.png" alt="Customizable profile" class="w-full" />
+  <figcaption> Customizable profile: Before and After
+</figcaption>
+</figure>
+
+
+
+**5. Fix Follower Count** — Identified a recurring pain point from writers where spam and banned accounts were inflating follower counts. Partnered with the Trust & Safety team to debug, brought a removal recommendation to the leadership with a read on the trade-offs, then coordinated with marketing and Creator Relations to get the communication right. [(Announcement)]
 
 ---
 
-### Challenge
+### The Impact
 
-Medium was losing writers to competitors like Substack. Years of algorithm changes had eroded trust. Writers saw their articles receive fewer views, and many noticed their new followers were bots. The platform's ranking had changed to use different engagement signals (Claps, readtime, views), causing readership to fluctuate month by month. Since payouts are tied to the traffic their articles generate, many creators felt they had lost control over their livelihoods.
+<figure class="case-study-image">
+  <img src="/medium-email-sub.png" alt="Email subscription" class="w-full" />
+  <figcaption>Email Subscription</figcaption>
+</figure>
 
-Writers wanted guaranteed audience ownership and direct reader relationships, independent of algorithmic distribution. This was not just a problem for creators — it was an existential threat for Medium. With 700,000 paying subscribers and 85–100 million monthly readers in 2021, the platform's value depended on a vibrant creator ecosystem. Without writers, we risk losing readership and community.
+The email subscription redesign drove the headline numbers:
+- **6× active subscribers** — 350K → 2.06M in six months
+- **100× daily email volume** — 1,200 → 100K–200K subscribers receiving emails per day
+- **70× monthly email sends** — 10K → 726K
+- **~40% open rates maintained at scale** — 10 points above Medium's own Digest newsletter
+- Over half of email subscribers read 3+ stories from subscribed writers within 90 days
+
+Beyond email, the referred membership program created a new revenue stream for roughly 20% of writers. Post-launch surveys showed renewed trust and positive sentiment across the creator base.
 
 ---
 
-### My Role
+### Why I Built It
 
-I joined to lead the Creators growth, partnering with design leadership and UX research to understand writer needs and execute solutions. Many of the problems were already known—my role was execution-focused: ship the right features fast, coordinate cross-functional work, and measure impact.
+Medium had 700K paid subscribers and 85–100M monthly readers in 2021. That value depended entirely on a healthy creator ecosystem. Without writers, there's no content, no readership, no community.
 
----
+The platform was at a difficult moment: writer attrition, an influx of low-quality content, and a broken monetization model. The leadership believed that giving writers direct relationships and the ability to distribute their stories to their email subscribers was the path forward. We could retain creators without abandoning the discovery advantages that made Medium valuable in the first place.
 
-### Approach
-
-The strategy was to **give writers audience ownership and control** *within* Medium so they didn't have to leave the platform to build durable relationships with readers.
-
-**1. Email Subscription Redesign:** Let writers build direct newsletter subscriber relationships independent of the algorithm. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)  
-
-<figure>
-  <img src="/medium-writer-subs.png" alt="Email subscription redesign — writer subscribe CTA" class="w-full" />
-  <figcaption>Email subscription redesign — writer subscribe CTA</figcaption>
-</figure>
-
-<details class="deep-dive-details">
-<summary>Deep-Dive: Email Subscription Redesign</summary>
-
-### Problem
-
-Writers couldn't reliably reach their most engaged readers, which threatened Medium's defensibility against Substack. Email subscription had launched six months before I joined but struggled with adoption:
-
-- Fewer than 10% of writers had enabled email subscriptions.  
-- Fewer than 50% of those who enabled it actually sent newsletters.  
-- 55% of surveyed writers were unaware that the feature even existed.  
-- Only ~10K emails were sent monthly out of 1.3M stories published.
-
-Despite this, there were encouraging signals:
-
-- Writer emails had ~40% open rates. 10 points above Medium's Digest Newsletter.  
-- 50% of email subscribers read 3+ stories from subscribed writers within 90 days.
-
-Engaged readers existed—we just needed to connect them with writers.
-
-### Strategic Bet
-
-If we could give writers **direct audience ownership within Medium**, we could retain creators while preserving our discovery advantages (curation, publications, built-in readership). We focused on four pillars:
-
-1. **Improve subscriber conversion:** Redesign subscribe CTAs across the reading experience. Personalize subscription landing pages.  Enable email list import so writers can bring their audiences from elsewhere.
-2. **Increase creator adoption:** Remove double opt-in requirements. Increase awareness through onboarding prompts. Build educational content with Creator Relations.
-3. **Drive engagement between writers and audiences:** Enable reader replies to writer emails. Integrate comments more tightly into the email experience.
-4. **Give writers a feedback loop:** Build an audience dashboard showing followers and email subscribers
-
-<figure>
-  <img src="/medium-get-email.png" alt="Subscribe flow — get reader emails" class="w-full" />
-  <figcaption>Subscribe flow — get reader emails</figcaption>
-</figure>
-<figure>
-  <img src="/medium-email-link.png" alt="Email subscription link in bio" class="w-full" />
-  <figcaption>Email subscription link in bio</figcaption>
-</figure>
-<figure>
-  <img src="/medium-dashboard.png" alt="Audience dashboard — followers and email subscribers" class="w-full" />
-  <figcaption>Audience dashboard — followers and email subscribers</figcaption>
-</figure>
-
-
-### Cross-functional Collaboration
-
-- Partnered with Legal on safely removing double opt-in.  
-- Worked with Marketing on launch communications.  
-- Collaborated with Creator Relations on awareness campaigns and education.  
-- Aligned with Customer Success to ensure support and success teams could assist writers.  
-- Recruited six engineers mid-sprint to increase capacity and parallelize work.  
-- Ran this initiative in parallel with the referred membership program (different PM lead, shared resources).
-
-</details>
-
-
-**2. Referred Membership Program** Enabled writers to earn a revenue share from reader conversions, creating income beyond traffic-based payouts. Co-led with a monetization PM. The program was later sunset in 2025. [(Announcement)](https://medium.com/blog/evolving-the-partner-program-2613708f9f3c)
-
-<figure>
-  <img src="/medium-referral.png" alt="Referred Membership Program" class="w-full" />
-  <figcaption>Referred Membership Program</figcaption>
-</figure>
-
-
-**3. Lists:** Allowed writers to curate lists of stories by topic, showcasing their expertise and driving engagement. [(Announcement)](https://medium.com/blog/curate-and-share-stories-with-lists-2c27326d096)
-
-<figure>
-  <img src="/medium-lists-animation.gif" alt="Lists — curate and share stories" class="w-full" />
-  <figcaption>Lists — curate and share stories</figcaption>
-</figure>
-
-
-**4. Customizable About Page:** Gave writers a better way to express their personal brand and differentiate themselves on Medium. [(Announcement)](https://medium.com/blog/elevate-your-brand-with-a-new-customizable-about-page-3392eb9fba7d)
-
-<figure>
-  <img src="/medium-about.gif" alt="Customizable About Page" class="w-full" />
-  <figcaption>Customizable About Page</figcaption>
-</figure>
-
-**5. Email List Import:** Let writers bring readers from other platforms onto Medium. Shipped ~6 months after the launch of the email subscription redesign. [(Help Doc)](https://help.medium.com/hc/en-us/articles/360059837393-Email-notifications)
-
-
-**6. Fix Follower Count:** Removed spam accounts to show writers their true fan base, rebuilding trust in audience metrics. [(Announcement)](https://medium.com/blog/keeping-medium-authentic-947feaf59415)
+Email subscription was the top writer request, but the v1 had almost no traction — fewer than 10% of writers had enabled it, and 55% didn't know it existed. And there were early signals worth investing in: writer emails were already hitting ~40% open rates, 10 points above Medium's own weekly email newsletter, the Digest, and half of email subscribers read 3+ stories from a writer within 90 days. Engaged readers existed. We just needed to connect them to writers at scale. 
 
 ---
 
-### Impact
+### The Challenges
 
-**Improve the Adoption of Email Subscription**
+**Rebuilding trust required more than shipping features.** Algorithm and business model changes had made creators feel the platform was working against them. Feature parity with competitors wasn't enough. Rebuilding trust required close collaboration with design, product marketing, and Creator Relations — both within the product and through external messaging — to demonstrate Medium's commitment to their success.
 
-- Nearly **6× total active subscribers** (350K → 2.06M).  
-- **100× daily email volume** (1,200 → 100K–200K subscribers receiving emails).  
-- **70× monthly email sends** (10K → 726K), massively increasing writer-driven distribution.  
-- A double-digit percentage of the writer base activated and sending newsletters regularly.  
-- Maintained ~40% open rates at scale.
+**Two launches, one team, one timeline.** The email subscription redesign and the referred membership program were scoped to ship a week apart, on overlapping engineering resources. I worked closely with engineering to carefully parallelize both tracks and hit our timeline without sacrificing quality on either.
 
-**Increase Writer Engagement on Platform**
-
-- Over half of subscribers read 3+ stories from subscribed writers in 90 days.  
-- Writers checked the audience dashboard daily, treating it as a core tool.  
-- Writers organically promoted email subscriptions in their stories.  
-- Post-launch surveys showed positive sentiment and renewed trust among creators.
-
-**Broader Creator Initiatives**
-
-- The referred membership program created a new revenue stream for ~20% of writers.  
-- Lists enabled content curation and helped writers showcase topical expertise.  
-- Customizable About pages gave writers clearer brand differentiation.  
-- Follower cleanup rebuilt trust in the authenticity of reach and audience size metrics.  
-
+**Getting up to speed fast.** My background building for content creators was an asset, but I had limited context on two-sided platform dynamics coming in. I ramped up quickly by talking directly with writers, doing in-depth competitor analysis on Substack and Ghost, and immersing myself in the creator economy. It was a lot to absorb but essential to leading with any credibility.
 
 ---
 
-### What I Learned
+### The Trade-offs
 
-Rebuilding trust is harder than building a product. With writers already skeptical after years of algorithm changes, shipping feature parity with competitors wasn't enough. We had to **earn back their trust** by investing in product marketing, detailed help documentation, and Creator Relations outreach. We communicated transparently about what we were changing and why.  We showed through data and lived experience, that Medium was committed to writer success. Lastly, working alongside Product Design, Product Marketing, and Creator Relations—teams deeply committed to writers—reinforced that **trust requires relentless effort and true cross-functional collaboration**.
+**Shipping over controlled learning.** We ran no A/B tests or holdouts — every feature launched at 100% rollout. In a healthier timeline, we would have instrumented experiments to measure causal impact. But writers were already leaving, and moving slowly had a real cost. Instead, we leaned on pre/post analysis, feedback sessions, and the Creator Relations team, who had direct relationships with writers we couldn't replicate through data alone. We got directional signals on creator sentiment, not quantitative certainty. Given the urgency, it was the right call.
 
----
-
+**Feature parity over fixing what was already broken.** Shipping five initiatives in a year meant some important problems didn't get prioritized, such as publications and the creator dashboard. Both are core tools writers rely on daily, and both need significant design and engineering investment to do right. Given the timeline and resources, deprioritizing them was the right call.  

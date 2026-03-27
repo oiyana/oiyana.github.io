@@ -40,6 +40,16 @@ if (image?.src) {
 }
 const canonicalURL = new URL(Astro.request.url, Astro.site);
 
+const faviconImage = siteConfig.avatar?.src
+    ? await getImage({
+          src: siteConfig.avatar.src as ImageMetadata,
+          width: 32,
+          height: 32,
+          format: 'png',
+          fit: 'cover'
+      })
+    : null;
+
 /**
  * Enforce some standard canonical URL formatting across the site.
  */
@@ -69,7 +79,11 @@ function formatCanonicalURL(url: string | URL) {
 <link rel="preload" as="font" type="font/woff2" href={bitterWoff2} crossorigin="anonymous" />
 
 <!-- Low Priority Global Metadata -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+{faviconImage ? (
+    <link rel="icon" type="image/png" href={faviconImage.src} sizes="32x32" />
+) : (
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+)}
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
 
 <!-- Page Metadata -->

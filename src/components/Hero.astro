@@ -14,7 +14,7 @@ const { title, titleImage, subtitle, image, text, actions } = Astro.props;
     (title || titleImage?.src || image?.src || text || (actions && actions.length > 0)) && (
         <section class="mb-16 flex w-full flex-col gap-8 sm:mb-24">
             {titleImage?.src ? (
-                <h1 class="h-20 sm:h-24 [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
+                <h1 class="h-16 sm:h-24 [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
                     <CustomImage
                         src={titleImage.src}
                         alt={titleImage.alt ?? ''}
@@ -29,8 +29,7 @@ const { title, titleImage, subtitle, image, text, actions } = Astro.props;
                 </h1>
             ) : null}
             {subtitle && (
-                <p class="flex items-center gap-3 text-lg text-theme-foreground">
-                    <Icon name="ph:hand-waving-fill" class="w-6 h-6 shrink-0 sm:w-8 sm:h-8" />
+                <p class="flex items-center gap-3 text-theme-foreground">
                     {subtitle}
                 </p>
             )}
@@ -47,7 +46,7 @@ const { title, titleImage, subtitle, image, text, actions } = Astro.props;
                     {image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{image.caption}</figcaption>}
                 </figure>
             )}
-            {text && <div class="prose sm:prose-lg max-w-none prose-hero" set:html={marked.parse(text)} />}
+            {text && <div class="prose max-w-none prose-hero" set:html={marked.parse(text)} />}
             {actions && actions.length > 0 && (
                 <div class="flex flex-wrap gap-4">
                     {actions.map((action) => (

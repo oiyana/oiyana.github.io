@@ -16,24 +16,11 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Run-on-Run',
-            href: '/run-on-run'
-        },
-        {
             text: 'LinkedIn',
             href: 'https://www.linkedin.com/in/jacqueline-yue/'
         }
     ],
-    footerNavLinks: [
-        {
-            text: 'Run-on-run',
-            href: '/run-on-run'
-        },
-        {
-            text: 'Projects',
-            href: '/projects'
-        }
-    ],
+    footerNavLinks: [],
     socialLinks: [
         {
             text: 'LinkedIn',

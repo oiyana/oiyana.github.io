@@ -8,8 +8,8 @@ const navLinks = siteConfig.headerNavLinks ?? [];
 const isHeroPage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 ---
 
-<nav class="relative min-h-10 pt-4 pb-12 sm:min-h-14 sm:pb-24 md:pt-8" aria-label="Primary navigation">
-    <div class="relative mx-auto flex w-full max-w-3xl items-center justify-between">
+<nav class="relative min-h-10 pt-3 pb-8 sm:min-h-14 sm:pb-6 md:pt-6" aria-label="Primary navigation">
+    <div class="relative mx-auto flex items-center justify-between">
         <!-- Logo: left-aligned (hidden on hero page) -->
         {isHeroPage ? (
             <div class="shrink-0" aria-hidden="true" />
@@ -32,12 +32,12 @@ const isHeroPage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
                 </button>
                 <ul
                     id="menu-items"
-                    class="menu max-md:bg-main max-md:border-main flex gap-6 max-md:absolute max-md:-top-2.5 max-md:right-0 max-md:z-20 max-md:max-w-64 max-md:flex-col max-md:gap-1 max-md:border max-md:border-dashed max-md:px-3 max-md:pt-16 max-md:pb-10"
+                    class="menu max-md:bg-main max-md:border-main flex gap-6 max-md:absolute max-md:-top-2.5 max-md:right-0 max-md:z-20 max-md:max-w-64 max-md:flex-col max-md:gap-1 max-md:border max-md:border-dashed max-md:px-3 max-md:pt-16 max-md:pb-5"
                 >
                     {navLinks.map((link) => (
                         <li class="py-1">
                             <NavLink
-                                class="text-main font-sans text-xl hover:underline hover:decoration-1 hover:underline-offset-2 md:text-base"
+                                class="text-main font-sans text-base hover:underline hover:decoration-2 hover:decoration-solid hover:underline-offset-[0.3em]"
                                 href={link.href}
                             >
                                 {link.text}

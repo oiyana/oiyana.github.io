@@ -1,14 +1,11 @@
 ---
-subtitle: I am a hands-on product builder, and forever learners. 
+subtitle: I am a product builder, conversational-pace runner, and forever learner.
 ---
 
-Currently at **[The New York Times Games](https://www.nytco.com/games/)**, I lead product and team brought long-term player values — [Create Your Wordle](https://www.nytco.com/games/), [Archievements](https://www.nytco.com/games/), [Archive](https://www.nytco.com/games/), [Stats & Streaks](https://www.nytco.com/games/) – for games you may heard of: Wordle, Connections, Spelling Bee, Strands and Crosswords.
+Currently at <a href="https://www.nytco.com/games/" class="hero-inline-logo-link"><img src="/images/newyorktimes.svg" alt="" class="hero-inline-logo-img" aria-hidden="true" /><span>The New York Times Games</span></a>, I lead the teams building product at the heart of our subscriber strategy for a portfolio of daily puzzles you may have heard of - Wordle, Connections and Crosswords — by building long-term value through [Badge System](https://www.theverge.com/news/806578/nyt-games-badges-achievements-wordle-spelling-bee-connections), [Archives](https://techcrunch.com/2024/05/07/nyt-games-wordle-archive-access-1000-past-puzzles/), [Stats & Streaks](https://www.nytco.com/press/introducing-connections-stats-and-streaks/), [Create Your Wordle Puzzle](https://www.nytco.com/press/create-your-wordle-puzzle-is-here-to-share/), and growth.
 
-Before this, I was a Group PM at **[Medium](https://medium.com/)**, empowering hundreds of thousands of independent writers to grow their audiences and their earnings. Prior to that, at **[BuzzFeed](https://www.buzzfeed.com/)**, I had two roles. As a designer, I led the development of new game formats to drive virality and later developed data and analytics tools. Then, I transitioned into product to re-imagine how content gets distributed at scale using automation and data models while ensuring editors/humans still retain 100% control. 
+Before this, I led Creator growth at <a href="https://medium.com/" class="hero-inline-logo-link"><img src="/images/medium.svg" alt="" class="hero-inline-logo-img" aria-hidden="true" /><span>Medium</span></a>, helping hundreds of thousands of independent writers to grow their audiences and earnings. At <a href="https://www.buzzfeed.com/" class="hero-inline-logo-link"><img src="/images/buzzfeed.svg" alt="" class="hero-inline-logo-img" aria-hidden="true" /><span>BuzzFeed</span></a>, I started as a designer building games engineered for virality and the analytics tools to understand why it happened. Then transitioned to product management, reimagined how content reached its  audiences, and maximized business impact at scale using automation and data models.
 
-My happy place lies at the intersection of technology, design, and value creation, where I can build products that feel good to use and create lasting impact. Throughout my journey, I bring a generalist curiosity to learn, understand, and connect dots. I strive to create the conditions to enable good work to happen for the team, and the individual is important to me.
+Through my journey, **I operate at the intersection of system building, intentional design, and value creation, where I can build products that feel good to use and create lasting impact.** I'm a generalist, good at connecting the dots, and drawn to messy problems. Whenever possible, I strive to foster conditions that enable great work to happen while having fun with the people around me.
 
-If you are interested in working together, [say hello on LinkedIn &rarr;](https://www.linkedin.com/in/jacquelineyue/)
-
-
-
+If you are interested in working together, [say hi on LinkedIn &rarr;](https://www.linkedin.com/in/jacquelineyue/)
