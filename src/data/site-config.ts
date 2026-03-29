@@ -17,14 +17,14 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/jacqueline-yue/'
+            href: 'https://www.linkedin.com/in/jacquelineyue/'
         }
     ],
     footerNavLinks: [],
     socialLinks: [
         {
             text: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/jacqueline-yue/'
+            href: 'https://www.linkedin.com/in/jacquelineyue/'
         },
         {
             text: 'GitHub',
