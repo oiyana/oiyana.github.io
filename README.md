@@ -8,6 +8,6 @@ I'm not an engineer, but I love dabbling in code and keep learning.
 
 I think in systems, care about craft, and believe the best products are built when everyone's in the room.
 
-🔗 Portfolio: jacqueline-yue.com
+🔗 Portfolio: [jacqueline-yue.com](url)
 
-🔗 LinkedIn: linkedin.com/in/jacquelineyue
+🔗 LinkedIn: [linkedin.com/in/jacquelineyue](url)
