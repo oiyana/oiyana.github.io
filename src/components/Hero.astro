@@ -14,7 +14,7 @@ const { title, titleImage, subtitle, image, text, actions } = Astro.props;
     (title || titleImage?.src || image?.src || text || (actions && actions.length > 0)) && (
         <section class="mb-16 flex w-full flex-col gap-8 sm:mb-24">
             {titleImage?.src ? (
-                <h1 class="h-16 sm:h-24 [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
+                <h1 class="h-12 sm:h-[4.5rem] [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
                     <CustomImage
                         src={titleImage.src}
                         alt={titleImage.alt ?? ''}

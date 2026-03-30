@@ -107,7 +107,7 @@ html.dark .page-run-on-run {
         display: inline-flex;
         align-items: baseline;
         gap: 0.3em;
-        font-weight: 700;
+        font-weight: 600;
         vertical-align: baseline;
         text-underline-offset: 0.3em;
     }
