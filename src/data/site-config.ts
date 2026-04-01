@@ -18,6 +18,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'LinkedIn',
             href: 'https://www.linkedin.com/in/jacquelineyue/'
+        },
+        {
+            text: 'GitHub',
+            href: 'https://github.com/oiyana/'
         }
     ],
     footerNavLinks: [],

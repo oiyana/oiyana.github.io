@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
@@ -28,6 +29,7 @@ const { showHeader = true, bodyClass, ...head } = Astro.props;
             <main class="mx-auto w-full max-w-2xl grow">
                 <slot />
             </main>
+            <Footer />
         </div>
     </body>
 </html>

@@ -2,13 +2,20 @@
 import siteConfig from '../data/site-config';
 
 const currentYear = new Date().getFullYear();
+const siteName = siteConfig.title || siteConfig.avatar.alt;
 ---
 
-<footer class="mx-auto w-full max-w-3xl pt-12 pb-10 sm:pt-24 sm:pb-14">
-    <div>
+<footer class="mx-auto w-full max-w-2xl pt-10 pb-10 sm:pt-16 sm:pb-14">
+    <div class="flex flex-col gap-4 sm:gap-5">
         <p class="text-sm">
             &copy; {currentYear}
-            <a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
+            <a class="hover:underline hover:underline-offset-2" href="/">{siteName}</a>.  
+            This site was built with
+            <a class="underline decoration-main/30 underline-offset-2 hover:decoration-main" href="https://astro.build">Astro</a>,
+            <a class="underline decoration-main/30 underline-offset-2 hover:decoration-main" href="https://tailwindcss.com">Tailwind CSS</a>
+            and            
+            <a class="underline decoration-main/30 underline-offset-2 hover:decoration-main" href="https://github.com/oiyana/oiyana.github.io">Github Pages</a>.
         </p>
     </div>
 </footer>
+
