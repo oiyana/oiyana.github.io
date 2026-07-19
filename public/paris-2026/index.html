@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jac & Thomas's Summer in Paris</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --paper:#F6F3EC;
+  --ink:#20242B;
+  --seine:#3B5B7C;
+  --brass:#A9793D;
+  --line:#D8D2C2;
+  --card:#FFFFFF;
+  --red:#B23B33;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  padding:0 0 80px 0;
+}
+
+.header{
+  padding:44px 20px 24px;
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:600;
+  margin-bottom:10px;
+}
+h1{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:38px;
+  margin:0;
+  line-height:1.1;
+}
+.chips-legend{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.chip{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:6px 12px;
+  font-size:12px;
+  font-weight:600;
+  color:var(--seine);
+}
+
+/* Day nav */
+.daynav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+  margin-bottom:28px;
+}
+.daynav-inner{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.daynav-inner::-webkit-scrollbar{display:none;}
+.daynav a{
+  flex:0 0 auto;
+  text-decoration:none;
+  font-family:'Inter';
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:7px 13px;
+  white-space:nowrap;
+}
+.daynav a:active,.daynav a:hover{
+  background:var(--seine);
+  border-color:var(--seine);
+  color:#fff;
+}
+
+.line-wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px;
+  position:relative;
+}
+.day{
+  position:relative;
+  padding-bottom:20px;
+  scroll-margin-top:64px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px;
+  flex:1;
+  min-width:0;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
+}
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:4px;
+}
+.date{
+  font-family:'Fraunces',serif;
+  font-size:19px;
+  font-weight:600;
+}
+.hood{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.03em;
+  color:var(--seine);
+  background:#EAF0F5;
+  padding:4px 10px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+.title{
+  font-size:13px;
+  color:#7A7F87;
+  margin-bottom:14px;
+}
+.item{
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:8px;
+  padding-left:15px;
+  position:relative;
+}
+.item:before{
+  content:"–";
+  position:absolute;
+  left:0;
+  color:var(--brass);
+}
+.item a{color:var(--seine);text-decoration:none;border-bottom:1px solid #B9CBDB;}
+.item a:hover{border-bottom-color:var(--seine);}
+.tag-run{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  color:#2F7A4E;
+  background:#E7F3EA;
+  border-radius:10px;
+  padding:2px 7px;
+  margin-left:5px;
+}
+.tag-res{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  color:var(--red);
+  background:#FBEBE9;
+  border-radius:10px;
+  padding:2px 7px;
+  margin-left:5px;
+}
+.tag-must{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  color:var(--brass);
+  background:#F5EBDB;
+  border-radius:10px;
+  padding:2px 7px;
+  margin-left:5px;
+}
+.tdf-link{
+  display:inline-block;
+  margin-top:6px;
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  background:var(--red);
+  padding:8px 14px;
+  border-radius:10px;
+  text-decoration:none;
+}
+.tdf-link:hover{opacity:.9;}
+
+.footer{
+  max-width:720px;
+  margin:20px auto 0;
+  padding:0 20px;
+  font-size:12px;
+  color:#8A8F97;
+  text-align:center;
+}
+
+@media (max-width:480px){
+  .card{padding:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Paris</div>
+  <div class="chips-legend">
+    <div class="chip">🏃 Running spots, green</div>
+    <div class="chip">📅 Reserve ahead, red</div>
+    <div class="chip">⭐ Must-go, brass</div>
+  </div>
+</div>
+
+<nav class="daynav">
+  <div class="daynav-inner">
+    <a href="#d1">Fri 24</a>
+    <a href="#d2">Sat 25</a>
+    <a href="#d3">Sun 26</a>
+    <a href="#d4">Mon 27</a>
+    <a href="#d5">Tue 28</a>
+    <a href="#d6">Wed 29</a>
+    <a href="#d7">Thu 30</a>
+    <a href="#d8">Fri 31</a>
+  </div>
+</nav>
+
+<div class="line-wrap">
+
+  <div class="day" id="d1">
+    <div class="card">
+      <div class="card-top"><span class="date">Fri, Jul 24</span><span class="hood">15th · Cambronne</span></div>
+      <div class="title">Arrival</div>
+      <div class="item">Land, transfer to Airbnb — check-in from 4:00pm</div>
+      <div class="item">Walk rue du Commerce, coffee at <a href="https://maps.google.com/?q=La+Boulange+De+Cambronne+Paris" target="_blank">La Boulange De Cambronne</a></div>
+      <div class="item">Dinner: <a href="https://www.bouillon-chartier.com/en/the-concept/" target="_blank">Bouillon Chartier Montparnasse</a><span class="tag-must">must-go</span> — close by, inexpensive, easy on jet lag</div>
+    </div>
+  </div>
+
+  <div class="day" id="d2">
+    <div class="card">
+      <div class="card-top"><span class="date">Sat, Jul 25</span><span class="hood">6th / 7th · St Germain</span></div>
+      <div class="title">Tom's dad arrives</div>
+      <div class="item">Morning: settle FIL in</div>
+      <div class="item">Afternoon: Rue des Saints-Pères, then <a href="https://maps.google.com/?q=Jardin+du+Luxembourg" target="_blank">Jardin du Luxembourg</a></div>
+      <div class="item">Dinner with FIL: <a href="https://www.bofingerparis.com/en/" target="_blank">Bofinger</a><span class="tag-res">reserve</span> — classic Alsatian brasserie, 4th</div>
+    </div>
+  </div>
+
+  <div class="day today" id="d3">
+    <div class="card">
+      <div class="card-top"><span class="date">Sun, Jul 26</span><span class="hood">7th / 1st · Orsay + Tuileries</span></div>
+      <div class="title">Full day with FIL — Tour de France finale</div>
+      <div class="item">Morning: <a href="https://maps.google.com/?q=Musee+d%27Orsay" target="_blank">Musée d'Orsay</a></div>
+      <div class="item">Walk the Seine, then Quai des Tuileries for the race — plan to be there <strong>5:00–6:00pm</strong>, before the barriers thicken and well ahead of the finish</div>
+      <a class="tdf-link" href="tour-de-france.html">🚴 Tour de France day plan →</a>
+      <div class="item" style="margin-top:12px;">Dinner with FIL: <a href="https://maps.google.com/?q=Le+Cafe+du+Commerce+Paris" target="_blank">Le Café du Commerce</a><span class="tag-res">reserve</span> — back in the 15th, easy on FIL after a long day</div>
+    </div>
+  </div>
+
+  <div class="day" id="d4">
+    <div class="card">
+      <div class="card-top"><span class="date">Mon, Jul 27</span><span class="hood">18th → 3rd · Saint-Ouen + Marais</span></div>
+      <div class="title">FIL departs, half day</div>
+      <div class="item">Morning: see FIL off</div>
+      <div class="item">Afternoon: <a href="https://maps.google.com/?q=Marche+aux+Puces+de+Saint-Ouen" target="_blank">Marché aux Puces de Saint-Ouen</a> — only open Sat/Sun/Mon, this is the one shot</div>
+      <div class="item">Dinner: <a href="https://maps.google.com/?q=Chez+Janou+Paris" target="_blank">Chez Janou</a>, Marais</div>
+    </div>
+  </div>
+
+  <div class="day" id="d5">
+    <div class="card">
+      <div class="card-top"><span class="date">Tue, Jul 28</span><span class="hood">16th · Bois de Boulogne</span></div>
+      <div class="title">Modern architecture day</div>
+      <div class="item">Morning run: <a href="https://maps.google.com/?q=Bois+de+Boulogne" target="_blank">Bois de Boulogne</a><span class="tag-run">run</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Fondation+Louis+Vuitton" target="_blank">Fondation Louis Vuitton</a> (Gehry), then <a href="https://maps.google.com/?q=Musee+d%27Art+Moderne+de+Paris" target="_blank">Musée d'Art Moderne de Paris</a></div>
+      <div class="item">Dinner with friend + husband, pick on the day:</div>
+      <div class="item"><a href="https://maps.google.com/?cid=11218234997207247465" target="_blank">Auberge du Bonheur</a> — inside the Bois, garden seating, 4.4★</div>
+      <div class="item"><a href="https://maps.google.com/?cid=10800187435503350140" target="_blank">Restaurant Le Bois</a> — casual bistro, 4.4★, easiest and unfussiest</div>
+      <div class="item"><a href="https://maps.google.com/?cid=7550387483986694815" target="_blank">Le Relais du Bois</a> — local favorite, 4.6★, more of a proper dinner<span class="tag-res">reserve</span></div>
+    </div>
+  </div>
+
+  <div class="day" id="d6">
+    <div class="card">
+      <div class="card-top"><span class="date">Wed, Jul 29</span><span class="hood">1st / 7th · Louvre + St Germain</span></div>
+      <div class="title">Classic meets modern</div>
+      <div class="item"><a href="https://maps.google.com/?q=Bourse+de+Commerce+Pinault+Collection" target="_blank">Bourse de Commerce – Pinault Collection</a></div>
+      <div class="item">Walk <a href="https://maps.google.com/?q=Galerie+Vero-Dodat+Paris" target="_blank">Galerie Véro-Dodat</a>, right nearby</div>
+      <div class="item">Afternoon shopping, Saints-Pères / St Germain</div>
+      <div class="item">Nice dinner, just the two of you: <a href="https://www.restaurant-aupassage.fr/en/" target="_blank">Au Passage</a><span class="tag-res">reserve</span> — the sentimental return</div>
+    </div>
+  </div>
+
+  <div class="day" id="d7">
+    <div class="card">
+      <div class="card-top"><span class="date">Thu, Jul 30</span><span class="hood">12th · Aligre</span></div>
+      <div class="title">Would-we-live-here day</div>
+      <div class="item">Morning: <a href="https://maps.google.com/?q=Marche+d%27Aligre+Paris" target="_blank">Marché d'Aligre</a></div>
+      <div class="item">Lunch: <a href="https://maps.google.com/?q=Le+Quincy+Paris" target="_blank">Le Quincy</a>, traditional French</div>
+      <div class="item">Afternoon open, good day to wander a neighborhood you're weighing, or run along the Seine<span class="tag-run">run</span></div>
+      <div class="item">Dinner, casual: <a href="https://maps.google.com/?q=Kodawari+Ramen+Yokocho+Paris" target="_blank">Kodawari Ramen</a> or <a href="https://maps.google.com/?q=Chez+Elisa+Paris" target="_blank">Chez Elisa</a></div>
+    </div>
+  </div>
+
+  <div class="day" id="d8">
+    <div class="card">
+      <div class="card-top"><span class="date">Fri, Jul 31</span><span class="hood">15th · Cambronne</span></div>
+      <div class="title">Departure, half day</div>
+      <div class="item">Relaxed morning, last coffee at La Boulange De Cambronne</div>
+      <div class="item">Optional: wander Rue de Cléry, 2nd, if you want one more neighborhood</div>
+      <div class="item">Airbnb check-out by <strong>11:00am</strong> — with checkout well before your flight, plan to store bags nearby (host, luggage locker, or a café) for the day</div>
+      <div class="item">Leave for CDG by <strong>5:15pm</strong> — gets you to the airport by ~6:30pm, two hours ahead of an 8:30pm flight</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Green = good running spot · Red = make the reservation now · Brass = must-go, don't skip</div>
+
+</body>
+</html>
