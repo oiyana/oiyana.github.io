@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Le Corbusier Trail — Jac & Thomas's Paris Trip</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -95,8 +96,28 @@ h1{
   color:#3A3E45;
   margin-bottom:24px;
 }
+#map{
+  height:360px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  margin-bottom:24px;
+}
+#map .leaflet-popup-content{
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  line-height:1.5;
+}
+#map .leaflet-popup-content b{
+  font-family:'Fraunces',serif;
+  font-size:14px;
+}
+#map .leaflet-popup-content a{
+  color:var(--seine);
+  font-weight:600;
+}
 @media (max-width:480px){
   h1{font-size:26px;}
+  #map{height:280px;}
 }
 </style>
 </head>
@@ -106,6 +127,8 @@ h1{
   <div class="eyebrow">Optional, no set day</div>
   <h1>Le Corbusier trail</h1>
   <div class="date">16th, 14th, 13th, and 7th arrondissements</div>
+
+  <div id="map" role="img" aria-label="Map of the 8 Le Corbusier sites across Paris"></div>
 
   <p class="intro">A cluster of cultural landmarks worth weaving in if there's a gap, especially given the interest in living in Paris again. Access varies a lot from site to site, some are proper museums, some are exterior-only.</p>
 
@@ -151,5 +174,33 @@ h1{
 
   <a class="back" href="index.html">← Back to the trip</a>
 </div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const sites = [
+  { name: "Le Corbusier's studio apartment", lat: 48.8433629, lng: 2.2514507, note: "24 Rue Nungesser-et-Coli, 16th" },
+  { name: "Fondation Le Corbusier / Maison La Roche", lat: 48.8519351, lng: 2.2652010, note: "8 Square du Docteur Blanche, 16th" },
+  { name: "Fondation Suisse / Pavillon Le Corbusier", lat: 48.8181090, lng: 2.3421861, note: "7K Boulevard Jourdan, 14th" },
+  { name: "Maison du Brésil", lat: 48.8178042, lng: 2.3435530, note: "7 Boulevard Jourdan, 14th" },
+  { name: "Villa Cook", lat: 48.8472762, lng: 2.2426473, note: "6 Rue Denfert-Rochereau, Boulogne-Billancourt" },
+  { name: "Maison Ozenfant", lat: 48.8237185, lng: 2.3327944, note: "53 Avenue Reille, 14th" },
+  { name: "Cité de Refuge", lat: 48.8268190, lng: 2.3768881, note: "12 Rue Cantagrel, 13th" },
+  { name: "Maison de Verre", lat: 48.8538385, lng: 2.3284600, note: "31 Rue Saint-Guillaume, 7th" }
+];
+
+const map = L.map('map', { scrollWheelZoom: false });
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 19
+}).addTo(map);
+
+const markers = sites.map(site => {
+  const gmaps = 'https://maps.google.com/?q=' + encodeURIComponent(site.name + ', Paris');
+  return L.marker([site.lat, site.lng])
+    .addTo(map)
+    .bindPopup('<b>' + site.name + '</b><br>' + site.note + '<br><a href="' + gmaps + '" target="_blank">Open in Google Maps →</a>');
+});
+
+map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [24, 24] });
+</script>
 </body>
 </html>
