@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Le Corbusier Trail — Jac & Thomas's Paris Trip</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.26.0/mapbox-gl.css" integrity="sha256-ZolgTGAusGwT8NbtHklyx7+HB0FpJS7h1iYqk9QZ2i4=" crossorigin="">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -102,16 +102,17 @@ h1{
   border:1px solid var(--line);
   margin-bottom:24px;
 }
-#map .leaflet-popup-content{
+#map .mapboxgl-popup-content{
   font-family:'Inter',sans-serif;
   font-size:13px;
   line-height:1.5;
+  padding:12px 14px;
 }
-#map .leaflet-popup-content b{
+#map .mapboxgl-popup-content b{
   font-family:'Fraunces',serif;
   font-size:14px;
 }
-#map .leaflet-popup-content a{
+#map .mapboxgl-popup-content a{
   color:var(--seine);
   font-weight:600;
 }
@@ -133,12 +134,12 @@ h1{
   <p class="intro">A cluster of cultural landmarks worth weaving in if there's a gap, especially given the interest in living in Paris again. Access varies a lot from site to site, some are proper museums, some are exterior-only.</p>
 
   <div class="card">
-    <h2>Le Corbusier's studio apartment<span class="tag-ticket">ticket</span></h2>
+    <h2>Le Corbusier’s studio apartment<span class="tag-ticket">Ticket</span></h2>
     <p>16th. His own home and studio, in the Molitor building. Open Thu, Fri, Sat only, limited hours. Book ahead through the <a href="https://www.fondationlecorbusier.fr/" target="_blank">Fondation Le Corbusier</a>.</p>
   </div>
 
   <div class="card">
-    <h2>Fondation Le Corbusier / Maison La Roche<span class="tag-ticket">ticket</span></h2>
+    <h2>Fondation Le Corbusier / Maison La Roche<span class="tag-ticket">Ticket</span></h2>
     <p>16th. Closed Sundays. Can be combined with the studio apartment on a twin ticket. Both sit right by the Bois de Boulogne, easy to pair with your Tuesday there.</p>
   </div>
 
@@ -168,13 +169,13 @@ h1{
   </div>
 
   <div class="card">
-    <h2>Maison de Verre<span class="tag-ticket">ticket</span></h2>
+    <h2>Maison de Verre<span class="tag-ticket">Ticket</span></h2>
     <p>7th, near Saint-Germain-des-Prés. Worth noting, this one is actually by Pierre Chareau, not Le Corbusier, but built the same years and part of the same modernist moment. Private, visits by appointment only, roughly one Thursday a month, 40€, book months ahead.</p>
   </div>
 
   <a class="back" href="index.html">← Back to the trip</a>
 </div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.26.0/mapbox-gl.js" integrity="sha256-9cdYGVzTXvitE59jps0pXkDPsQaKqzvuGNwzhqzsFlA=" crossorigin=""></script>
 <script>
 const sites = [
   { name: "Le Corbusier's studio apartment", lat: 48.8433629, lng: 2.2514507, note: "24 Rue Nungesser-et-Coli, 16th" },
@@ -187,20 +188,29 @@ const sites = [
   { name: "Maison de Verre", lat: 48.8538385, lng: 2.3284600, note: "31 Rue Saint-Guillaume, 7th" }
 ];
 
-const map = L.map('map', { scrollWheelZoom: false });
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 19
-}).addTo(map);
+mapboxgl.accessToken = 'pk.eyJ1Ijoib2l5YW5hIiwiYSI6ImNtcnUweWFkdDAwaHUyeXEwbHUzbjZ2ZGEifQ.s3FycX8rgz90QXOPiQ4VxA';
 
-const markers = sites.map(site => {
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v11',
+  scrollZoom: false
+});
+map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+
+const bounds = new mapboxgl.LngLatBounds();
+sites.forEach(site => {
   const gmaps = 'https://maps.google.com/?q=' + encodeURIComponent(site.name + ', Paris');
-  return L.marker([site.lat, site.lng])
-    .addTo(map)
-    .bindPopup('<b>' + site.name + '</b><br>' + site.note + '<br><a href="' + gmaps + '" target="_blank">Open in Google Maps →</a>');
+  const popup = new mapboxgl.Popup({ offset: 12 }).setHTML(
+    '<b>' + site.name + '</b><br>' + site.note + '<br><a href="' + gmaps + '" target="_blank">Open in Google Maps →</a>'
+  );
+  new mapboxgl.Marker({ color: '#6B4FA0' })
+    .setLngLat([site.lng, site.lat])
+    .setPopup(popup)
+    .addTo(map);
+  bounds.extend([site.lng, site.lat]);
 });
 
-map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [24, 24] });
+map.fitBounds(bounds, { padding: 40, duration: 0 });
 </script>
 </body>
 </html>
