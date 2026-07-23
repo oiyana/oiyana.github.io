@@ -33,14 +33,15 @@
     }
 
     function setupThemeToggle() {
-        const button = document.getElementById('theme-toggle');
-        if (!button) return;
+        const buttons = document.querySelectorAll('[data-theme-toggle]');
 
-        button.onclick = () => {
-            const isDark = root.classList.toggle('dark');
-            const theme = isDark ? 'dark' : 'light';
-            storeTheme(theme);
-        };
+        buttons.forEach((button) => {
+            button.onclick = () => {
+                const isDark = root.classList.toggle('dark');
+                const theme = isDark ? 'dark' : 'light';
+                storeTheme(theme);
+            };
+        });
     }
 
     // Set initial theme

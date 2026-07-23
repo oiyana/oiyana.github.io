@@ -1,0 +1,106 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import NavLink from '../components/NavLink.astro';
+import siteConfig from '../data/site-config';
+
+export type Props = HeadProps;
+
+const head = Astro.props;
+
+const pageLinks = [
+    { text: 'About', href: '/' },
+    { text: 'Portfolio', href: '/blog' }
+];
+const navLinks = [...pageLinks, ...(siteConfig.socialLinks ?? [])];
+
+const linkClass =
+    'font-sans text-base hover:underline hover:decoration-2 hover:decoration-solid hover:underline-offset-[0.3em]';
+---
+
+<!doctype html>
+<html lang="en" class="wrap-break-words antialiased">
+    <head>
+        <BaseHead {...head} />
+        <script>
+            if (localStorage.theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
+        <ClientRouter />
+        <script is:inline src="/theme-toggle.js"></script>
+    </head>
+    <body class="bg-main text-main">
+        <div class="grid-shell mx-auto w-full max-w-6xl px-5 md:px-10">
+            <!-- Mobile nav: full width, left-aligned, top of page -->
+            <nav class="grid-nav-mobile flex items-center justify-between py-6 md:hidden" aria-label="Primary">
+                <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                    {navLinks.map((link) => (
+                        <li>
+                            <NavLink class={linkClass} href={link.href}>{link.text}</NavLink>
+                        </li>
+                    ))}
+                </ul>
+                <ThemeToggle />
+            </nav>
+
+            <!-- Main content: full width on mobile, first 8 of 12 columns on tablet/desktop -->
+            <main class="grid-main py-2 md:py-10">
+                <slot />
+            </main>
+
+            <!-- Desktop sidebar: stacked nav, right-aligned, sticky -->
+            <aside class="grid-aside hidden flex-col items-end gap-8 md:flex" aria-label="Site navigation">
+                <ul class="flex flex-col items-end gap-2">
+                    {navLinks.map((link) => (
+                        <li>
+                            <NavLink class={linkClass} href={link.href}>{link.text}</NavLink>
+                        </li>
+                    ))}
+                </ul>
+                <ThemeToggle />
+            </aside>
+
+            <!-- Footer: full width, bottom of page, under the hero text on every breakpoint -->
+            <div class="grid-footer hidden">
+                <Footer />
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    @reference "tailwindcss";
+
+    .grid-shell {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .grid-shell {
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .grid-main {
+            grid-column: 1 / span 8;
+            grid-row: 1;
+        }
+
+        .grid-aside {
+            grid-column: 9 / span 4;
+            grid-row: 1;
+            position: sticky;
+            top: 2.5rem;
+            align-self: start;
+            padding-top: 2.5rem;
+        }
+
+        .grid-footer {
+            grid-column: 1 / span 12;
+            grid-row: 2;
+        }
+    }
+</style>
