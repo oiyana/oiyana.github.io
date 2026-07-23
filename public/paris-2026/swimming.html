@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seine Swimming — Jac & Thomas's Paris Trip</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --paper:#F6F3EC;
+  --ink:#20242B;
+  --seine:#3B5B7C;
+  --brass:#A9793D;
+  --line:#D8D2C2;
+  --card:#FFFFFF;
+  --red:#B23B33;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  padding:0 0 60px 0;
+}
+.wrap{
+  max-width:640px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.back{
+  display:inline-block;
+  margin:28px 0 0;
+  font-size:13px;
+  font-weight:700;
+  color:var(--seine);
+  text-decoration:none;
+}
+.back:hover{text-decoration:underline;}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--seine);
+  font-weight:700;
+  margin:24px 0 8px;
+}
+h1{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:32px;
+  margin:0 0 4px;
+  line-height:1.1;
+}
+.date{
+  font-size:14px;
+  color:#7A7F87;
+  margin-bottom:28px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 22px;
+  margin-bottom:18px;
+}
+.card h2{
+  font-family:'Fraunces',serif;
+  font-size:19px;
+  margin:0 0 10px;
+}
+.card p{
+  font-size:14.5px;
+  line-height:1.65;
+  margin:0 0 10px;
+  color:#3A3E45;
+}
+.card p:last-child{margin-bottom:0;}
+.card a{color:var(--seine);font-weight:600;text-decoration:none;border-bottom:1px solid #B9CBDB;}
+.card a:hover{border-bottom-color:var(--seine);}
+.spot{
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+}
+.spot:last-child{border-bottom:none;padding-bottom:0;}
+.spot:first-child{padding-top:0;}
+.spot-name{
+  font-weight:700;
+  font-size:15px;
+}
+.spot-hours{
+  font-size:13.5px;
+  color:#7A7F87;
+  margin-top:2px;
+}
+@media (max-width:480px){
+  h1{font-size:26px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to the trip</a>
+  <div class="eyebrow">Free · Jul 4 – Aug 30</div>
+  <h1>Seine swimming</h1>
+  <div class="date">Open-air swimming is new this summer, and runs the entire length of your trip</div>
+
+  <div class="card">
+    <h2>Along the Seine</h2>
+    <div class="spot">
+      <div class="spot-name">Bras Marie</div>
+      <div class="spot-hours">New this year, longer hours — 8am–6pm</div>
+    </div>
+    <div class="spot">
+      <div class="spot-name">Bercy</div>
+      <div class="spot-hours">Biggest of the three — 11am–9pm</div>
+    </div>
+    <div class="spot">
+      <div class="spot-name">Grenelle</div>
+      <div class="spot-hours">Eiffel Tower views — 10am–5:30pm (4:45pm Saturdays)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Canals</h2>
+    <div class="spot">
+      <div class="spot-name">Bassin de la Villette</div>
+      <div class="spot-hours">Daily, 11am–9pm</div>
+    </div>
+    <div class="spot">
+      <div class="spot-name">Canal Saint-Martin</div>
+      <div class="spot-hours">Sundays only, 2pm–6pm</div>
+    </div>
+  </div>
+
+  <a class="back" href="index.html">← Back to the trip</a>
+</div>
+</body>
+</html>
