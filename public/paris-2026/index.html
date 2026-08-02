@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jac & Thomas's Summer in Paris</title>
+<title>Jac & Thomas's Paris Guide</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   --paper:#F6F3EC;
   --ink:#20242B;
-  --seine:#3B5B7C;
+  --seine:#0047AB;
   --brass:#A9793D;
   --line:#D8D2C2;
   --card:#FFFFFF;
@@ -27,27 +27,24 @@ body{
 }
 
 .header{
-  padding:44px 20px 24px;
-  max-width:760px;
-  margin:0 auto;
+  padding:24px 0 32px;
   text-align:center;
 }
-.eyebrow{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--brass);
-  font-weight:600;
-  margin-bottom:10px;
-}
-h1{
+.page-title{
   font-family:'Fraunces',serif;
   font-weight:600;
-  font-size:38px;
-  margin:0;
-  line-height:1.1;
+  font-size:28px;
+  line-height:1.2;
+  margin:0 0 10px;
 }
-/* Persistent top links + day nav, stuck together as one unit */
+.intro{
+  margin:14px 0 0;
+  font-size:13.5px;
+  line-height:1.6;
+  color:#7A7F87;
+  text-align:left;
+}
+/* Persistent, compact nav: arrondissements + special pages flow together */
 .sticky-top{
   position:sticky;
   top:0;
@@ -56,31 +53,8 @@ h1{
   border-bottom:1px solid var(--line);
   margin-bottom:28px;
 }
-.toplinks-inner{
-  max-width:720px;
-  margin:0 auto;
-  padding:12px 16px 0;
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.toplinks-inner a{
-  text-decoration:none;
-  font-family:'Inter';
-  font-size:12.5px;
-  font-weight:700;
-  color:#fff;
-  background:var(--seine);
-  border:1px solid var(--seine);
-  border-radius:16px;
-  padding:7px 13px;
-  white-space:nowrap;
-}
-.toplinks-inner a:hover{opacity:.85;}
-
-/* Day nav */
 .daynav{
-  padding:10px 0;
+  padding:10px 0 14px;
 }
 .daynav-inner{
   max-width:720px;
@@ -88,13 +62,9 @@ h1{
   padding:0 16px;
   display:flex;
   gap:8px;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+  flex-wrap:wrap;
 }
-.daynav-inner::-webkit-scrollbar{display:none;}
 .daynav a{
-  flex:0 0 auto;
   text-decoration:none;
   font-family:'Inter';
   font-size:12.5px;
@@ -106,11 +76,17 @@ h1{
   padding:7px 13px;
   white-space:nowrap;
 }
-.daynav a:active,.daynav a:hover{
+.daynav a:hover{
   background:var(--seine);
   border-color:var(--seine);
   color:#fff;
 }
+.daynav a.accent{
+  color:#fff;
+  background:var(--seine);
+  border-color:var(--seine);
+}
+.daynav a.accent:hover{opacity:.85;}
 
 .line-wrap{
   max-width:720px;
@@ -121,7 +97,7 @@ h1{
 .day{
   position:relative;
   padding-bottom:20px;
-  scroll-margin-top:64px;
+  scroll-margin-top:calc(var(--nav-height, 100px) + 12px);
 }
 .card{
   background:var(--card);
@@ -133,33 +109,22 @@ h1{
   box-shadow:0 1px 2px rgba(0,0,0,.03);
 }
 .card-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:4px;
+  margin-bottom:14px;
 }
 .date{
   font-family:'Fraunces',serif;
-  font-size:19px;
+  font-size:18px;
   font-weight:600;
 }
-.hood{
+.subhead{
   font-size:11px;
   font-weight:700;
-  letter-spacing:.03em;
-  color:var(--seine);
-  background:#EAF0F5;
-  padding:4px 10px;
-  border-radius:12px;
-  white-space:nowrap;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin:14px 0 6px;
 }
-.title{
-  font-size:13px;
-  color:#7A7F87;
-  margin-bottom:14px;
-}
+.subhead:first-of-type{margin-top:0;}
 .item{
   font-size:14px;
   line-height:1.55;
@@ -175,58 +140,11 @@ h1{
 }
 .item a{color:var(--seine);text-decoration:none;border-bottom:1px solid #B9CBDB;}
 .item a:hover{border-bottom-color:var(--seine);}
-.tag-run{
-  display:inline-block;
-  font-size:10.5px;
-  font-weight:700;
-  color:#2F7A4E;
-  background:#E7F3EA;
-  border-radius:10px;
-  padding:2px 7px;
-  margin-left:5px;
+.tags{
+  font-size:12.5px;
+  font-style:italic;
+  color:#7A7F87;
 }
-.tag-res{
-  display:inline-block;
-  font-size:10.5px;
-  font-weight:700;
-  color:var(--red);
-  background:#FBEBE9;
-  border-radius:10px;
-  padding:2px 7px;
-  margin-left:5px;
-}
-.tag-must{
-  display:inline-block;
-  font-size:10.5px;
-  font-weight:700;
-  color:var(--brass);
-  background:#F5EBDB;
-  border-radius:10px;
-  padding:2px 7px;
-  margin-left:5px;
-}
-.tag-ticket{
-  display:inline-block;
-  font-size:10.5px;
-  font-weight:700;
-  color:#6B4FA0;
-  background:#EEE8F7;
-  border-radius:10px;
-  padding:2px 7px;
-  margin-left:5px;
-}
-.tdf-link{
-  display:inline-block;
-  margin-top:6px;
-  font-size:13px;
-  font-weight:700;
-  color:#fff;
-  background:var(--red);
-  padding:8px 14px;
-  border-radius:10px;
-  text-decoration:none;
-}
-.tdf-link:hover{opacity:.9;}
 
 .footer{
   max-width:720px;
@@ -244,138 +162,186 @@ h1{
 </head>
 <body>
 
-<div class="header">
-  <div class="eyebrow">Paris</div>
-</div>
-
 <div class="sticky-top">
-  <div class="toplinks-inner">
-    <a href="swimming.html">🏊 Swimming</a>
-    <a href="tour-de-france.html">🚴 Tour de France</a>
-    <a href="le-corbusier.html">🏛️ Le Corbusier</a>
-  </div>
   <nav class="daynav">
     <div class="daynav-inner">
-      <a href="#d1">Fri 24</a>
-      <a href="#d2">Sat 25</a>
-      <a href="#d3">Sun 26</a>
-      <a href="#d4">Mon 27</a>
-      <a href="#d5">Tue 28</a>
-      <a href="#d6">Wed 29</a>
-      <a href="#d7">Thu 30</a>
-      <a href="#d8">Fri 31</a>
+      <a href="#arr-1-2">1st/2nd</a>
+      <a href="#arr-3-4">3rd/4th</a>
+      <a href="#arr-5-13">5th/13th</a>
+      <a href="#arr-6-7">6th/7th</a>
+      <a href="#arr-9">9th</a>
+      <a href="#arr-11-12">11th/12th</a>
+      <a href="#arr-14-15">14th/15th</a>
+      <a href="#arr-16">16th</a>
+      <a href="#arr-18-19">18th/19th</a>
+      <a class="accent" href="swimming.html">🏊 Swimming</a>
+      <a class="accent" href="tour-de-france.html">🚴 Tour de France</a>
+      <a class="accent" href="le-corbusier.html">🏛️ Le Corbusier</a>
     </div>
   </nav>
 </div>
 
 <div class="line-wrap">
 
-  <div class="day" id="d1">
+  <div class="header">
+    <h1 class="page-title">Paris</h1>
+    <p class="intro">This list is grouped by arrondissement / neighborhood, then by activity — what to see, wander, do, and eat.</p>
+  </div>
+
+  <div class="day" id="arr-1-2">
     <div class="card">
-      <div class="card-top"><span class="date">Fri, Jul 24</span><span class="hood">15th · Cambronne</span></div>
-      <div class="title">Arrival</div>
-      <div class="item">Land, transfer to Airbnb — check-in from 4:00pm</div>
-      <div class="item">Walk rue du Commerce, coffee at <a href="https://maps.google.com/?q=La+Boulange+De+Cambronne+Paris" target="_blank">La Boulange De Cambronne</a></div>
-      <div class="item">Dinner: <a href="https://www.bouillon-chartier.com/en/the-concept/" target="_blank">Bouillon Chartier Montparnasse</a><span class="tag-must">must-go</span> — close by, inexpensive, easy on jet lag</div>
+      <div class="card-top"><span class="date">1st/2nd — Louvre · Sentier</span></div>
+
+      <div class="subhead">To See</div>
+      <div class="item"><a href="https://www.boursedecommerce.fr/en" target="_blank">Bourse de Commerce – Pinault Collection</a> <span class="tags">must-go, ticket ahead, modern art</span></div>
+      <div class="item"><a href="https://www.fondationcartier.com/en" target="_blank">Fondation Cartier</a> <span class="tags">must-go, ticket ahead, world-class art and architecture (Jean Nouvel), easy to spend an hour</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Galerie+Vero-Dodat+Paris" target="_blank">Galerie Véro-Dodat</a> <span class="tags">lovely gallery, historic covered passage, free, the shops themselves are just ok</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Quai+des+Tuileries+Paris" target="_blank">Quai des Tuileries</a> <span class="tags">walk along the Seine</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+de+Clery+Paris" target="_blank">Rue de Cléry</a> <span class="tags">wander, boutiques</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+Reaumur+Paris" target="_blank">Rue Réaumur</a> <span class="tags">shopping street, wander</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+Tiquetonne+Paris" target="_blank">Rue Tiquetonne</a> <span class="tags">second-hand clothing, wander</span></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://www.pieddecochon.com/en/" target="_blank">Pied de Cochon</a> <span class="tags">reserve, classic French, iconic 24hr spot, seafood tower</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Au+Vieux+Comptoir+Paris" target="_blank">Au Vieux Comptoir</a> <span class="tags">classic French, english-friendly</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Tonton+Ramen+Paris" target="_blank">Tonton Ramen</a> <span class="tags">casual, no reservation needed, €14–18 a bowl</span></div>
     </div>
   </div>
 
-  <div class="day" id="d2">
+  <div class="day" id="arr-3-4">
     <div class="card">
-      <div class="card-top"><span class="date">Sat, Jul 25</span><span class="hood">6th / 7th · St Germain</span></div>
-      <div class="title">Tom's dad arrives</div>
-      <div class="item">Morning: settle FIL in</div>
-      <div class="item">Lunch: <a href="https://maps.google.com/?q=Paul+Chene+Cherche+Midi+Paris" target="_blank">Paul Chêne Cherche Midi</a>, 6th, near Bon Marché — classic French, generous portions, good pick with FIL. Phone reservation only</div>
-      <div class="item">Afternoon: Rue des Saints-Pères, then <a href="https://maps.google.com/?q=Jardin+du+Luxembourg" target="_blank">Jardin du Luxembourg</a></div>
-      <div class="item">Dinner with FIL: <a href="https://www.bofingerparis.com/en/" target="_blank">Bofinger</a><span class="tag-res">reserve</span> — classic Alsatian brasserie, 4th</div>
+      <div class="card-top"><span class="date">3rd/4th — Marais</span></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://www.chezjanou.com/" target="_blank">Chez Janou</a> <span class="tags">French bistro, Marais</span></div>
+      <div class="item"><a href="https://www.bofingerparis.com/en/" target="_blank">Bofinger</a> <span class="tags">reserve, classic Alsatian brasserie, good for bringing in-laws or parents</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Bistrot+Le+Temps+des+Cerises+Paris" target="_blank">Bistrot Le Temps des Cerises</a> <span class="tags">excellent, low-key, fresh produce, no-fuss</span></div>
     </div>
   </div>
 
-  <div class="day today" id="d3">
+  <div class="day" id="arr-5-13">
     <div class="card">
-      <div class="card-top"><span class="date">Sun, Jul 26</span><span class="hood">7th / 1st · Orsay + Tuileries</span></div>
-      <div class="title">Full day with FIL — Tour de France finale</div>
-      <div class="item">Morning: <a href="https://maps.google.com/?q=Musee+d%27Orsay" target="_blank">Musée d'Orsay</a><span class="tag-ticket">ticket</span> — book a timed slot online ahead, July lines get long</div>
-      <div class="item">Walk the Seine, then Quai des Tuileries for the race — plan to be there <strong>5:00–6:00pm</strong>, before the barriers thicken and well ahead of the finish</div>
-      <a class="tdf-link" href="tour-de-france.html">🚴 Tour de France day plan →</a>
-      <div class="item" style="margin-top:12px;">Dinner with FIL, pick on the day:</div>
-      <div class="item"><a href="https://maps.google.com/?q=Le+Cafe+du+Commerce+Paris" target="_blank">Le Café du Commerce</a><span class="tag-res">reserve</span> — back in the 15th, easy on FIL after a long day</div>
-      <div class="item"><a href="https://www.pieddecochon.com/" target="_blank">Pied de Cochon</a><span class="tag-res">reserve</span> — 1st, near Les Halles/Châtelet, seafood tour, classic French, iconic 24hr spot</div>
-      <div class="item"><a href="https://maps.google.com/?q=Au+Vieux+Comptoir+Paris" target="_blank">Au Vieux Comptoir</a> — 1st, near Châtelet, classic French, English-friendly</div>
+      <div class="card-top"><span class="date">5th/13th — Mouffetard · Port-Royal · Alésia</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+Mouffetard+Paris" target="_blank">Marché Mouffetard</a> <span class="tags">farmer/street market — Tue–Sun 8am–1pm, closed Mondays</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Marche+Port-Royal+Paris" target="_blank">Port-Royal Market</a> <span class="tags">farmer market — Tue & Thu 7am–1:30pm, Sat 7am–2:30pm</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Marche+Alesia+Paris" target="_blank">Marché Alésia</a> <span class="tags">farmer market — Wed 7am–1:30pm, Sat 7am–2:30pm</span></div>
     </div>
   </div>
 
-  <div class="day" id="d4">
+  <div class="day" id="arr-6-7">
     <div class="card">
-      <div class="card-top"><span class="date">Mon, Jul 27</span><span class="hood">18th → 3rd · Saint-Ouen + Marais</span></div>
-      <div class="title">FIL departs, half day</div>
-      <div class="item">Morning: see FIL off</div>
-      <div class="item">Afternoon: <a href="https://maps.google.com/?q=Marche+aux+Puces+de+Saint-Ouen" target="_blank">Marché aux Puces de Saint-Ouen</a> — only open Sat/Sun/Mon, this is the one shot</div>
-      <div class="item">Dinner: <a href="https://maps.google.com/?q=Chez+Janou+Paris" target="_blank">Chez Janou</a>, Marais</div>
+      <div class="card-top"><span class="date">6th/7th — St Germain · Orsay</span></div>
+
+      <div class="subhead">To See</div>
+      <div class="item"><a href="https://www.musee-orsay.fr/en" target="_blank">Musée d'Orsay</a> <span class="tags">must-go, ticket ahead — book a timed slot online, lines get long in high season, similar scale to the Met in NYC</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+des+Saints-Peres+Paris" target="_blank">Rue des Saints-Pères</a> <span class="tags">wander, boutiques</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Jardin+du+Luxembourg" target="_blank">Jardin du Luxembourg</a> <span class="tags">park</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Marche+Raspail+Paris" target="_blank">Marché Raspail</a> <span class="tags">organic/bio market Sun 7am–2:30pm; regular market Tue & Fri, same spot</span></div>
+
+      <div class="subhead">To Do</div>
+      <div class="item"><a href="https://www.musee.minesparis.psl.eu" target="_blank">Mineral and Gem Museum</a> <span class="tags">ticketed (small fee), affordable, old-school science-lab feel</span></div>
+      <div class="item"><a href="https://www.lebonmarche.com/en" target="_blank">Le Bon Marché</a> <span class="tags">iconic department store, easy to spend an hour</span></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://maps.google.com/?q=Paul+Chene+Cherche+Midi+Paris" target="_blank">Paul Chêne Cherche Midi</a> <span class="tags">classic French, generous portions, phone reservation only</span></div>
+      <div class="item"><a href="https://www.bouillon-chartier.com/en/the-concept/" target="_blank">Bouillon Chartier Montparnasse</a> <span class="tags">inexpensive, classic French, casual</span></div>
     </div>
   </div>
 
-  <div class="day" id="d5">
+  <div class="day" id="arr-9">
     <div class="card">
-      <div class="card-top"><span class="date">Tue, Jul 28</span><span class="hood">16th · Bois de Boulogne</span></div>
-      <div class="title">Modern architecture day</div>
-      <div class="item">Morning run: <a href="https://maps.google.com/?q=Bois+de+Boulogne" target="_blank">Bois de Boulogne</a><span class="tag-run">run</span></div>
-      <div class="item"><a href="https://maps.google.com/?q=Fondation+Louis+Vuitton" target="_blank">Fondation Louis Vuitton</a> (Gehry)<span class="tag-must">must-go</span><span class="tag-ticket">ticket</span> — timed entry required, book online in advance. Current show is Calder</div>
-      <div class="item"><a href="https://maps.google.com/?q=Musee+d%27Art+Moderne+de+Paris" target="_blank">Musée d'Art Moderne de Paris</a><span class="tag-must">must-go</span> — permanent collection is free, no ticket needed, only paid exhibitions require one</div>
-      <div class="item">Dinner with friend + husband, pick on the day:</div>
-      <div class="item"><a href="https://maps.google.com/?cid=11218234997207247465" target="_blank">Auberge du Bonheur</a> — inside the Bois, garden seating, 4.4★</div>
-      <div class="item"><a href="https://maps.google.com/?cid=10800187435503350140" target="_blank">Restaurant Le Bois</a> — casual bistro, 4.4★, easiest and unfussiest</div>
-      <div class="item"><a href="https://maps.google.com/?cid=7550387483986694815" target="_blank">Le Relais du Bois</a> — local favorite, 4.6★, more of a proper dinner<span class="tag-res">reserve</span></div>
+      <div class="card-top"><span class="date">9th — Pigalle · Opéra</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+des+Martyrs+Paris" target="_blank">Rue des Martyrs</a> <span class="tags">wander, shops</span></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://restaurant-perception.com/en" target="_blank">Perception</a> <span class="tags">reserve, Korean chef, French-rooted tasting menu, special-occasion, closed Sun/Mon</span></div>
+      <div class="item"><a href="https://menu.bigmammagroup.com/pink?utm_source=google&utm_medium=organic&utm_campaign=mybusiness-website&service=all&categorie=antipasti" target="_blank">Pink Mamma</a> <span class="tags">pizza</span></div>
+      <div class="item"><a href="https://www.shinjukupigalle.com/" target="_blank">Shinjuku Pigalle</a> <span class="tags">chill, low-key, inexpensive, Japanese</span></div>
     </div>
   </div>
 
-  <div class="day" id="d6">
+  <div class="day" id="arr-11-12">
     <div class="card">
-      <div class="card-top"><span class="date">Wed, Jul 29</span><span class="hood">1st / 7th · Louvre + St Germain</span></div>
-      <div class="title">Classic meets modern</div>
-      <div class="item"><a href="https://maps.google.com/?q=Bourse+de+Commerce+Pinault+Collection" target="_blank">Bourse de Commerce – Pinault Collection</a>, 1st<span class="tag-must">must-go</span><span class="tag-ticket">ticket</span> — book a timed slot online</div>
-      <div class="item"><a href="https://www.fondationcartier.com/en" target="_blank">Fondation Cartier</a>, 1st<span class="tag-must">must-go</span><span class="tag-ticket">ticket</span> — new Jean Nouvel building right on Place du Palais-Royal, a few minutes' walk from Bourse de Commerce, book online ahead</div>
-      <div class="item">Walk <a href="https://maps.google.com/?q=Galerie+Vero-Dodat+Paris" target="_blank">Galerie Véro-Dodat</a>, right nearby</div>
-      <div class="item">Afternoon shopping, Saints-Pères / St Germain</div>
-      <div class="item">Nice dinner, just the two of you, two options:</div>
-      <div class="item"><a href="https://www.restaurant-aupassage.fr/en/" target="_blank">Au Passage</a>, 11th<span class="tag-res">reserve</span> — the sentimental return, you've been before</div>
-      <div class="item"><a href="https://guide.michelin.com/us/en/ile-de-france/paris/restaurant/perception" target="_blank">Perception</a>, 9th<span class="tag-res">reserve</span> — Korean chef, French-rooted tasting menu, more of a special-occasion pick, closed Sun/Mon</div>
+      <div class="card-top"><span class="date">11th/12th — Bastille · Aligre · Oberkampf</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Marche+d%27Aligre+Paris" target="_blank">Marché d'Aligre</a> <span class="tags">market</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Coulee+Verte+Rene-Dumont+Paris" target="_blank">Coulée Verte René-Dumont</a> (Promenade Plantée) <span class="tags">must-go, free, elevated park walkway</span> — <a href="https://www.theguardian.com/travel/2017/jun/07/paris-promenade-plantee-free-elevated-park-walkway-bastille-bois-de-vincennes" target="_blank">background on it here</a></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://www.restaurant-aupassage.fr/en/" target="_blank">Au Passage</a> <span class="tags">reserve, lovely and cozy, modern French, sentimental favorite</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Bistrot+Paul+Bert+Paris" target="_blank">Bistrot Paul Bert</a> <span class="tags">reserve, or try ~30 min before opening for a same-day table, classic bistro, touristy but solid</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Kodawari+Ramen+Yokocho+Paris" target="_blank">Kodawari Ramen</a> <span class="tags">casual</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Chez+Elisa+Paris" target="_blank">Chez Elisa</a> <span class="tags">casual, chef is Hong Kong-born and raised, fun twist on French food</span></div>
     </div>
   </div>
 
-  <div class="day" id="d7">
+  <div class="day" id="arr-14-15">
     <div class="card">
-      <div class="card-top"><span class="date">Thu, Jul 30</span><span class="hood">12th · Aligre</span></div>
-      <div class="title">Would-we-live-here day</div>
-      <div class="item">Morning: <a href="https://maps.google.com/?q=Marche+d%27Aligre+Paris" target="_blank">Marché d'Aligre</a></div>
-      <div class="item">Lunch: <a href="https://maps.google.com/?q=Le+Quincy+Paris" target="_blank">Le Quincy</a>, traditional French</div>
-      <div class="item">Afternoon open, good day to wander a neighborhood you're weighing, or run along the Seine<span class="tag-run">run</span></div>
-      <div class="item">Or walk the <a href="https://maps.google.com/?q=Coulee+Verte+Rene-Dumont+Paris" target="_blank">Coulée Verte René-Dumont</a> (Promenade Plantée)<span class="tag-must">must-go</span> — elevated park walkway starting right in the 12th, near Bastille. <a href="https://www.theguardian.com/travel/2017/jun/07/paris-promenade-plantee-free-elevated-park-walkway-bastille-bois-de-vincennes" target="_blank">Background on it here</a></div>
-      <div class="item">Dinner, casual: <a href="https://maps.google.com/?q=Kodawari+Ramen+Yokocho+Paris" target="_blank">Kodawari Ramen</a> or <a href="https://maps.google.com/?q=Chez+Elisa+Paris" target="_blank">Chez Elisa</a></div>
-      <div class="item">Or, if you want a proper bistro instead: <a href="https://maps.google.com/?q=Bistrot+Paul+Bert+Paris" target="_blank">Paul Bert</a>, 11th<span class="tag-res">reserve</span> — needs a reservation, or call about 30 min before opening for a same-day table. Touristy but solid</div>
+      <div class="card-top"><span class="date">14th/15th — Montparnasse · Cambronne</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Rue+du+Commerce+Paris" target="_blank">Rue du Commerce</a> <span class="tags">wander</span></div>
+
+      <div class="subhead">To Do</div>
+      <div class="item"><a href="https://maps.google.com/?q=Emile+Anthoine+Stadium+Paris" target="_blank">Émile Anthoine Stadium</a> <span class="tags">great place to run, views of the Eiffel Tower</span></div>
+
+      <div class="subhead">To Eat</div>
+      <div class="item"><a href="https://maps.google.com/?q=Pho+Tai+Paris" target="_blank">Pho Tai</a> <span class="tags">Michelin-starred, Vietnamese</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Le+Cafe+du+Commerce+Paris" target="_blank">Le Café du Commerce</a> <span class="tags">reserve, good for bringing in-laws, food is fine but not exceptional</span></div>
+      <div class="item"><a href="https://restaurants.meltslowsmokedbarbecue.com/en/texan-restaurant-barbecue/paris-15-cambronne/" target="_blank">MELT Cambronne</a> <span class="tags">Texas BBQ, excellent and surprisingly good</span></div>
+      <div class="item"><a href="https://www.facebook.com/partagecafe/" target="_blank">Partage Café</a> <span class="tags">non-French brunch, good</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Caractere+de+Cochon+Paris" target="_blank">Caractère de Cochon</a> <span class="tags">cold cut store, good for a quick bite</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Le+Petit+Vendome+Paris" target="_blank">Le Petit Vendôme</a> <span class="tags">sandwiches, French, €10–40</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Rouge+et+Blanc+Boulangerie+Patisserie+Paris" target="_blank">Rouge & Blanc Boulangerie Pâtisserie</a> <span class="tags">good pastries</span></div>
     </div>
   </div>
 
-  <div class="day" id="d8">
+  <div class="day" id="arr-16">
     <div class="card">
-      <div class="card-top"><span class="date">Fri, Jul 31</span><span class="hood">15th · Cambronne</span></div>
-      <div class="title">Departure, half day</div>
-      <div class="item">Relaxed morning, last coffee at La Boulange De Cambronne</div>
-      <div class="item">Optional early run: <a href="https://maps.google.com/?q=Emile+Anthoine+Stadium+Paris" target="_blank">Émile Anthoine Stadium</a><span class="tag-run">run</span> — track right by the Eiffel Tower, close to the apartment</div>
-      <div class="item">Casual lunch/picnic near the apartment before you go, pick on the day:</div>
-      <div class="item"><a href="https://maps.google.com/?q=Caractere+de+Cochon+Paris" target="_blank">Caractère de Cochon</a> — cold cut store, good for grabbing something quick</div>
-      <div class="item"><a href="https://maps.google.com/?q=Le+Petit+Vendome+Paris" target="_blank">Le Petit Vendôme</a> — sandwiches, €10–40, French</div>
-      <div class="item"><a href="https://maps.google.com/?q=Rouge+et+Blanc+Boulangerie+Patisserie+Paris" target="_blank">Rouge & Blanc Boulangerie Pâtisserie</a> — good for a last pastry</div>
-      <div class="item">Optional: wander Rue de Cléry, 2nd, if you want one more neighborhood — <a href="https://maps.google.com/?q=Tonton+Ramen+Paris" target="_blank">Tonton Ramen</a>, also 2nd, is a good low-key lunch if you're around there, €14–18 a bowl, no reservation needed</div>
-      <div class="item">Airbnb check-out by <strong>11:00am</strong> — with checkout well before your flight, plan to store bags nearby (host, luggage locker, or a café) for the day</div>
-      <div class="item">Leave for CDG by <strong>5:15pm</strong> — gets you to the airport by ~6:30pm, two hours ahead of an 8:30pm flight</div>
-      <div class="item">Curious about the Le Corbusier sites? See the <a href="le-corbusier.html">Le Corbusier trail →</a></div>
+      <div class="card-top"><span class="date">16th — Bois de Boulogne</span></div>
+
+      <div class="subhead">To See</div>
+      <div class="item"><a href="https://www.fondationlouisvuitton.fr/en/fondation" target="_blank">Fondation Louis Vuitton</a> (Gehry) <span class="tags">must-go, ticket ahead, modern architecture</span></div>
+      <div class="item"><a href="https://www.mam.paris.fr/en" target="_blank">Musée d'Art Moderne de Paris</a> <span class="tags">must-go, free permanent collection, modern art</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Bois+de+Boulogne" target="_blank">Bois de Boulogne</a> <span class="tags">run, park</span></div>
+    </div>
+  </div>
+
+  <div class="day" id="arr-18-19">
+    <div class="card">
+      <div class="card-top"><span class="date">18th/19th — Saint-Ouen · La Villette</span></div>
+
+      <div class="subhead">To See</div>
+      <div class="item"><a href="https://maps.google.com/?q=Cite+des+Sciences+et+de+l%27Industrie+Paris" target="_blank">Cité des Sciences et de l'Industrie</a> <span class="tags">great visit with kids</span></div>
+
+      <div class="subhead">To Wander</div>
+      <div class="item"><a href="https://maps.google.com/?q=Marche+aux+Puces+de+Saint-Ouen" target="_blank">Marché aux Puces de Saint-Ouen</a> <span class="tags">flea market, open Sat/Sun/Mon only</span></div>
+      <div class="item"><a href="https://maps.google.com/?q=Quai+de+l%27Oise+Paris" target="_blank">Quai de l'Oise</a> <span class="tags">along the canal — playground, canal-side cafés and bars</span></div>
     </div>
   </div>
 
 </div>
 
-<div class="footer">Green = good running spot · Red = make the reservation now · Brass = must-go, don't skip · Purple = book a ticket ahead</div>
-
+<script>
+  function setNavHeight(){
+    var nav = document.querySelector('.sticky-top');
+    if(!nav) return;
+    document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  }
+  window.addEventListener('load', setNavHeight);
+  window.addEventListener('resize', setNavHeight);
+  setNavHeight();
+</script>
 </body>
 </html>
