@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tour de France Final Stage — Jac & Thomas's Paris Trip</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇫🇷</text></svg>">
+<title>Tour de France Final Stage — Paris</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -25,39 +26,36 @@ body{
   padding:0 0 60px 0;
 }
 .wrap{
-  max-width:640px;
+  max-width:720px;
   margin:0 auto;
-  padding:0 20px;
+  padding:0 16px;
 }
-.back{
-  display:inline-block;
-  margin:28px 0 0;
-  font-size:13px;
-  font-weight:700;
+h1{
+  position:relative;
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:32px;
+  margin:28px 0 4px;
+  line-height:1.1;
+  text-align:center;
+}
+.back-arrow{
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
   color:var(--seine);
   text-decoration:none;
 }
-.back:hover{text-decoration:underline;}
-.eyebrow{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--red);
-  font-weight:700;
-  margin:24px 0 8px;
-}
-h1{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:32px;
-  margin:0 0 4px;
-  line-height:1.1;
-}
+.back-arrow:hover{text-decoration:underline;}
 .date{
   font-size:14px;
   color:#7A7F87;
   margin-bottom:28px;
 }
+.date a{color:var(--seine);font-weight:600;text-decoration:none;border-bottom:1px solid #B9CBDB;}
+.date a:hover{border-bottom-color:var(--seine);}
+.date-center{text-align:center;}
 .card{
   background:var(--card);
   border:1px solid var(--line);
@@ -79,11 +77,6 @@ h1{
 .card p:last-child{margin-bottom:0;}
 .card a{color:var(--seine);font-weight:600;text-decoration:none;border-bottom:1px solid #B9CBDB;}
 .card a:hover{border-bottom-color:var(--seine);}
-.highlight{
-  background:#FBF0EE;
-  border-color:#E9C9C4;
-}
-.highlight h2{color:var(--red);}
 .stations{
   font-size:13px;
   line-height:1.7;
@@ -96,18 +89,17 @@ h1{
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="index.html">← Back to the trip</a>
-  <h1>Tour de France, final stage</h1>
-  <div class="date">1st, 8th, and 18th arrondissements</div>
-  <div class="date">See the <a href="https://www.letour.fr/en/" target="_blank">official Tour de France site</a> for the current route and schedule</div>
+  <h1><a class="back-arrow" href="index.html" aria-label="Back to the trip">←</a>🚴 Tour de France, Final Stage</h1>
+  <div class="date date-center">1st, 8th, and 18th arrondissements</div>
+  <div class="date date-center">See the <a href="https://www.letour.fr/en/" target="_blank">official Tour de France site </a> for the route and schedule</div>
 
   <div class="card">
-    <h2>What's happening</h2>
+    <h2>What’s happening</h2>
     <p>The final stage covers about 133km from Thoiry into Paris. Once in the city, the peloton runs a circuit of Champs-Élysées laps combined with three passes over the cobbled Côte de la Butte Montmartre, right past Sacré-Cœur, before the finishing sprint back on the Champs-Élysées.</p>
     <p>Rollout is roughly 4:30pm. The peloton reaches Paris after about 50km of transfer riding, so expect the first laps through the city from mid-to-late afternoon. The actual finish is closer to 7:30–8pm.</p>
   </div>
 
-  <div class="card highlight">
+  <div class="card">
     <h2>Where to watch</h2>
     <p>Since you'll already be at Musée d'Orsay that morning, the easiest move is the <a href="https://maps.google.com/?q=Quai+des+Tuileries+Paris" target="_blank">Quai des Tuileries</a>. It sits right along the route from Concorde toward the Champs-Élysées, so you can catch the riders passing more than once, and it's typically far less packed than the barriers directly on the Champs-Élysées.</p>
     <p>Catch one of the earlier laps, around 5–6pm, rather than holding out for the final sprint. That keeps enough time to get back to the 15th for the Le Café du Commerce dinner reservation, which matters more on FIL's last full evening than seeing the very last meter of the race.</p>
@@ -115,17 +107,10 @@ h1{
   </div>
 
   <div class="card">
-    <h2>While you're in the area</h2>
-    <p>Highly recommended, easy to combine with watching the race: <a href="https://www.grandpalais.fr" target="_blank">Grand Palais</a> and <a href="https://www.petitpalais.paris.fr/en" target="_blank">Petit Palais</a>, both 8th, right by Champs-Élysées; and the <a href="https://madparis.fr" target="_blank">Musée des Arts Décoratifs</a>, 1st, on Rue de Rivoli.</p>
-  </div>
-
-  <div class="card">
     <h2>Getting around that day</h2>
     <p class="stations">Closed all day: George V, Tuileries, Concorde, Champs-Élysées–Clemenceau, Franklin D. Roosevelt, Charles de Gaulle–Étoile, Madeleine.</p>
     <p>Parking is banned in the affected zones. Walk or use the RER from outside the closure area. Check transit status the morning of, since barriers and closures typically start early.</p>
   </div>
-
-  <a class="back" href="index.html">← Back to the trip</a>
 </div>
 </body>
 </html>
