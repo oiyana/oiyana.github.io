@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import Button from '../components/Button.astro';
-import Hero from '../components/Hero.astro';
+import Hero from '../components/HeroGrid.astro';
 import PostPreview from '../components/PostPreview.astro';
 // import ProjectPreview from '../components/ProjectPreview.astro'; // restore with featured projects
 import siteConfig from '../data/site-config';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import GridLayout from '../layouts/GridLayout.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const heroEntries = await getCollection('hero');
@@ -26,7 +26,7 @@ const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 // const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
-<BaseLayout description={siteConfig.description}>
+<GridLayout description={siteConfig.description}>
     <Hero {...heroProps} />
     {/* Featured projects – uncomment data fetch + import + this block when ready
     {featuredProjects?.length > 0 && (
@@ -51,4 +51,4 @@ const featuredPosts = posts.filter(({ data }) => data.isFeatured);
             </div>
         )
     }
-</BaseLayout>
+</GridLayout>

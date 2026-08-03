@@ -32,6 +32,27 @@ html.dark {
     --link-underline-hover: #ffffff;
 }
 
+html,
+body,
+.bg-main,
+.text-main,
+.border-main {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html,
+    body,
+    .bg-main,
+    .text-main,
+    .border-main {
+        transition: none;
+    }
+}
+
 @theme inline {
     --font-sans: 'Libre Franklin Variable', sans-serif;
     --text-color-main: var(--text-main);
