@@ -1,0 +1,194 @@
+---
+import type { Hero as HeroProps } from '../types';
+import Button from './Button.astro';
+import CustomImage from './CustomImage.astro';
+
+type Props = HeroProps;
+
+const { title, titleImage, subtitle, image, actions } = Astro.props;
+---
+
+<section class="mb-16 flex w-full flex-col gap-8 sm:mb-24">
+    {
+        titleImage?.src ? (
+            <h1 class="h-24 max-md:pt-4 pt-6 sm:h-[6.75rem] [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
+                <CustomImage
+                    src={titleImage.src}
+                    alt={titleImage.alt ?? ''}
+                    class="h-full w-auto object-contain dark:invert"
+                    loading="eager"
+                    fetchpriority="high"
+                />
+            </h1>
+        ) : title ? (
+            <h1 class="font-sans text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+        ) : null
+    }
+    {subtitle && <p class="flex items-center gap-3 text-theme-foreground">{subtitle}</p>}
+    {
+        image?.src && (
+            <figure>
+                <CustomImage
+                    class="w-full"
+                    {...image}
+                    widths={[480, 640, 768, 1024, 1536]}
+                    sizes="(min-width: 832px) 768px, calc(100vw - 32px)"
+                    fetchpriority="high"
+                    loading="eager"
+                />
+                {image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{image.caption}</figcaption>}
+            </figure>
+        )
+    }
+
+    <div class="prose prose-lg max-w-none prose-hero">
+        <p>
+            I’m Jac. I build products, create systems, and lead teams to solve problems worth solving, driving growth,
+            and delivering lasting impact.
+        </p>
+
+        <p>
+            Today at The New York Times Games, I lead{' '}
+            <button
+                type="button"
+                class="builder-toggle"
+                aria-expanded="false"
+                aria-controls="expand-subscriber-growth"
+                data-builder-toggle
+            >
+                <span class="builder-toggle__label">subscriber growth</span>
+                <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
+            </button>{' '}across a portfolio of games and products.{' '}
+            <em id="expand-subscriber-growth" class="builder-expand" data-builder-expanded hidden>
+                I grew a single-stack feature team into a full-stack team that ships 0-to-1 product areas, optimization,
+                and enablement to maximize each game’s engagement lifecycle. With a “free-to-play, pay-to-get-more”
+                model, I create the core engagement loop with achievement systems, stats, streaks, and a live ops
+                program to drive top-of-funnel growth, while expanding a premium suite of benefits to convert and retain
+                subscribers.
+            </em>
+        </p>
+
+        <p>
+            Previously at Medium, I helped hundreds of thousands of writers grow their audiences and earnings. (Click
+            “creator growth” to expand a thumbnail of a feature I shipped.)
+        </p>
+
+        <p>
+            At BuzzFeed (late-stage, pre-IPO), I became a{' '}
+            <button
+                type="button"
+                class="builder-toggle"
+                aria-expanded="false"
+                aria-controls="expand-product-builder"
+                data-builder-toggle
+            >
+                <span class="builder-toggle__label">product builder</span>
+                <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
+            </button>
+            <em id="expand-product-builder" class="builder-expand" data-builder-expanded hidden>
+                I started as a product designer, created game mechanics engineered for virality, then built dashboards
+                to analyze trends and replicate what worked. Later, I transitioned to leading the workflow tool,
+                automating publishing with ML models to maximize traffic and revenue.
+            </em>{' '}
+            (Click “full stack builder” to expand a thumbnail of a feature I shipped.)
+        </p>
+
+        <p>
+            From serving millions of players every day or building for a small team to scale their output, I have become
+            good at operating at the intersection of value creation, intentional design, and collective ambition. Ideas
+            come from anywhere, but great execution rarely happens in a vacuum. I thrive on leading teams through
+            ambiguity, growing PMs, and creating the conditions for good work.
+        </p>
+    </div>
+
+    {
+        actions && actions.length > 0 && (
+            <div class="flex flex-wrap gap-4">
+                {actions.map((action) => (
+                    <Button href={action.href}>{action.text}</Button>
+                ))}
+            </div>
+        )
+    }
+</section>
+
+<style>
+    .builder-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+        margin: 0 0.1em;
+        padding: 0.12em 0.12em 0.18em;
+        vertical-align: baseline;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-weight: 600;
+        line-height: 1.4;
+        cursor: pointer;
+        box-shadow: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .builder-toggle:hover {
+        background: color-mix(in srgb, var(--text-main) 6%, transparent);
+    }
+
+    .builder-toggle:focus-visible {
+        outline: 2px solid #e07a5f;
+        outline-offset: 2px;
+    }
+
+    .builder-toggle[aria-expanded='true'] {
+        background: #f6d5cb;
+    }
+
+    :global(html.dark) .builder-toggle[aria-expanded='true'] {
+        background: color-mix(in srgb, #e07a5f 35%, var(--bg-main));
+    }
+
+    .builder-toggle__icon {
+        color: #0047ab;
+        font-weight: 600;
+        font-size: 0.95em;
+        line-height: 1;
+        min-width: 0.65em;
+        text-align: center;
+    }
+
+    .builder-expand {
+        font-weight: 400;
+    }
+
+    .builder-expand[hidden] {
+        display: none;
+    }
+</style>
+
+<script>
+    function initBuilderToggles() {
+        document.querySelectorAll<HTMLButtonElement>('[data-builder-toggle]').forEach((button) => {
+            if (button.dataset.bound === 'true') return;
+            button.dataset.bound = 'true';
+
+            const expandId = button.getAttribute('aria-controls');
+            const expanded = expandId ? document.getElementById(expandId) : null;
+            const icon = button.querySelector<HTMLElement>('[data-builder-icon]');
+            if (!expanded || !icon) return;
+
+            button.addEventListener('click', () => {
+                const isOpen = button.getAttribute('aria-expanded') === 'true';
+                const nextOpen = !isOpen;
+
+                button.setAttribute('aria-expanded', String(nextOpen));
+                icon.textContent = nextOpen ? '×' : '+';
+                expanded.hidden = !nextOpen;
+            });
+        });
+    }
+
+    initBuilderToggles();
+    document.addEventListener('astro:page-load', initBuilderToggles);
+</script>
