@@ -77,7 +77,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 alt="New York Times Games achievement badges"
                 loading="lazy"
             />
-            <figcaption class="builder-expand__caption">2025 - Badge Systems. Built with Robert Vinluan, Michael Ingber, Steven Speicher.</figcaption>
+            <figcaption class="builder-expand__caption">Badge Systems (2025). Built with Robert Vinluan, Michael Ingber, Steven Speicher.</figcaption>
         </figure>
 
         <p>
@@ -106,7 +106,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 alt="Medium email feature"
                 loading="lazy"
             />
-            <figcaption class="builder-expand__caption">Caption coming soon</figcaption>
+            <figcaption class="builder-expand__caption">Writer Subscription (2021). Built with Abby Aker.</figcaption>
         </figure>
 
         <p>
@@ -126,9 +126,9 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
             </button>{' '}
             in fueling their meteoric audience growth.{' '}
             <span id="expand-two-roles" class="builder-expand" data-builder-expanded hidden>
-                As a product designer, I built game mechanics engineered for virality, then dashboards to track trends
-                and replicate what worked. I later transitioned into product management to lead workflow tools that used
-                ML to automate publishing, powering over 9 billion content views a month.
+                As a product designer, I created new game mechanics engineered for virality, then built dashboards to 
+                track what worked and replicate it. I later moved into product management, where I scaled a content 
+                publishing workflow powered by automation and ML recommendations, reaching over 9 billion content views a month
             </span>
         </p>
         <figure id="expand-two-roles-image" class="builder-expand__figure" hidden>
@@ -138,7 +138,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 alt="BuzzFeed recommendation feature"
                 loading="lazy"
             />
-            <figcaption class="builder-expand__caption">Caption coming soon</figcaption>
+            <figcaption class="builder-expand__caption">Internal publishing tool (2018). Built with Andrea Handevidt, Alex Gervais and Kevin Merritt.</figcaption>
         </figure>
 
         <p>
@@ -345,6 +345,11 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         line-height: 1.4;
         font-weight: 400;
         text-align: left;
+        color: #171717;
+    }
+
+    :global(html.dark) .builder-expand__caption {
+        color: #ffffff;
     }
 
     :global(.prose a.company-link) {
