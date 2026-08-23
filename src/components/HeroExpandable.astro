@@ -2,6 +2,9 @@
 import type { Hero as HeroProps } from '../types';
 import Button from './Button.astro';
 import CustomImage from './CustomImage.astro';
+import nytBadgesGif from '../../public/image-nyt/nyt-games-badges-2.gif?url';
+import mediumEmailHero from '../../public/image-medium/medium-email-hero.png?url';
+import buzzfeedRecommendationHero from '../../public/image-buzzfeed/buzzfeed-recommendation-hero.png?url';
 
 type Props = HeroProps;
 
@@ -73,9 +76,8 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         <figure id="expand-subscriber-engagement-image" class="builder-expand__figure" hidden>
             <img
                 class="builder-expand__image"
-                src="/image-nyt/nyt-games-badges-2.gif"
+                data-expand-src={nytBadgesGif}
                 alt="New York Times Games achievement badges"
-                loading="lazy"
             />
             <figcaption class="builder-expand__caption">Badge Systems (2025). Built with Robert Vinluan, Michael Ingber, Steven Speicher.</figcaption>
         </figure>
@@ -102,9 +104,8 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         <figure id="expand-creators-image" class="builder-expand__figure" hidden>
             <img
                 class="builder-expand__image"
-                src="/image-medium/medium-email-hero.png"
+                data-expand-src={mediumEmailHero}
                 alt="Medium email feature"
-                loading="lazy"
             />
             <figcaption class="builder-expand__caption">Writer Subscription (2021). Built with Abby Aker.</figcaption>
         </figure>
@@ -134,9 +135,8 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         <figure id="expand-two-roles-image" class="builder-expand__figure" hidden>
             <img
                 class="builder-expand__image"
-                src="/image-buzzfeed/buzzfeed-recommendation-hero.png"
+                data-expand-src={buzzfeedRecommendationHero}
                 alt="BuzzFeed recommendation feature"
-                loading="lazy"
             />
             <figcaption class="builder-expand__caption">Internal Publishing Tool (2019). Built with Andrea Handevidt, Alex Gervais and Kevin Merritt.</figcaption>
         </figure>
@@ -382,6 +382,14 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 </style>
 
 <script>
+    function loadExpandImage(figure: HTMLElement | null) {
+        const img = figure?.querySelector<HTMLImageElement>('.builder-expand__image');
+        const src = img?.getAttribute('data-expand-src');
+        if (img && src && !img.getAttribute('src')) {
+            img.src = src;
+        }
+    }
+
     function initBuilderToggles() {
         document.querySelectorAll<HTMLButtonElement>('[data-builder-toggle]').forEach((button) => {
             if (button.dataset.bound === 'true') return;
@@ -401,7 +409,10 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 button.setAttribute('aria-expanded', String(nextOpen));
                 icon.textContent = nextOpen ? '×' : '+';
                 expanded.hidden = !nextOpen;
-                if (expandImage) expandImage.hidden = !nextOpen;
+                if (expandImage) {
+                    if (nextOpen) loadExpandImage(expandImage);
+                    expandImage.hidden = !nextOpen;
+                }
             });
         });
     }

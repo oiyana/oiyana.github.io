@@ -8,6 +8,9 @@ import siteConfig from './src/data/site-config';
 // https://astro.build/config
 export default defineConfig({
     site: siteConfig.website,
+    redirects: {
+        '/home-v2': '/'
+    },
     vite: {
         plugins: [tailwindcss()]
     },

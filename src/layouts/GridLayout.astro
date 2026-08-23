@@ -10,7 +10,7 @@ export type Props = HeadProps;
 
 const head = Astro.props;
 
-const pageLinks = [{ text: 'About', href: '/home-v2' }];
+const pageLinks = [{ text: 'About', href: '/' }];
 const navLinks = [...pageLinks, ...(siteConfig.socialLinks ?? [])];
 
 const linkClass = 'font-sans text-base';
