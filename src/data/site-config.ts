@@ -13,7 +13,7 @@ const siteConfig: SiteConfig = {
     headerNavLinks: [
         {
             text: 'About',
-            href: '/'
+            href: '/home-v2'
         },
         {
             text: 'LinkedIn',

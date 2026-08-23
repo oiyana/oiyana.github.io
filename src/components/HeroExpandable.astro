@@ -61,13 +61,13 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
             </button>{' '}
             at the{' '}
-            <a href="https://www.nytimes.com/crosswords/apps" class="company-link">Games, New York Times</a>, building
+            <a href="https://www.nytimes.com/crosswords/apps" class="company-link">The New York Times Games</a>, building
             experiences that delights for millions of players every day.{' '}
             <span id="expand-subscriber-engagement" class="builder-expand" data-builder-expanded hidden>
-                I grew a team from optimizing small features to delivering the core
-                gameplay experience across a portfolio of games, from 0-to-1s to optimizations to expansion. I built a
-                core loop to maximize the engagement lifecycle through achievement systems, stats, streaks, and a live
-                ops program. I expanded its premium product line for subscribers to drive conversion and retention.
+                I expanded my team’s scope from individual features to the core experience across a portfolio of live games, 
+                including 0-to-1 launches, growth optimizations, and horizontal expansion. Together, we build the core loop 
+                that maximizes the engagement lifecycle through badges, stats, streaks, and a live ops program. 
+                We also tripled premium features for subscribers, creating more value for paid users.
             </span>
         </p>
         <figure id="expand-subscriber-engagement-image" class="builder-expand__figure" hidden>
@@ -94,9 +94,9 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 <span class="builder-toggle__label">creators</span>
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
             </button>{' '}
-            grow their audiences and earnings from independent writers to public figures.{' '}
+            from independent writers to public figures, grow their audiences and earnings.{' '}
             <span id="expand-creators" class="builder-expand" data-builder-expanded hidden>
-                Click “creators” to expand a thumbnail of a feature I shipped.
+                The goal was to give writers more control and transparency, and to build trust in the platform.
             </span>
         </p>
         <figure id="expand-creators-image" class="builder-expand__figure" hidden>
@@ -111,8 +111,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 
         <p>
             At{' '}
-            <a href="https://www.buzzfeed.com/" class="company-link">BuzzFeed</a>, known for manufacturing culture
-            moments and memes, I served{' '}
+            <a href="https://www.buzzfeed.com/" class="company-link">BuzzFeed</a>, known for creating viral moments, I held{' '}
             <button
                 type="button"
                 class="builder-toggle wave-underline"
@@ -124,11 +123,12 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 <span class="builder-toggle__label">two roles</span>
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
             </button>{' '}
-            in fueling their meteoric audience growth.{' '}
+            driving their meteoric audience growth.{' '}
             <span id="expand-two-roles" class="builder-expand" data-builder-expanded hidden>
-                As a product designer, I created new game mechanics engineered for virality, then built dashboards to 
-                track what worked and replicate it. I later moved into product management, where I scaled a content 
-                publishing workflow powered by automation and ML recommendations, reaching over 9 billion content views a month
+                As a product designer, I created game mechanics engineered for virality, 
+                then built dashboards to track traffic and trends, identifying what worked and what to replicate. 
+                I later moved into product management, where I scaled a content publishing workflow powered by 
+                automation and ML recommendations, reaching over 9 billion content views a month.
             </span>
         </p>
         <figure id="expand-two-roles-image" class="builder-expand__figure" hidden>
@@ -138,7 +138,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 alt="BuzzFeed recommendation feature"
                 loading="lazy"
             />
-            <figcaption class="builder-expand__caption">Internal publishing tool (2018). Built with Andrea Handevidt, Alex Gervais and Kevin Merritt.</figcaption>
+            <figcaption class="builder-expand__caption">Internal Publishing Tool (2019). Built with Andrea Handevidt, Alex Gervais and Kevin Merritt.</figcaption>
         </figure>
 
         <p>
@@ -205,56 +205,12 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 <style>
     .logo-blue :global(img),
     .logo-blue__img {
-        filter: invert(19%) sepia(99%) saturate(3876%) hue-rotate(229deg) brightness(96%) contrast(108%);
+        filter: invert(18%) sepia(95%) saturate(4500%) hue-rotate(214deg) brightness(95%) contrast(101%);
     }
 
     :global(html.dark) .logo-blue :global(img),
     :global(html.dark) .logo-blue__img {
         filter: invert(42%) sepia(98%) saturate(2146%) hue-rotate(214deg) brightness(103%) contrast(101%);
-    }
-
-    .wave-underline {
-        position: relative;
-        text-decoration: none;
-        padding-bottom: 0.42em;
-        display: inline-block;
-    }
-
-    .wave-underline::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 0.4em;
-        pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 8' width='16' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q4 2.25 8 4 T16 4' fill='none' stroke='%231A2BE6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-        background-repeat: repeat-x;
-        background-position: 0 100%;
-        background-size: 0.88em 0.4em;
-    }
-
-    :global(html.dark) .wave-underline::after {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 8' width='16' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q4 2.25 8 4 T16 4' fill='none' stroke='%234574FF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-    }
-
-    .wave-underline.is-waving::after {
-        animation: builder-wave 0.7s linear infinite;
-    }
-
-    @keyframes builder-wave {
-        from {
-            background-position-x: 0;
-        }
-        to {
-            background-position-x: 0.88em;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .wave-underline.is-waving::after {
-            animation: none;
-        }
     }
 
     .builder-toggle {
@@ -286,7 +242,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 
     .builder-toggle:focus-visible,
     .email-copy:focus-visible {
-        outline: 2px solid #1a2be6;
+        outline: 2px solid #0348de;
         outline-offset: 2px;
     }
 
@@ -296,7 +252,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     }
 
     .builder-toggle[aria-expanded='true'] {
-        color: #1a2be6;
+        color: #0348de;
     }
 
     :global(html.dark) .builder-toggle[aria-expanded='true'] {
@@ -304,7 +260,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     }
 
     .builder-toggle__icon {
-        color: #1a2be6;
+        color: #0348de;
         font-weight: 800;
         font-size: 0.95em;
         line-height: 1;
@@ -340,7 +296,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     }
 
     .builder-expand__caption {
-        margin-top: 0.4em;
+        margin-top: 0.65em;
         font-size: 13px;
         line-height: 1.4;
         font-weight: 400;
@@ -395,7 +351,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         width: 0.8em;
         height: 0.8em;
         flex: 0 0 0.8em;
-        color: #1a2be6;
+        color: #0348de;
         overflow: visible;
         transform: translateY(0.1em);
     }
