@@ -20,31 +20,31 @@ I inherited PubHub, an internal content publishing tool, when my manager left to
 
 **1. Unified workflow** — Consolidated the fragmented mix of spreadsheets, dashboards, and platform tools publishers relied on into a single platform for sourcing, planning, scheduling, and publishing across social platforms. The interface included a recommendation queue, drag-and-drop scheduling, and an automation configuration panel — so users could evaluate and act without context-switching.
 <figure class="case-study-image">
-  <img src="/buzzfeed-pubhub.png" alt="Publishing hub — unified workflow" class="w-full" />
+  <img src="/image-buzzfeed/buzzfeed-pubhub.png" alt="Publishing hub — unified workflow" class="w-full" />
   <figcaption>Publishing hub</figcaption>
 </figure>
 
 **2. Rules-based automation** — Built a configurable automation layer for predictable, high-volume publishing. Editors could define rules (new desert videos push to lifestyle channels), then adjust behavior per platform via toggles and runtime overrides — without engineering support. The system handled 2,600 of 4,000 weekly assets across YouTube, Facebook, Instagram, TikTok, Twitter, and syndication platforms.
 <figure class="case-study-image">
-  <img src="/buzzfeed-auto.png" alt="Automation workflow" class="w-full" />
+  <img src="/image-buzzfeed/buzzfeed-auto.png" alt="Automation workflow" class="w-full" />
   <figcaption>Automation workflow — runtime controls and overrides</figcaption>
 </figure>
 <figure class="case-study-image">
-  <img src="/buzzfeed-rule.png" alt="Rules configuration" class="w-full" />
+  <img src="/image-buzzfeed/buzzfeed-rule.png" alt="Rules configuration" class="w-full" />
   <figcaption>Rules configuration — define and manage automation rules per channel</figcaption>
 </figure>
 
 
 **3. ML-powered recommendations** — Productionized two base models: a relevancy model that scores how well a piece of content matches a given channel's audience, and an evergreen model that evaluates whether older content is worth surfacing again based on age, prior promotion history, and engagement performance. Together, they powered 24 specialized bots — each tuned to recommend the highest-leverage asset for a specific channel type and business goal.
 <figure class="case-study-image">
-  <img src="/buzzfeed-recs.png" alt="Recommendation queue" class="w-full" />
+  <img src="/image-buzzfeed/buzzfeed-recs.png" alt="Recommendation queue" class="w-full" />
   <figcaption>ML-driven recommendation queue</figcaption>
 </figure>
 
 
 **4. Link-in-bio automation** — Built a fully integrated workflow for Instagram and TikTok shopping content: push video on-platform → transform to static assets → auto-populate metadata and linkbacks → publish to a branded link-in-bio page. Later extended with programmatic ad integration on top-performing pages, unlocking incremental sponsorship revenue.
 <figure class="case-study-image">
-  <img src="/buzzfeed-bio.png" alt="Link-in-bio automation for shopping content" class="w-full" />
+  <img src="/image-buzzfeed/buzzfeed-bio.png" alt="Link-in-bio automation for shopping content" class="w-full" />
   <figcaption>Link-in-bio automation — shopping content CMS for Instagram and TikTok</figcaption>
 </figure>
 

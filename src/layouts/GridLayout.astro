@@ -13,8 +13,7 @@ const head = Astro.props;
 const pageLinks = [{ text: 'About', href: '/' }];
 const navLinks = [...pageLinks, ...(siteConfig.socialLinks ?? [])];
 
-const linkClass =
-    'font-sans text-base hover:underline hover:decoration-2 hover:decoration-solid hover:underline-offset-[0.3em]';
+const linkClass = 'font-sans text-base';
 ---
 
 <!doctype html>

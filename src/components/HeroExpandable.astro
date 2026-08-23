@@ -11,11 +11,11 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 <section class="mb-16 flex w-full flex-col gap-8 sm:mb-24">
     {
         titleImage?.src ? (
-            <h1 class="h-24 max-md:pt-4 pt-6 sm:h-[6.75rem] [&>img]:h-full [&>img]:w-auto [&>img]:object-contain [&>img]:dark:invert">
+            <h1 class="logo-blue h-24 max-md:pt-4 pt-6 sm:h-[6.75rem] [&>img]:h-full [&>img]:w-auto [&>img]:object-contain">
                 <CustomImage
                     src={titleImage.src}
                     alt={titleImage.alt ?? ''}
-                    class="h-full w-auto object-contain dark:invert"
+                    class="logo-blue__img h-full w-auto object-contain"
                     loading="eager"
                     fetchpriority="high"
                 />
@@ -36,7 +36,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                     fetchpriority="high"
                     loading="eager"
                 />
-                {image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{image.caption}</figcaption>}
+                {image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm padding-top: 0.35em">{image.caption}</figcaption>}
             </figure>
         )
     }
@@ -48,56 +48,146 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         </p>
 
         <p>
-            Today at The New York Times Games, I lead{' '}
+            Currently, I lead{' '}
             <button
                 type="button"
-                class="builder-toggle"
+                class="builder-toggle wave-underline"
                 aria-expanded="false"
-                aria-controls="expand-subscriber-growth"
+                aria-controls="expand-subscriber-engagement"
                 data-builder-toggle
+                data-expand-image="expand-subscriber-engagement-image"
             >
-                <span class="builder-toggle__label">subscriber growth</span>
+                <span class="builder-toggle__label">subscriber engagement and growth</span>
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
-            </button>{' '}across a portfolio of games and products.{' '}
-            <em id="expand-subscriber-growth" class="builder-expand" data-builder-expanded hidden>
-                I grew a single-stack feature team into a full-stack team that ships 0-to-1 product areas, optimization,
-                and enablement to maximize each game’s engagement lifecycle. With a “free-to-play, pay-to-get-more”
-                model, I create the core engagement loop with achievement systems, stats, streaks, and a live ops
-                program to drive top-of-funnel growth, while expanding a premium suite of benefits to convert and retain
-                subscribers.
-            </em>
+            </button>{' '}
+            at the{' '}
+            <a href="https://www.nytimes.com/crosswords/apps" class="company-link">Games, New York Times</a>, building
+            experiences that delights for millions of players every day.{' '}
+            <span id="expand-subscriber-engagement" class="builder-expand" data-builder-expanded hidden>
+                I grew a team from optimizing small features to delivering the core
+                gameplay experience across a portfolio of games, from 0-to-1s to optimizations to expansion. I built a
+                core loop to maximize the engagement lifecycle through achievement systems, stats, streaks, and a live
+                ops program. I expanded its premium product line for subscribers to drive conversion and retention.
+            </span>
         </p>
+        <figure id="expand-subscriber-engagement-image" class="builder-expand__figure" hidden>
+            <img
+                class="builder-expand__image"
+                src="/image-nyt/nyt-games-badges-2.gif"
+                alt="New York Times Games achievement badges"
+                loading="lazy"
+            />
+            <figcaption class="builder-expand__caption">2025 - Badge Systems. Built with Robert Vinluan, Michael Ingber, Steven Speicher.</figcaption>
+        </figure>
 
         <p>
-            Previously at Medium, I helped hundreds of thousands of writers grow their audiences and earnings. (Click
-            “creator growth” to expand a thumbnail of a feature I shipped.)
-        </p>
-
-        <p>
-            At BuzzFeed (late-stage, pre-IPO), I became a{' '}
+            Previously at{' '}
+            <a href="https://medium.com/" class="company-link">Medium</a>, I helped hundreds of thousands of{' '}
             <button
                 type="button"
-                class="builder-toggle"
+                class="builder-toggle wave-underline"
                 aria-expanded="false"
-                aria-controls="expand-product-builder"
+                aria-controls="expand-creators"
                 data-builder-toggle
+                data-expand-image="expand-creators-image"
             >
-                <span class="builder-toggle__label">product builder</span>
+                <span class="builder-toggle__label">creators</span>
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
-            </button>
-            <em id="expand-product-builder" class="builder-expand" data-builder-expanded hidden>
-                I started as a product designer, created game mechanics engineered for virality, then built dashboards
-                to analyze trends and replicate what worked. Later, I transitioned to leading the workflow tool,
-                automating publishing with ML models to maximize traffic and revenue.
-            </em>{' '}
-            (Click “full stack builder” to expand a thumbnail of a feature I shipped.)
+            </button>{' '}
+            grow their audiences and earnings from independent writers to public figures.{' '}
+            <span id="expand-creators" class="builder-expand" data-builder-expanded hidden>
+                Click “creators” to expand a thumbnail of a feature I shipped.
+            </span>
+        </p>
+        <figure id="expand-creators-image" class="builder-expand__figure" hidden>
+            <img
+                class="builder-expand__image"
+                src="/image-medium/medium-email-hero.png"
+                alt="Medium email feature"
+                loading="lazy"
+            />
+            <figcaption class="builder-expand__caption">Caption coming soon</figcaption>
+        </figure>
+
+        <p>
+            At{' '}
+            <a href="https://www.buzzfeed.com/" class="company-link">BuzzFeed</a>, known for manufacturing culture
+            moments and memes, I served{' '}
+            <button
+                type="button"
+                class="builder-toggle wave-underline"
+                aria-expanded="false"
+                aria-controls="expand-two-roles"
+                data-builder-toggle
+                data-expand-image="expand-two-roles-image"
+            >
+                <span class="builder-toggle__label">two roles</span>
+                <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
+            </button>{' '}
+            in fueling their meteoric audience growth.{' '}
+            <span id="expand-two-roles" class="builder-expand" data-builder-expanded hidden>
+                As a product designer, I built game mechanics engineered for virality, then dashboards to track trends
+                and replicate what worked. I later transitioned into product management to lead workflow tools that used
+                ML to automate publishing, powering over 9 billion content views a month.
+            </span>
+        </p>
+        <figure id="expand-two-roles-image" class="builder-expand__figure" hidden>
+            <img
+                class="builder-expand__image"
+                src="/image-buzzfeed/buzzfeed-recommendation-hero.png"
+                alt="BuzzFeed recommendation feature"
+                loading="lazy"
+            />
+            <figcaption class="builder-expand__caption">Caption coming soon</figcaption>
+        </figure>
+
+        <p>
+            From serving millions of players every day to helping small teams scale their output, I enjoy operating at
+            the intersection of value creation, intentional design, and measurable impact. To get there, I bring the
+            right people together, create the conditions for great work, and build systems that outlast any single
+            project, all while having fun along the way.
         </p>
 
         <p>
-            From serving millions of players every day or building for a small team to scale their output, I have become
-            good at operating at the intersection of value creation, intentional design, and collective ambition. Ideas
-            come from anywhere, but great execution rarely happens in a vacuum. I thrive on leading teams through
-            ambiguity, growing PMs, and creating the conditions for good work.
+            Outside my role, I also do advisory, mentoring, and connecting others over running. You can reach me via{' '}
+            <button
+                type="button"
+                class="email-copy"
+                data-email-copy
+                data-email="jac.oiyana@gmail.com"
+                aria-label="Copy email address"
+            >
+                <span data-email-label>email</span>
+                <svg class="contact-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <rect
+                        x="5.5"
+                        y="5.5"
+                        width="8"
+                        height="8"
+                        rx="1.25"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"></rect>
+                    <path
+                        d="M10.5 5.5V3.75A1.25 1.25 0 0 0 9.25 2.5H3.75A1.25 1.25 0 0 0 2.5 3.75v5.5A1.25 1.25 0 0 0 3.75 10.5H5.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"></path>
+                </svg>
+            </button>{' '}
+            or find me on{' '}
+            <a href="https://www.linkedin.com/in/jacquelineyue/" class="linkedin-link" data-linkedin-link>
+                LinkedIn
+                <svg class="contact-icon linkedin-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <path
+                        d="M3 8h8.2M8.2 4.2 12 8l-3.8 3.8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>.
         </p>
     </div>
 
@@ -113,16 +203,69 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 </section>
 
 <style>
+    .logo-blue :global(img),
+    .logo-blue__img {
+        filter: invert(19%) sepia(99%) saturate(3876%) hue-rotate(229deg) brightness(96%) contrast(108%);
+    }
+
+    :global(html.dark) .logo-blue :global(img),
+    :global(html.dark) .logo-blue__img {
+        filter: invert(42%) sepia(98%) saturate(2146%) hue-rotate(214deg) brightness(103%) contrast(101%);
+    }
+
+    .wave-underline {
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 0.42em;
+        display: inline-block;
+    }
+
+    .wave-underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0.4em;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 8' width='16' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q4 2.25 8 4 T16 4' fill='none' stroke='%231A2BE6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        background-size: 0.88em 0.4em;
+    }
+
+    :global(html.dark) .wave-underline::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 8' width='16' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q4 2.25 8 4 T16 4' fill='none' stroke='%234574FF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+
+    .wave-underline.is-waving::after {
+        animation: builder-wave 0.7s linear infinite;
+    }
+
+    @keyframes builder-wave {
+        from {
+            background-position-x: 0;
+        }
+        to {
+            background-position-x: 0.88em;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .wave-underline.is-waving::after {
+            animation: none;
+        }
+    }
+
     .builder-toggle {
         display: inline-flex;
         align-items: center;
-        gap: 0.35em;
+        gap: 0.15em;
         margin: 0 0.1em;
-        padding: 0.12em 0.50em;
-        radi
+        padding: 0.25em 0.15em 0.28em;
         vertical-align: baseline;
         border: none;
-        border-radius: 0.20em;
+        border-radius: 0;
         background: transparent;
         color: inherit;
         font: inherit;
@@ -130,41 +273,150 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         line-height: 1.4;
         cursor: pointer;
         box-shadow: none;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    .builder-toggle:hover {
+    .builder-toggle:hover,
+    .builder-toggle[aria-expanded='true'],
+    .builder-toggle[aria-expanded='true']:hover,
+    .email-copy:hover,
+    :global(.prose a.linkedin-link:hover) {
         background: color-mix(in srgb, var(--text-main) 6%, transparent);
     }
 
-    .builder-toggle:focus-visible {
-        outline: 2px solid #e07a5f;
+    .builder-toggle:focus-visible,
+    .email-copy:focus-visible {
+        outline: 2px solid #1a2be6;
         outline-offset: 2px;
     }
 
+    :global(html.dark) .builder-toggle:focus-visible,
+    :global(html.dark) .email-copy:focus-visible {
+        outline-color: #4574ff;
+    }
+
     .builder-toggle[aria-expanded='true'] {
-        background: #f6d5cb;
+        color: #1a2be6;
     }
 
     :global(html.dark) .builder-toggle[aria-expanded='true'] {
-        background: color-mix(in srgb, #e07a5f 35%, var(--bg-main));
+        color: #4574ff;
     }
 
     .builder-toggle__icon {
-        color: #0047ab;
-        font-weight: 600;
+        color: #1a2be6;
+        font-weight: 800;
         font-size: 0.95em;
         line-height: 1;
         min-width: 0.65em;
         text-align: center;
     }
 
+    :global(html.dark) .builder-toggle__icon {
+        color: #4574ff;
+    }
+
     .builder-expand {
+        font-style: normal;
         font-weight: 400;
     }
 
-    .builder-expand[hidden] {
+    .builder-expand[hidden],
+    .builder-expand__figure[hidden] {
         display: none;
+    }
+
+    .builder-expand__figure {
+        margin: 0.75em 0 1.25em;
+        padding: 0;
+    }
+
+    .builder-expand__image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .builder-expand__caption {
+        margin-top: 0.4em;
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    :global(.prose a.company-link) {
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    :global(.prose a.company-link:hover) {
+        text-decoration: none;
+    }
+
+    .email-copy {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.22em;
+        width: auto;
+        padding: 0.25em 0.15em 0.28em;
+        border: none;
+        background: none;
+        color: inherit;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        vertical-align: baseline;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    :global(.prose a.linkedin-link) {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.22em;
+        width: auto;
+        padding: 0.25em 0.15em 0.28em;
+        text-decoration: none;
+        white-space: nowrap;
+        vertical-align: baseline;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-icon {
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        flex: 0 0 0.8em;
+        color: #1a2be6;
+        overflow: visible;
+        transform: translateY(0.1em);
+    }
+
+    :global(html.dark) .contact-icon {
+        color: #4574ff;
+    }
+
+    .linkedin-arrow.is-nudging {
+        animation: linkedin-nudge 0.28s ease-in-out 3;
+    }
+
+    @keyframes linkedin-nudge {
+        0%,
+        100% {
+            transform: translate(0, 0.1em);
+        }
+        50% {
+            transform: translate(0.22em, 0.1em);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .linkedin-arrow.is-nudging {
+            animation: none;
+        }
     }
 </style>
 
@@ -176,6 +428,8 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 
             const expandId = button.getAttribute('aria-controls');
             const expanded = expandId ? document.getElementById(expandId) : null;
+            const imageId = button.getAttribute('data-expand-image');
+            const expandImage = imageId ? document.getElementById(imageId) : null;
             const icon = button.querySelector<HTMLElement>('[data-builder-icon]');
             if (!expanded || !icon) return;
 
@@ -186,10 +440,103 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 button.setAttribute('aria-expanded', String(nextOpen));
                 icon.textContent = nextOpen ? '×' : '+';
                 expanded.hidden = !nextOpen;
+                if (expandImage) expandImage.hidden = !nextOpen;
             });
         });
     }
 
+    function initWaveUnderlines() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        document.querySelectorAll<HTMLElement>('.wave-underline').forEach((el) => {
+            if (el.dataset.waveBound === 'true') return;
+            el.dataset.waveBound = 'true';
+
+            const scheduleNextWave = () => {
+                const wait = 7000 + Math.random() * 16000;
+                window.setTimeout(() => {
+                    el.classList.add('is-waving');
+                    window.setTimeout(() => {
+                        el.classList.remove('is-waving');
+                        scheduleNextWave();
+                    }, 2200 + Math.random() * 1200);
+                }, wait);
+            };
+
+            window.setTimeout(scheduleNextWave, Math.random() * 4000);
+        });
+    }
+
+    function initEmailCopy() {
+        document.querySelectorAll<HTMLButtonElement>('[data-email-copy]').forEach((button) => {
+            if (button.dataset.bound === 'true') return;
+            button.dataset.bound = 'true';
+
+            const label = button.querySelector<HTMLElement>('[data-email-label]');
+            if (!label) return;
+
+            button.addEventListener('click', async () => {
+                const email = button.getAttribute('data-email') || '';
+
+                try {
+                    await navigator.clipboard.writeText(email);
+                } catch {
+                    return;
+                }
+
+                const previousTimeout = Number(button.dataset.copiedTimeout || 0);
+                if (previousTimeout) window.clearTimeout(previousTimeout);
+
+                label.textContent = 'copied to clipboard';
+                button.setAttribute('aria-label', 'Email address copied');
+
+                button.dataset.copiedTimeout = String(
+                    window.setTimeout(() => {
+                        label.textContent = 'email';
+                        button.setAttribute('aria-label', 'Copy email address');
+                        delete button.dataset.copiedTimeout;
+                    }, 3000)
+                );
+            });
+        });
+    }
+
+    function nudgeLinkedInArrow(arrow: HTMLElement) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        arrow.classList.remove('is-nudging');
+        // Restart animation if already running
+        void arrow.offsetWidth;
+        arrow.classList.add('is-nudging');
+        arrow.addEventListener(
+            'animationend',
+            () => {
+                arrow.classList.remove('is-nudging');
+            },
+            { once: true }
+        );
+    }
+
+    function initLinkedInArrow() {
+        document.querySelectorAll<HTMLAnchorElement>('[data-linkedin-link]').forEach((link) => {
+            if (link.dataset.bound === 'true') return;
+            link.dataset.bound = 'true';
+
+            const arrow = link.querySelector<HTMLElement>('.linkedin-arrow');
+            if (!arrow) return;
+
+            link.addEventListener('mouseenter', () => nudgeLinkedInArrow(arrow));
+            link.addEventListener('click', () => nudgeLinkedInArrow(arrow));
+        });
+    }
+
     initBuilderToggles();
-    document.addEventListener('astro:page-load', initBuilderToggles);
+    initWaveUnderlines();
+    initEmailCopy();
+    initLinkedInArrow();
+    document.addEventListener('astro:page-load', () => {
+        initBuilderToggles();
+        initWaveUnderlines();
+        initEmailCopy();
+        initLinkedInArrow();
+    });
 </script>

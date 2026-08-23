@@ -22,7 +22,7 @@ I led the Creators team to ship a mix of new and improved features that gave wri
 
 **1. Email Subscription Redesign** — Took a low-adoption feature, diagnosed the friction, and rebuilt the end-to-end experience: better CTAs across the reading surface, personalized landing pages, simplified opt-in, reader reply support, and an audience dashboard. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)
 <figure class="case-study-image">
-  <img src="/medium-email-opt-in.png" alt="Email subscription opt-in" class="w-full" />
+  <img src="/image-medium/medium-email-opt-in.png" alt="Email subscription opt-in" class="w-full" />
   <figcaption>Writer opt-in to automatically send each story to the subscriber's inbox with one click.
 </figcaption>
 </figure>
@@ -31,7 +31,7 @@ I led the Creators team to ship a mix of new and improved features that gave wri
 
 **2. Referred Membership Program** — Built a creator-forward signup flow and landing page that lets writers earn revenue share from reader conversions, creating income beyond traffic-based payouts. [(Announcement)](https://medium.com/blog/evolving-the-partner-program-2613708f9f3c)
 <figure class="case-study-image">
-  <img src="/medium-referral.png" alt="Referral program" class="w-full" />
+  <img src="/image-medium/medium-referral.png" alt="Referral program" class="w-full" />
   <figcaption> Creator landing page and referral payout
 </figcaption>
 </figure>
@@ -40,7 +40,7 @@ I led the Creators team to ship a mix of new and improved features that gave wri
 
 **3. Lists** — Worked with the Book team to bring a curation feature from design concept to launch. Writers and readers can save, annotate, and publish collections of stories by topic. [(Announcement)](https://medium.com/blog/curate-and-share-stories-with-lists-2c27326d096)
 <figure class="case-study-image">
-  <img src="/medium-list.png" alt="List" class="w-full" />
+  <img src="/image-medium/medium-list.png" alt="List" class="w-full" />
   <figcaption> Lists - Curate stories and publish to profile
 </figcaption>
 </figure>
@@ -49,7 +49,7 @@ I led the Creators team to ship a mix of new and improved features that gave wri
 
 **4. Customizable About Page** — Modernized the profile CMS to support rich formatting, embedded images, and more expressive tools so writers could better represent their brand. [(Announcement)](https://medium.com/blog/elevate-your-brand-with-a-new-customizable-about-page-3392eb9fba7d)
 <figure class="case-study-image">
-  <img src="/medium-profile.png" alt="Customizable profile" class="w-full" />
+  <img src="/image-medium/medium-profile.png" alt="Customizable profile" class="w-full" />
   <figcaption> Customizable profile: Before and After
 </figcaption>
 </figure>
@@ -63,7 +63,7 @@ I led the Creators team to ship a mix of new and improved features that gave wri
 ### The Impact
 
 <figure class="case-study-image">
-  <img src="/medium-email-sub.png" alt="Email subscription" class="w-full" />
+  <img src="/image-medium/medium-email-sub.png" alt="Email subscription" class="w-full" />
   <figcaption>Email Subscription</figcaption>
 </figure>
 
