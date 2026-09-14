@@ -45,7 +45,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     }
 
     <div class="prose prose-lg max-w-none prose-hero">
-        <p>
+        <p class="intro-lead">
             I’m Jac. I build products, create systems, and lead teams to solve problems worth solving, driving growth,
             and delivering lasting impact.
         </p>
@@ -65,10 +65,14 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
             </button> building experiences that delights for millions of players every day.{' '}
             <span id="expand-subscriber-engagement" class="builder-expand" data-builder-expanded hidden>
-                I expanded my team’s scope from individual features to the core experience across a portfolio of live games, 
-                including 0-to-1 launches, growth optimizations, and horizontal expansion. Together, we build the core loop 
-                that maximizes the engagement lifecycle through badges, stats, streaks, and a live ops program. 
-                We also tripled premium features for subscribers, creating more value for paid users.
+                Together, we built the core loop that maximizes the engagement lifecycle through{' '}
+                <a href="https://www.nytco.com/press/gamify-your-gameplay-with-badges-from-new-york-times-games/" class="link-secondary" target="_blank" rel="noopener noreferrer">badges</a>,{' '}
+                <a href="https://www.nytco.com/press/introducing-connections-stats-and-streaks/" class="link-secondary" target="_blank" rel="noopener noreferrer">stats &amp; streaks</a>, and a{' '}
+                <a href="https://www.nytco.com/press/wordle5/" class="link-secondary" target="_blank" rel="noopener noreferrer">live ops program</a>{' '}
+                across a portfolio of games. We also tripled the value stack for paid subscribers, from{' '}
+                <a href="https://techcrunch.com/2024/05/07/nyt-games-wordle-archive-access-1000-past-puzzles/" class="link-secondary" target="_blank" rel="noopener noreferrer">archives</a>{' '}
+                and weekly{' '}
+                <a href="https://www.forbes.com/sites/erikkain/2026/09/02/nyt-games-bonus-puzzles-wordle-in-1-connections-3x3/" class="link-secondary" target="_blank" rel="noopener noreferrer">bonus puzzles</a>.
             </span>
         </p>
         <figure id="expand-subscriber-engagement-image" class="builder-expand__figure" hidden>
@@ -306,6 +310,17 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         color: #ffffff;
     }
 
+    .intro-lead {
+        font-weight: 700;
+    }
+
+    :global(.prose a.link-secondary),
+    :global(.prose a.link-secondary:hover) {
+        text-decoration: none;
+        text-decoration-line: none;
+        background-image: none;
+    }
+
     :global(.prose a.company-link) {
         font-weight: 600;
         text-decoration: none;
@@ -423,7 +438,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
             el.dataset.waveBound = 'true';
 
             const scheduleNextWave = () => {
-                const wait = 7000 + Math.random() * 16000;
+                const wait = 7000 + Math.random() * 11000;
                 window.setTimeout(() => {
                     el.classList.add('is-waving');
                     window.setTimeout(() => {

@@ -120,6 +120,19 @@ html.dark .page-run-on-run {
         text-decoration-color: var(--link-underline-hover);
     }
 
+    .prose a.link-secondary,
+    .prose a.link-secondary:hover,
+    .prose a.link-secondary:active,
+    .prose a.link-secondary:focus-visible {
+        text-decoration: none;
+        text-decoration-line: none;
+        color: inherit;
+    }
+
+    .link-secondary {
+        text-decoration: none;
+    }
+
     .prose-hero a {
         font-weight: 600;
     }
@@ -258,4 +271,14 @@ html.dark .page-run-on-run {
             animation: none;
         }
     }
+}
+
+a.link-secondary,
+.prose a.link-secondary,
+.prose a.link-secondary:hover,
+.prose a.link-secondary:active,
+.prose a.link-secondary:focus-visible {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    background-image: none;
 }
