@@ -32,7 +32,7 @@ const sections: { title: string; links: DirectoryLink[] }[] = [
         links: projects.map((project) => ({
             text: project.data.title,
             href: `/projects/${project.id}/`,
-            description: project.data.description
+            description: project.data.headline ?? project.data.description
         }))
     }
 ];

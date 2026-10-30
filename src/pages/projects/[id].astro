@@ -17,7 +17,7 @@ type Props = {
 };
 
 const { project } = Astro.props;
-const { title, description, seo } = project.data;
+const { title, headline, description, seo } = project.data;
 const { Content } = await render(project);
 ---
 
@@ -31,8 +31,22 @@ const { Content } = await render(project);
 >
     <article class="mt-12 mb-16 sm:mb-24 md:mt-16">
         <header class="mb-8 sm:mb-10">
-            <ProjectTitle title={title} headingLevel="h1" class="text-3xl" />
-            {description && <p class="mt-3 font-sans text-base leading-relaxed">{description}</p>}
+            {
+                headline ? (
+                    <>
+                        <ProjectTitle
+                            title={title}
+                            headingLevel="p"
+                            weight="normal"
+                            fontFamily="roboto-mono"
+                            class="mb-3 text-[15px] uppercase"
+                        />
+                        <h1 class="font-sans text-3xl leading-tight font-bold">{headline}</h1>
+                    </>
+                ) : (
+                    <ProjectTitle title={title} headingLevel="h1" class="text-3xl" />
+                )
+            }
         </header>
         <div class="prose project-prose max-w-none">
             <Content />

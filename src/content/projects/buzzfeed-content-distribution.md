@@ -1,6 +1,7 @@
 ---
-title: '03 - BuzzFeed: Content Distribution'
-description: Supercharge a small team with smart recommendation and automation to distribute content at scale
+title: 'BuzzFeed Content Distribution'
+headline: 'Turn a stretched team into a distribution engine with automation and ML recommendations'
+description: 'Help a small publishing team to scale their output.'
 publishDate: 'Jan 01 2020'
 isFeatured: true
 icon: 'tabler:hexagon-number-3-filled'
@@ -11,14 +12,12 @@ seo:
 
 ---
 
-**Product Manager → Senior Product Manager — 2018–2020**
+**Role:** Senior Product Manager, 2018–2020
 
 ---
-### From Manual Tool to Distribution Engine
+In 2017, BuzzFeed faced audience headwinds. Social platforms were sending less traffic to publishers. The publishing team was understaffed, even as the platforms it covered grew from 3 to 6. And publishing vertical video to TikTok and Instagram was too manual to scale, which put revenue at risk.
 
-In 2017, BuzzFeed faced audience and revenue headwinds. Social platforms were sending less traffic to publishers. The publishing team was understaffed, even as the platforms it covered grew from 3 to 6. And publishing vertical video to TikTok and Instagram was too manual to scale, which put revenue at risk.
-
-That's when I inherited PubHub, BuzzFeed's internal publishing tool. Our bet: let automation and models handle the repetitive work, so editors could focus on judgment calls, trends, and new formats. Over 18 months, we transformed it from a manual tool into an automated distribution system built on four pillars:
+That's when I inherited PubHub, BuzzFeed's internal publishing tool. **Our bet: let automation and models handle the repetitive work, so editors could focus on judgment calls, trends, and new formats.** Over 18 months, we transformed it from a manual tool into an automated distribution **system built on four pillars:**
 
 **1. Unified workflow** — One place to source, plan, schedule, and publish across social platforms. It replaced a mix of spreadsheets, dashboards, and platform tools.
 <figure class="case-study-image">
@@ -48,7 +47,7 @@ That's when I inherited PubHub, BuzzFeed's internal publishing tool. Our bet: le
 
 ### Impact
 
-The bet paid off. A smaller team reached more people and earned more revenue, across twice as many platforms.
+A smaller team reached more people and earned more revenue, across twice as many platforms.
 
 - 3.2B monthly content views at peak; $25M in platform video ad revenue
 - 500% YoY increase in affiliate revenue on Instagram and TikTok
@@ -74,8 +73,8 @@ The bet paid off. A smaller team reached more people and earned more revenue, ac
 
 **Control over full automation.** Every rule had a kill switch. Editors could override it for breaking news. That kept adoption high.
 
-**Focus over coverage.** We bet on shopping content on Instagram and TikTok first. That focus drove 500% affiliate growth.
+**Prioritize growth over long-standing requests.** The news team had been asking for Twitter for a long time, but shopping content on Instagram and TikTok was where the growth was. We supported that team first, promised Twitter next, and affiliate revenue grew 500%.
 
 ---
 
-**Team:** Max Woolf (Data Science), Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering)
+<p class="project-team-line">Team: Max Woolf (Data Science), Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering)</p>
