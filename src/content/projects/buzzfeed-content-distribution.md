@@ -73,7 +73,7 @@ A smaller team reached more people and earned more revenue, across twice as many
 
 **Control over full automation.** Every rule had a kill switch. Editors could override it for breaking news. That kept adoption high.
 
-**Prioritize growth over long-standing requests.** The news team had been asking for Twitter for a long time, but shopping content on Instagram and TikTok was where the growth was. We supported that team first, promised Twitter next, and affiliate revenue grew 500%.
+**Prioritize growth over long-standing requests.** We put Instagram and TikTok ahead of older platform requests because that's where affiliate revenue was growing.
 
 ---
 

@@ -221,9 +221,16 @@ html.dark .page-run-on-run {
         font-size: 1rem;
     }
 
+    .project-prose figcaption {
+        font-family: var(--font-roboto-mono);
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--text-main);
+    }
+
     .project-team-line {
         font-family: var(--font-roboto-mono);
-        font-size: 15px;
+        font-size: 14px;
         text-transform: uppercase;
     }
 
