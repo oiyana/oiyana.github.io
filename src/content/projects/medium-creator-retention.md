@@ -16,12 +16,17 @@ seo:
 
 ---
 
+Medium had 700K paid subscribers and 85–100M monthly readers in 2021. That value depended entirely on a healthy creator ecosystem. Without writers, there's no content, no readership, no community.
 
-Medium was losing writers. Algorithm changes made earnings unpredictable, bot accounts inflated follower counts, and creators had little control over their relationships with readers.
+The platform was at a difficult moment: writer attrition, an influx of low-quality content, and a broken monetization model. The leadership believed that giving writers direct relationships and the ability to distribute their stories to their email subscribers was the path forward. We could retain creators without abandoning the discovery advantages that made Medium valuable in the first place.
 
-I led the Creators team to rebuild that trust. **Our bet: help writers grow direct audience relationships without giving up Medium's discovery.** In under a year, we shipped four changes to help creators reach, retain, and earn from their readers.
+I brought in to led Creator team to reduce writer churns. **Medium's main thesis is to help writers grow direct audience relationships without giving up Medium's discovery.** In under a year, we shipped four changes to help creators reach, retain, and earn from their readers.
 
-**1. Email subscriptions** — Rebuilt a low-adoption feature with clearer calls to action, personalized landing pages, simpler opt-in, reader replies, and an audience dashboard. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)
+
+
+**1. Email subscriptions** — Improving email subscription produc was the top request. v1 had little adoption and awareness. Fewer than 10% of writers had enabled it, and 55% didn't know it existed. However, early signals showed promised on engagement: writer emails has ~40% open rates, 10 points above the weekly digest newsletter, and half of email subscribers read 3+ stories from a writer within 90 days. Engaged readers existed. We just needed to connect them to writers at scale. 
+
+Rebuilt a low-adoption feature with clearer calls to action, personalized landing pages, simpler opt-in, reader replies, and an audience dashboard. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)
 <figure class="case-study-image">
   <img src="/image-medium/medium-email-opt-in.png" alt="Email subscription opt-in" class="w-full" />
   <figcaption>Writer opt-in to automatically send each story to the subscriber's inbox with one click.</figcaption>
@@ -58,18 +63,20 @@ The email redesign turned an overlooked feature into a meaningful reader channel
 
 The referred membership program also created a new revenue stream for roughly 20% of writers.
 
+Post-launch surveys showed renewed trust and positive sentiment across the creator base.
+
 ---
 
 ### The Challenges
 
-**Trust had to be rebuilt in the product and beyond it.** I partnered with Design, Product Marketing, and Creator Relations to make the changes feel like a commitment to writers, not just another feature launch.
+**Rebuilding trust required more than shipping features.** I partnered with Design, Product Marketing, and Creator Relations to ensure messaging in product and external channel that the changes feel like a commitment to writers, not just another feature launch.
 
-**Two launches, one team.** Email subscriptions and referred membership were scheduled a week apart. I worked with Engineering to parallelize both tracks without compromising quality.
+**Two launches, one team, one timeline.** To drive the biggest impact, the email subscription improvement and the referred membership were scheduled to launch a week apart, on overlapping resources. I worked closely with engineering to parallelize both tracks and hit our timeline without compromising quality on either.
 
 ---
 
 ### The Trade-offs
 
-**Shipping over controlled learning.** With writers already leaving, we launched to everyone rather than delay for A/B tests. Pre/post analysis and direct feedback gave us directional signals, not causal certainty.
+**Shipping over controlled learning.** With writers already leaving, we launched to everyone rather than delay for A/B tests or holdout. In a normal timeline, we would have tested to measure causal impact. With writers churn, and shipping slowly had a real cost. Instead, we decided on pre/post analysis, user ressarch sessions, and feedback vai the Creator Relations team We got directional signals on creator sentiment, not quantitative certainty. Given the urgency, it was the right call.
 
-**Focused bets over feature parity.** We prioritized audience growth and monetization over publications and the creator dashboard. Both remained important, but needed more design and engineering investment to do well.
+**Feature parity over fixing what was already broken.** Shipping the core bets meant some important problems didn't get prioritized, such as publications and the creator dashboard that user have been asking to fix. Cosdiernging both tracks need significant design and engineering lift to do right. Given the timeline and resources, deprioritizing them was the tough but a right call give business ont the idea ptath.
