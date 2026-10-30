@@ -21,6 +21,7 @@ body {
     --border-main: #171717;
     --link-underline: #ead770;
     --link-underline-hover: #171717;
+    --brand-accent: #0348de;
 }
 
 html.dark {
@@ -30,6 +31,7 @@ html.dark {
     --border-main: #171717;
     --link-underline: #b4a34b;
     --link-underline-hover: #ffffff;
+    --brand-accent: #4574ff;
 }
 
 html,
@@ -212,6 +214,15 @@ html.dark .page-run-on-run {
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
     }
+
+    .project-prose {
+        font-size: 1rem;
+    }
+
+    .project-prose :where(h1, h2, h3, h4, h5, h6) {
+        font-size: 1.25rem;
+    }
+
     .prose ul,
     .prose ol {
         margin-top: 0em;
@@ -268,6 +279,49 @@ html.dark .page-run-on-run {
 
     @media (prefers-reduced-motion: reduce) {
         .wave-underline.is-waving::after {
+            animation: none;
+        }
+    }
+
+    .brand-lettering {
+        filter: brightness(0) saturate(100%) invert(22%) sepia(98%) saturate(2876%) hue-rotate(212deg) brightness(92%) contrast(104%);
+    }
+
+    html.dark .brand-lettering {
+        filter: invert(1);
+    }
+
+    .brand-section-label {
+        color: var(--brand-accent);
+    }
+
+    .brand-plus {
+        color: var(--brand-accent);
+        font-weight: 700;
+    }
+
+    .work-wave {
+        width: 4.5rem;
+        height: 12px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 12' width='32' height='12'%3E%3Cpath d='M0 6 C4 -1 12 -1 16 6 C20 13 28 13 32 6' fill='none' stroke='%230348de' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        background-position: 0 50%;
+        background-size: 32px 12px;
+        animation: work-wave-drift 20s linear infinite;
+    }
+
+    html.dark .work-wave {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 12' width='32' height='12'%3E%3Cpath d='M0 6 C4 -1 12 -1 16 6 C20 13 28 13 32 6' fill='none' stroke='%234574FF' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+    }
+
+    @keyframes work-wave-drift {
+        to {
+            background-position-x: 32px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .work-wave {
             animation: none;
         }
     }

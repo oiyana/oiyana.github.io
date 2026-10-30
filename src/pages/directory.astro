@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import WorkListItem from '../components/WorkListItem.astro';
+import { staticPageLinks } from '../data/static-pages';
+import GridLayout from '../layouts/GridLayout.astro';
+import { sortItemsByDateDesc } from '../utils/data-utils';
+
+const contentPages = (await getCollection('pages')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const projects = (await getCollection('projects')).filter(({ data }) => data.isFeatured).sort(sortItemsByDateDesc);
+
+type DirectoryLink = {
+    text: string;
+    href: string;
+    description?: string;
+};
+
+const sections: { title: string; links: DirectoryLink[] }[] = [
+    {
+        title: 'Site',
+        links: staticPageLinks
+    },
+    {
+        title: 'Pages',
+        links: contentPages.map((page) => ({
+            text: page.data.title,
+            href: `/${page.id}/`
+        }))
+    },
+    {
+        title: 'Projects',
+        links: projects.map((project) => ({
+            text: project.data.title,
+            href: `/projects/${project.id}/`,
+            description: project.data.description
+        }))
+    }
+];
+---
+
+<GridLayout
+    title="Directory"
+    description="Internal directory of static pages on this site."
+    sectionLabel="DIRECTORY"
+    sectionHref="/directory/"
+>
+    <div class="work-wave mt-12 mb-4 md:mt-16" aria-hidden="true"></div>
+    {
+        sections.map((section) => (
+            <section class="mb-10 sm:mb-14">
+                <h2 class="font-sans text-xl italic">{section.title}</h2>
+                <div>
+                    {section.links.map((link) => (
+                        <WorkListItem
+                            href={link.href}
+                            title={link.text}
+                            description={link.description ?? link.href}
+                            headingLevel="h3"
+                        />
+                    ))}
+                </div>
+            </section>
+        ))
+    }
+</GridLayout>

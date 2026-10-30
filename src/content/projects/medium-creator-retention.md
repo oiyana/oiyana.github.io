@@ -1,6 +1,6 @@
 ---
 
-title: 'Medium Writer Growth'
+title: 'Medium: Writer Growth'
 description: Help writers to grow audiences and earnings.
 publishDate: 'May 01 2022'
 isFeatured: true

@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+    title: string;
+    headingLevel?: 'h1' | 'h2' | 'h3';
+    class?: string;
+};
+
+const { title, headingLevel = 'h2', class: className } = Astro.props;
+const TitleTag = headingLevel;
+const brands = [
+    { name: 'NYT Games', icon: 'simple-icons:newyorktimes' },
+    { name: 'Medium', icon: 'simple-icons:medium' },
+    { name: 'BuzzFeed', icon: 'simple-icons:buzzfeed' }
+];
+const brand = brands.find(({ name }) => title.includes(name));
+const brandIndex = brand ? title.indexOf(brand.name) : -1;
+const beforeBrand = brandIndex >= 0 ? title.slice(0, brandIndex) : '';
+const afterBrand = brand && brandIndex >= 0 ? title.slice(brandIndex + brand.name.length) : '';
+---
+
+<TitleTag class:list={['font-sans leading-tight font-bold', className]}>
+    {
+        brand ? (
+            <>
+                {beforeBrand}
+                <Icon name={brand.icon} class="mr-[0.2em] inline-block h-[0.8em] w-[0.8em] align-[-0.08em]" aria-hidden="true" />
+                {brand.name}
+                {afterBrand}
+            </>
+        ) : (
+            title
+        )
+    }
+</TitleTag>

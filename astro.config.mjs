@@ -14,5 +14,11 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()]
     },
-    integrations: [mdx(), sitemap(), icon()]
+    integrations: [
+        mdx(),
+        sitemap({
+            filter: (page) => !page.includes('/directory')
+        }),
+        icon()
+    ]
 });
