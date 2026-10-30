@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GridLayout from '../layouts/GridLayout.astro';
+import ProjectTitle from '../components/ProjectTitle.astro';
 
 export async function getStaticPaths() {
     const pages = await getCollection('pages');
@@ -15,17 +17,49 @@ export async function getStaticPaths() {
 type Props = { page: CollectionEntry<'pages'> };
 
 const { page } = Astro.props;
-const { title, seo } = page.data;
+const { title, headline, seo } = page.data;
 const { Content } = await render(page);
+const isSideQuest = page.id === 'side-quest';
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description} image={seo?.image} showHeader={false} bodyClass={page.id === 'run-on-run' ? 'page-run-on-run' : undefined}>
-    <article class="mb-16 sm:mb-24">
-        <header class="mb-8">
-            <h1 class="font-sans text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight">{title}</h1>
-        </header>
-        <div class="prose max-w-none">
-            <Content />
-        </div>
-    </article>
-</BaseLayout>
+{
+    isSideQuest ? (
+        <GridLayout
+            title={seo?.title ?? title}
+            description={seo?.description}
+            image={seo?.image}
+            sectionLabel="SIDE QUEST"
+            sectionHref="/side-quest/"
+            bodyClass="page-side-quest"
+        >
+            <article class="mt-12 mb-16 sm:mb-24 md:mt-16">
+                <header class="mb-8 sm:mb-10">
+                    {title && (
+                        <ProjectTitle
+                            title={title}
+                            headingLevel="p"
+                            weight="normal"
+                            fontFamily="roboto-mono"
+                            class="mb-3 text-[14px] uppercase"
+                        />
+                    )}
+                    <h1 class="font-sans text-3xl leading-tight font-bold">{headline}</h1>
+                </header>
+                <div class="prose project-prose max-w-none">
+                    <Content />
+                </div>
+            </article>
+        </GridLayout>
+    ) : (
+        <BaseLayout title={seo?.title ?? title} description={seo?.description} image={seo?.image}>
+            <article class="mb-16 sm:mb-24">
+                <header class="mb-8">
+                    <h1 class="font-sans text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+                </header>
+                <div class="prose max-w-none">
+                    <Content />
+                </div>
+            </article>
+        </BaseLayout>
+    )
+}

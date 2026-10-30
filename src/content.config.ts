@@ -34,6 +34,7 @@ const pages = defineCollection({
     schema: ({ image }) =>
         z.object({
             title: z.string(),
+                headline: z.string().optional(),
             seo: seoSchema(image).optional()
         })
 });

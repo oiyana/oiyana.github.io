@@ -65,7 +65,7 @@ body,
     --border-color-main: var(--border-main);
 }
 
-@keyframes run-on-run-bg {
+@keyframes side-quest-bg {
     from {
         background-color: rgb(255, 255, 234);
     }
@@ -74,7 +74,7 @@ body,
     }
 }
 
-@keyframes run-on-run-bg-dark {
+@keyframes side-quest-bg-dark {
     from {
         background-color: rgb(19, 19, 0);
     }
@@ -83,12 +83,12 @@ body,
     }
 }
 
-.page-run-on-run {
-    animation: run-on-run-bg 1.2s ease-out forwards;
+.page-side-quest {
+    animation: side-quest-bg 1.2s ease-out forwards;
 }
 
-html.dark .page-run-on-run {
-    animation-name: run-on-run-bg-dark;
+html.dark .page-side-quest {
+    animation-name: side-quest-bg-dark;
 }
 
 @layer utilities {

@@ -10,9 +10,10 @@ import siteConfig from '../data/site-config';
 export type Props = HeadProps & {
     sectionLabel?: string;
     sectionHref?: string;
+    bodyClass?: string;
 };
 
-const { sectionLabel, sectionHref, ...head } = Astro.props;
+const { sectionLabel, sectionHref, bodyClass, ...head } = Astro.props;
 
 const pageLinks = [{ text: 'About', href: '/' }];
 const navLinks = [...pageLinks, ...(siteConfig.socialLinks ?? [])];
@@ -33,7 +34,7 @@ const hasBrand = Boolean(sectionLabel);
         <ClientRouter />
         <script is:inline src="/theme-toggle.js"></script>
     </head>
-    <body class="bg-main text-main">
+    <body class:list={['bg-main text-main', bodyClass]}>
         <div class:list={['grid-shell mx-auto w-full max-w-6xl px-5 md:px-10', { 'has-brand': hasBrand }]}>
             {
                 hasBrand && sectionLabel && (
