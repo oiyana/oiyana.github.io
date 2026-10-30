@@ -47,9 +47,8 @@ That's when I inherited PubHub, BuzzFeed's internal publishing tool. **Our bet: 
 
 ### Impact
 
-A smaller team reached more people and earned more revenue, across twice as many platforms.
-
-- 3.2B monthly content views at peak; $25M in platform video ad revenue
+A smaller team drove more traffic and earned more revenue, across twice as many platforms.
+- 3B+ of monthly views at peak. Eight-figure annual revenue from platform video and affiliate. Fewer people, twice the platforms.
 - 500% YoY increase in affiliate revenue on Instagram and TikTok
 - 300% YoY increase in pageviews from evergreen content
 - 65% of weekly publishing automated
@@ -77,4 +76,4 @@ A smaller team reached more people and earned more revenue, across twice as many
 
 ---
 
-<p class="project-team-line">Team: Max Woolf (Data Science), Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering)</p>
+<p class="project-team-line">Shoutout: Max Woolf (Data Science), Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering), Swara Kantaria (PM Lead)</p>

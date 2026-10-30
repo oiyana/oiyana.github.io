@@ -87,4 +87,4 @@ Post-launch surveys showed renewed trust and positive sentiment across the creat
 
 ---
 
-<p class="project-team-line">Team: Abby Ankler, Ashley Simon, Scott Lamb, Christopher Koenig, Nick Hong, Dan Yoo, Helena Zhang, Eugenia Dellapenna, Justin Arn, Ellie Budzinski, Amirtha Raman, Ritwik Dey, and many more</p>
+<p class="project-team-line">Shoutout: Abby Ankler, Ashley Simon, Scott Lamb, Christopher Koenig, Nick Hong, Dan Yoo, Helena Zhang, Eugenia Dellapenna, Justin Arn, Ellie Budzinski, Amirtha Raman, Ritwik Dey, Ev Williams, and many more</p>

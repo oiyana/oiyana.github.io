@@ -15,6 +15,10 @@ body {
     line-height: 1.9;
 }
 
+body.bg-main {
+    background-color: var(--bg-main);
+}
+
 :root {
     --text-main: #171717;
     --bg-main: rgb(255, 255, 234);
@@ -27,7 +31,7 @@ body {
 
 html.dark {
     --text-main: #ffffff;
-    --bg-main: rgb(19, 19, 0);
+    --bg-main: #2a3548;
     --bg-muted: #eae9e1;
     --border-main: #171717;
     --link-underline: #b4a34b;
@@ -342,6 +346,7 @@ html.dark .page-side-quest {
         .wave-underline.is-waving::after {
             animation: none;
         }
+
     }
 
     .brand-lettering {

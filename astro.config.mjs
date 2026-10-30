@@ -17,7 +17,7 @@ export default defineConfig({
     integrations: [
         mdx(),
         sitemap({
-            filter: (page) => !page.includes('/directory')
+            filter: (page) => !page.includes('/directory') && !page.includes('/projects')
         }),
         icon()
     ]
