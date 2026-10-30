@@ -1,0 +1,19 @@
+---
+import letteringUrl from '../assets/images/examples/jac-yue-lettering-2.svg?url';
+
+type Props = {
+    label: string;
+    href: string;
+};
+
+const { label, href } = Astro.props;
+---
+
+<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+    <a href="/" class="shrink-0 self-center" aria-label="Jac Yue">
+        <img src={letteringUrl} alt="" class="brand-lettering h-8 w-auto sm:h-11" />
+    </a>
+    <a href={href} class="brand-section-label font-sans text-xl leading-none font-normal italic sm:text-4xl">
+        — {label}
+    </a>
+</div>

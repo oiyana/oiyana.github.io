@@ -1,19 +1,24 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import BrandHeader from '../components/BrandHeader.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import NavLink from '../components/NavLink.astro';
 import siteConfig from '../data/site-config';
 
-export type Props = HeadProps;
+export type Props = HeadProps & {
+    sectionLabel?: string;
+    sectionHref?: string;
+};
 
-const head = Astro.props;
+const { sectionLabel, sectionHref, ...head } = Astro.props;
 
 const pageLinks = [{ text: 'About', href: '/' }];
 const navLinks = [...pageLinks, ...(siteConfig.socialLinks ?? [])];
 
 const linkClass = 'font-sans text-base';
+const hasBrand = Boolean(sectionLabel);
 ---
 
 <!doctype html>
@@ -29,9 +34,19 @@ const linkClass = 'font-sans text-base';
         <script is:inline src="/theme-toggle.js"></script>
     </head>
     <body class="bg-main text-main">
-        <div class="grid-shell mx-auto w-full max-w-6xl px-5 md:px-10">
+        <div class:list={['grid-shell mx-auto w-full max-w-6xl px-5 md:px-10', { 'has-brand': hasBrand }]}>
+            {
+                hasBrand && sectionLabel && (
+                    <div class="grid-brand flex items-start justify-between gap-4 pt-6 md:pt-14">
+                        <BrandHeader label={sectionLabel} href={sectionHref ?? '/'} />
+                        <div class="md:hidden">
+                            <ThemeToggle />
+                        </div>
+                    </div>
+                )
+            }
             <!-- Mobile nav: full width, left-aligned, top of page -->
-            <nav class="grid-nav-mobile flex items-center justify-between py-6 md:hidden" aria-label="Primary">
+            <nav class:list={['grid-nav-mobile flex items-center justify-between md:hidden', hasBrand ? 'py-3' : 'py-6']} aria-label="Primary">
                 <ul class="flex flex-wrap gap-x-6 gap-y-2">
                     {navLinks.map((link) => (
                         <li>
@@ -39,7 +54,7 @@ const linkClass = 'font-sans text-base';
                         </li>
                     ))}
                 </ul>
-                <ThemeToggle />
+                {!hasBrand && <ThemeToggle />}
             </nav>
 
             <!-- Main content: full width on mobile, first 8 of 12 columns on tablet/desktop -->
@@ -97,6 +112,27 @@ const linkClass = 'font-sans text-base';
         .grid-footer {
             grid-column: 1 / span 12;
             grid-row: 2;
+        }
+
+        .grid-shell.has-brand .grid-brand {
+            grid-column: 1 / span 8;
+            grid-row: 1;
+        }
+
+        .grid-shell.has-brand .grid-main {
+            grid-column: 1 / span 8;
+            grid-row: 2;
+            padding-top: 0.5rem;
+        }
+
+        .grid-shell.has-brand .grid-aside {
+            grid-column: 9 / span 4;
+            grid-row: 1 / span 2;
+        }
+
+        .grid-shell.has-brand .grid-footer {
+            grid-column: 1 / span 12;
+            grid-row: 3;
         }
     }
 </style>

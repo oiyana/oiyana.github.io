@@ -1,6 +1,6 @@
 ---
 
-title: 'Metagame Engagement System'
+title: 'NYT Games: Engagement System'
 description: Transform a portfolio of free-to-play games into a long-term player values.
 publishDate: 'Jan 01 2025'
 isFeatured: true

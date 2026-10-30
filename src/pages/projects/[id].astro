@@ -1,69 +1,41 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import ProjectPreview from '../../components/ProjectPreview.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectTitle from '../../components/ProjectTitle.astro';
+import GridLayout from '../../layouts/GridLayout.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 export async function getStaticPaths() {
     const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-    const featuredProjects = projects.filter(({ data }) => data.isFeatured);
-
-    return projects.map((project) => {
-        const featuredIndex = featuredProjects.findIndex((p) => p.id === project.id);
-
-        // If the project is not featured, hide navigation to/from it.
-        if (featuredIndex === -1) {
-            return {
-                params: { id: project.id },
-                props: {
-                    project,
-                    prevProject: null,
-                    nextProject: null
-                }
-            };
-        }
-
-        const projectCount = featuredProjects.length;
-
-        return {
-            params: { id: project.id },
-            props: {
-                project,
-                prevProject: featuredIndex + 1 !== projectCount ? featuredProjects[featuredIndex + 1] : null,
-                nextProject: featuredIndex !== 0 ? featuredProjects[featuredIndex - 1] : null
-            }
-        };
-    });
+    return projects.map((project) => ({
+        params: { id: project.id },
+        props: { project }
+    }));
 }
 
 type Props = {
     project: CollectionEntry<'projects'>;
-    prevProject: CollectionEntry<'projects'>;
-    nextProject: CollectionEntry<'projects'>;
 };
 
-const { project, prevProject, nextProject } = Astro.props;
+const { project } = Astro.props;
 const { title, description, seo } = project.data;
 const { Content } = await render(project);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
-    <article class="mb-16 sm:mb-24">
-        <header class="mb-6 sm:mb-10">
-            <h1 class="font-sans text-2xl leading-tight font-bold sm:text-4xl sm:leading-tight">{title}</h1>
-            {description && <p class="mt-4 text-lg font-sans">{description}</p>}
+<GridLayout
+    title={seo?.title ?? title}
+    description={seo?.description ?? description}
+    image={seo?.image}
+    pageType="article"
+    sectionLabel="WORK"
+    sectionHref="/projects/"
+>
+    <article class="mt-12 mb-16 sm:mb-24 md:mt-16">
+        <header class="mb-8 sm:mb-10">
+            <ProjectTitle title={title} headingLevel="h1" class="text-3xl" />
+            {description && <p class="mt-3 font-sans text-base leading-relaxed">{description}</p>}
         </header>
-        <div class="prose max-w-none">
+        <div class="prose project-prose max-w-none">
             <Content />
         </div>
     </article>
-    {
-        (prevProject || nextProject) && (
-            <div class="my-16 sm:my-24">
-                <h2 class="mb-12 font-sans text-xl sm:mb-16 sm:text-2xl">View Next</h2>
-                {nextProject && <ProjectPreview project={nextProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
-                {prevProject && <ProjectPreview project={prevProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
-            </div>
-        )
-    }
-</BaseLayout>
+</GridLayout>

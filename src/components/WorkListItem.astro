@@ -1,0 +1,22 @@
+---
+import ProjectTitle from './ProjectTitle.astro';
+
+type Props = {
+    href: string;
+    title: string;
+    description?: string;
+    headingLevel?: 'h2' | 'h3';
+    class?: string;
+};
+
+const { href, title, description, headingLevel = 'h2', class: className } = Astro.props;
+---
+
+<a class:list={['group block py-5 sm:py-7', className]} href={href}>
+    <ProjectTitle title={title} headingLevel={headingLevel} class="text-xl" />
+    {
+        description && (
+            <p class="mt-1.5 max-w-xl font-sans text-base leading-relaxed font-normal">{description}</p>
+        )
+    }
+</a>
