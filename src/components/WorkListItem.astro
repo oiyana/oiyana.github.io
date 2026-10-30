@@ -2,21 +2,23 @@
 import ProjectTitle from './ProjectTitle.astro';
 
 type Props = {
-    href: string;
+    href?: string;
     title: string;
     description?: string;
     headingLevel?: 'h2' | 'h3';
+    muted?: boolean;
     class?: string;
 };
 
-const { href, title, description, headingLevel = 'h2', class: className } = Astro.props;
+const { href, title, description, headingLevel = 'h2', muted = false, class: className } = Astro.props;
+const Tag = href ? 'a' : 'div';
 ---
 
-<a class:list={['group block py-5 sm:py-7', className]} href={href}>
-    <ProjectTitle title={title} headingLevel={headingLevel} class="text-xl" />
+<Tag class:list={['group block py-5 sm:py-7', className]} href={href}>
+    <ProjectTitle title={title} headingLevel={headingLevel} class={muted ? 'text-xl text-gray-400' : 'text-xl'} />
     {
         description && (
             <p class="mt-1.5 max-w-xl font-sans text-base leading-relaxed font-normal">{description}</p>
         )
     }
-</a>
+</Tag>

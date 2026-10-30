@@ -243,12 +243,22 @@ html.dark .page-side-quest {
 
     .project-image-viewer {
         position: fixed;
-        max-width: min(96vw, 1280px);
-        max-height: 96dvh;
-        padding: 3rem 1rem 1rem;
+        inset: 0;
+        width: 100vw;
+        height: 100dvh;
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        padding: 0;
         border: 0;
-        background: var(--bg-main);
+        background: transparent;
         color: var(--text-main);
+    }
+
+    .project-image-viewer[open] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .project-image-viewer::backdrop {
@@ -266,9 +276,9 @@ html.dark .page-side-quest {
     }
 
     .project-image-viewer__close {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
         border: 1px solid currentColor;
         background: var(--bg-main);
         color: var(--text-main);
@@ -276,6 +286,23 @@ html.dark .page-side-quest {
         font-family: var(--font-sans);
         font-size: 0.875rem;
         cursor: pointer;
+    }
+
+    .project-prose hr {
+        border-color: transparent;
+    }
+
+    .project-back-link {
+        text-decoration: none;
+    }
+
+    .project-back-link__arrow {
+        width: 0.8em;
+        height: 0.8em;
+        flex: 0 0 0.8em;
+        color: var(--brand-accent);
+        overflow: visible;
+        transform: scaleX(-1);
     }
 
     .project-team-line {

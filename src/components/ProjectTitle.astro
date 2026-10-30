@@ -6,10 +6,11 @@ type Props = {
     headingLevel?: 'h1' | 'h2' | 'h3' | 'p';
     weight?: 'normal' | 'bold';
     fontFamily?: 'sans' | 'mono' | 'roboto-mono';
+    iconOnly?: boolean;
     class?: string;
 };
 
-const { title, headingLevel = 'h2', weight = 'bold', fontFamily = 'sans', class: className } = Astro.props;
+const { title, headingLevel = 'h2', weight = 'bold', fontFamily = 'sans', iconOnly = false, class: className } = Astro.props;
 const TitleTag = headingLevel;
 const brands = [
     { name: 'NYT Games', icon: 'simple-icons:newyorktimes' },
@@ -31,7 +32,12 @@ const afterBrand = brand && brandIndex >= 0 ? title.slice(brandIndex + brand.nam
     ]}
 >
     {
-        brand ? (
+        brand && iconOnly ? (
+            <>
+                <Icon name={brand.icon} class="inline-block h-[1.25em] w-[1.25em]" aria-hidden="true" />
+                <span class="sr-only">{title}</span>
+            </>
+        ) : brand ? (
             <>
                 {beforeBrand}
                 <Icon name={brand.icon} class="mr-[0.2em] inline-block h-[0.8em] w-[0.8em] align-[-0.08em]" aria-hidden="true" />

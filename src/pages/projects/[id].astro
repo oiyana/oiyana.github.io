@@ -5,7 +5,9 @@ import GridLayout from '../../layouts/GridLayout.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 export async function getStaticPaths() {
-    const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+    const projects = (await getCollection('projects'))
+        .filter(({ data }) => !data.comingSoon)
+        .sort(sortItemsByDateDesc);
     return projects.map((project) => ({
         params: { id: project.id },
         props: { project }
@@ -28,6 +30,7 @@ const { Content } = await render(project);
     pageType="article"
     sectionLabel="WORK"
     sectionHref="/projects/"
+    showFooter={false}
 >
     <article class="mt-12 mb-16 sm:mb-24 md:mt-16">
         <header class="mb-8 sm:mb-10">
@@ -39,6 +42,7 @@ const { Content } = await render(project);
                             headingLevel="p"
                             weight="normal"
                             fontFamily="roboto-mono"
+                            iconOnly
                             class="mb-3 text-[14px] uppercase"
                         />
                         <h1 class="font-sans text-3xl leading-tight font-bold">{headline}</h1>
@@ -51,6 +55,18 @@ const { Content } = await render(project);
         <div class="prose project-prose max-w-none">
             <Content />
         </div>
+        <a href="/projects/" class="project-back-link mt-12 inline-flex items-center gap-2 font-sans text-base font-semibold">
+            <svg class="project-back-link__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path
+                    d="M3 8h8.2M8.2 4.2 12 8l-3.8 3.8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+            <span class="wave-underline">Back to Work</span>
+        </a>
     </article>
     <dialog class="project-image-viewer" data-project-image-viewer aria-label="Full-size project image">
         <button type="button" class="project-image-viewer__close" data-project-image-close>Close</button>

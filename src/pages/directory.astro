@@ -7,7 +7,7 @@ import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const contentPages = (await getCollection('pages')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-const projects = (await getCollection('projects')).filter(({ data }) => data.isFeatured).sort(sortItemsByDateDesc);
+const projects = (await getCollection('projects')).filter(({ data }) => data.isFeatured && !data.comingSoon).sort(sortItemsByDateDesc);
 
 type DirectoryLink = {
     text: string;

@@ -30,9 +30,10 @@ const portfolio = page.data;
     <div>
         {portfolio.map((project) => (
             <WorkListItem
-                href={`/projects/${project.id}/`}
+                href={project.data.comingSoon ? undefined : `/projects/${project.id}/`}
                 title={project.data.title}
-                description={project.data.description}
+                description={project.data.comingSoon ? 'Coming Soon' : project.data.description}
+                muted={project.data.comingSoon}
             />
         ))}
     </div>

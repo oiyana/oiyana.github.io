@@ -1,6 +1,6 @@
 ---
-title: 'BuzzFeed Content Distribution'
-headline: 'Turn a stretched team into a distribution engine with automation and ML recommendations'
+title: 'BuzzFeed'
+headline: 'BuzzFeed: Turn a nimble team into a distribution engine with automation and ML Models.'
 description: 'Help a small publishing team to scale their output.'
 publishDate: 'Jan 01 2020'
 isFeatured: true
@@ -12,7 +12,7 @@ seo:
 
 ---
 
-**Role:** Senior Product Manager, 2018–2020
+**Role:** Senior Product Manager 2018–2020
 
 ---
 In 2017, BuzzFeed faced audience headwinds. Social platforms were sending less traffic to publishers. The publishing team was understaffed, even as the platforms it covered grew from 3 to 6. And publishing vertical video to TikTok and Instagram was too manual to scale, which put revenue at risk.

@@ -1,7 +1,7 @@
 ---
 
-title: 'Medium: Writer Growth'
-headline: 'Give writers more control to build their own audiences and a stronger path to earnings'
+title: 'Medium'
+headline: 'Medium: Give writers more control to build direct audiences and a new path to earnings'
 description: Help writers to grow audiences and earnings.
 publishDate: 'May 01 2022'
 isFeatured: true
@@ -12,7 +12,7 @@ seo:
     alt: Medium creator tools and email subscriptions
 
 ---
-**Role:** Group Product Manager, Creators, 2021-2022
+**Role:** Group Product Manager 2021-2022
 
 ---
 
