@@ -228,6 +228,52 @@ html.dark .page-run-on-run {
         color: var(--text-main);
     }
 
+    .project-prose img {
+        cursor: zoom-in;
+    }
+
+    .project-prose img:focus-visible {
+        outline: 2px solid var(--brand-accent);
+        outline-offset: 3px;
+    }
+
+    .project-image-viewer {
+        position: fixed;
+        max-width: min(96vw, 1280px);
+        max-height: 96dvh;
+        padding: 3rem 1rem 1rem;
+        border: 0;
+        background: var(--bg-main);
+        color: var(--text-main);
+    }
+
+    .project-image-viewer::backdrop {
+        background: rgb(0 0 0 / 0.88);
+    }
+
+    .project-image-viewer > img {
+        display: block;
+        max-width: 92vw;
+        max-height: 84dvh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        cursor: zoom-out;
+    }
+
+    .project-image-viewer__close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        border: 1px solid currentColor;
+        background: var(--bg-main);
+        color: var(--text-main);
+        padding: 0.25rem 0.5rem;
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        cursor: pointer;
+    }
+
     .project-team-line {
         font-family: var(--font-roboto-mono);
         font-size: 14px;

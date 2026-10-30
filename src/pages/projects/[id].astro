@@ -52,4 +52,52 @@ const { Content } = await render(project);
             <Content />
         </div>
     </article>
+    <dialog class="project-image-viewer" data-project-image-viewer aria-label="Full-size project image">
+        <button type="button" class="project-image-viewer__close" data-project-image-close>Close</button>
+        <img data-project-image-full alt="" />
+    </dialog>
 </GridLayout>
+
+<script>
+    const initializeProjectImageViewer = () => {
+        const dialog = document.querySelector<HTMLDialogElement>('[data-project-image-viewer]');
+        if (!dialog || dialog.dataset.initialized) return;
+
+        const fullImage = dialog.querySelector<HTMLImageElement>('[data-project-image-full]');
+        const closeButton = dialog.querySelector<HTMLButtonElement>('[data-project-image-close]');
+        if (!fullImage || !closeButton) return;
+
+        dialog.dataset.initialized = 'true';
+
+        document.querySelectorAll<HTMLImageElement>('.project-prose img').forEach((image) => {
+            if (image.dataset.viewerInitialized) return;
+
+            image.dataset.viewerInitialized = 'true';
+            image.tabIndex = 0;
+            image.setAttribute('role', 'button');
+            image.setAttribute('aria-label', `View full-size image: ${image.alt || 'Project image'}`);
+
+            const openImage = () => {
+                fullImage.src = image.currentSrc || image.src;
+                fullImage.alt = image.alt;
+                dialog.showModal();
+            };
+
+            image.addEventListener('click', openImage);
+            image.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openImage();
+                }
+            });
+        });
+
+        closeButton.addEventListener('click', () => dialog.close());
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog || event.target === fullImage) dialog.close();
+        });
+    };
+
+    initializeProjectImageViewer();
+    document.addEventListener('astro:page-load', initializeProjectImageViewer);
+</script>
