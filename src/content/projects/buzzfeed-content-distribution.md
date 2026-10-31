@@ -1,6 +1,6 @@
 ---
 title: 'BuzzFeed'
-headline: 'BuzzFeed: Turn a nimble team into a distribution engine with automation and ML Models.'
+headline: 'BuzzFeed: Turn a small team into a distribution engine with automation and ML Models.'
 description: 'Help a small publishing team to scale their output.'
 publishDate: 'Jan 01 2020'
 isFeatured: true
@@ -21,25 +21,33 @@ That's when I inherited PubHub, BuzzFeed's internal publishing tool. **Our bet: 
 
 **1. Unified workflow** — One place to source, plan, schedule, and publish across social platforms. It replaced a mix of spreadsheets, dashboards, and platform tools.
 <figure class="case-study-image">
-  <img src="/image-buzzfeed/buzzfeed-pubhub.png" alt="Publishing hub — unified workflow" class="w-full" />
+
+![Publishing hub — unified workflow](../../assets/images/buzzfeed-pubhub.png)
+
   <figcaption>Publishing hub</figcaption>
 </figure>
 
 **2. Rules-based automation** — Editors set rules, like "new dessert videos go to lifestyle channels." They could adjust or override them without engineers. The system handled 2,600 of 4,000 weekly assets.
 <figure class="case-study-image">
-  <img src="/image-buzzfeed/buzzfeed-auto.png" alt="Automation workflow" class="w-full" />
+
+![Automation workflow](../../assets/images/buzzfeed-auto.png)
+
   <figcaption>Automation workflow — runtime controls and overrides</figcaption>
 </figure>
 
 **3. Relevancy and evergreen recommendations** — Two models: one matched content to a channel's audience, the other found old content worth sharing again. They powered 24 bots, each tuned to a channel and goal.
 <figure class="case-study-image">
-  <img src="/image-buzzfeed/buzzfeed-recs.png" alt="Recommendation queue" class="w-full" />
+
+![Recommendation queue](../../assets/images/buzzfeed-recs.png)
+
   <figcaption>Model-driven recommendation queue</figcaption>
 </figure>
 
 **4. Link-in-bio automation for shopping** — Shopping videos on Instagram and TikTok flowed automatically to a branded link-in-bio page. We later added ads to top pages for extra revenue.
 <figure class="case-study-image">
-  <img src="/image-buzzfeed/buzzfeed-bio.png" alt="Link-in-bio automation for shopping content" class="w-full" />
+
+![Link-in-bio automation for shopping content](../../assets/images/buzzfeed-bio.png)
+
   <figcaption>Link-in-bio automation — shopping content CMS for Instagram and TikTok</figcaption>
 </figure>
 

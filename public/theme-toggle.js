@@ -1,4 +1,7 @@
 (function () {
+    if (window.__themeToggleReady) return;
+    window.__themeToggleReady = true;
+
     const root = document.documentElement;
 
     function getStoredTheme() {
@@ -32,27 +35,19 @@
         root.classList.toggle('dark', isDark);
     }
 
-    function setupThemeToggle() {
-        const buttons = document.querySelectorAll('[data-theme-toggle]');
-
-        buttons.forEach((button) => {
-            button.onclick = () => {
-                const isDark = root.classList.toggle('dark');
-                const theme = isDark ? 'dark' : 'light';
-                storeTheme(theme);
-            };
-        });
-    }
+    // Delegated so the toggle works on first load and after client-side navigation
+    document.addEventListener('click', (event) => {
+        const button = event.target instanceof Element ? event.target.closest('[data-theme-toggle]') : null;
+        if (!button) return;
+        const isDark = root.classList.toggle('dark');
+        storeTheme(isDark ? 'dark' : 'light');
+    });
 
     // Set initial theme
     applyTheme(getActiveTheme());
 
-    // Attach toggle listener on first load
-    document.addEventListener('astro:page-load', setupThemeToggle);
-
     // Re-apply theme after navigation
     document.addEventListener('astro:after-swap', () => {
         applyTheme(getActiveTheme());
-        setupThemeToggle();
     });
 })();

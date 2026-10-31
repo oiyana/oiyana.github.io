@@ -236,6 +236,17 @@ html.dark .page-side-quest {
         cursor: zoom-in;
     }
 
+    .project-image-pair {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .project-image-pair img {
+        margin: 0;
+    }
+
     .project-prose img:focus-visible {
         outline: 2px solid var(--brand-accent);
         outline-offset: 3px;

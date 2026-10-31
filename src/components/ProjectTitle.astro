@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import mediumLogoUrl from '../assets/images/medium.svg?url';
 
 type Props = {
     title: string;
@@ -12,9 +13,9 @@ type Props = {
 
 const { title, headingLevel = 'h2', weight = 'bold', fontFamily = 'sans', iconOnly = false, class: className } = Astro.props;
 const TitleTag = headingLevel;
-const brands = [
+const brands: { name: string; icon?: string; image?: string }[] = [
     { name: 'NYT Games', icon: 'simple-icons:newyorktimes' },
-    { name: 'Medium', icon: 'simple-icons:medium' },
+    { name: 'Medium', image: mediumLogoUrl },
     { name: 'BuzzFeed', icon: 'simple-icons:buzzfeed' }
 ];
 const brand = brands.find(({ name }) => title.includes(name));
@@ -34,13 +35,21 @@ const afterBrand = brand && brandIndex >= 0 ? title.slice(brandIndex + brand.nam
     {
         brand && iconOnly ? (
             <>
-                <Icon name={brand.icon} class="inline-block h-[1.25em] w-[1.25em]" aria-hidden="true" />
+                {brand.image ? (
+                    <img src={brand.image} alt="" class="inline-block h-[1.25em] w-auto dark:invert" aria-hidden="true" />
+                ) : (
+                    <Icon name={brand.icon!} class="inline-block h-[1.25em] w-[1.25em]" aria-hidden="true" />
+                )}
                 <span class="sr-only">{title}</span>
             </>
         ) : brand ? (
             <>
                 {beforeBrand}
-                <Icon name={brand.icon} class="mr-[0.2em] inline-block h-[0.8em] w-[0.8em] align-[-0.08em]" aria-hidden="true" />
+                {brand.image ? (
+                    <img src={brand.image} alt="" class="mr-[0.2em] inline-block h-[0.8em] w-auto align-[-0.08em] dark:invert" aria-hidden="true" />
+                ) : (
+                    <Icon name={brand.icon!} class="mr-[0.2em] inline-block h-[0.8em] w-[0.8em] align-[-0.08em]" aria-hidden="true" />
+                )}
                 {brand.name}
                 {afterBrand}
             </>
