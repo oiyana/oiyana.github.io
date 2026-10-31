@@ -40,7 +40,7 @@ I led design from concept through UI/UX, prototyping, and play-testing to launch
 
 ### A spectrum of formats
 
-The games fell on a spectrum. On one end were **handcrafted games**: one-off builds with custom art and mechanics made around a single idea. On the other were **reskinnable formats**: a proven mechanic that editors could fill with new content using an editor. Most of what scaled lived near that end.
+On one end were **handcrafted games**: one-off builds with custom art and mechanics made around a single idea. On the other were **reskinnable formats**: a proven mechanic that editors could fill with new content using an editor. Most of what scaled lived near that end.
 
 
 **1. Memory Game** · *Handcrafted* — In "How Long Would You Last as a Barista?" a customer reads off a six-part coffee order. The player taps OK once they've memorized it, then rebuilds the order by tapping ingredients in the right sequence. (390k views)
@@ -73,7 +73,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ---
 
-**4. 20-Question** · *Handcrafted* — The player thinks of an emoji. "Emoji Oracle" asks a series of yes/no questions, narrowing the options with each answer until it reveals its guess. Based on the classic [20-questions](https://en.wikipedia.org/wiki/Twenty_questions) game. (50K views)
+**4. 20-Question** · *Handcrafted* — The player thinks of an emoji. "Emoji Oracle" asks a series of yes/no questions, narrowing the options with each answer until it reveals its guess. Based on the classic 20-questions game. (50 views)
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-emoji-oracle.gif" alt="Emoji Oracle yes/no guessing game" loading="lazy" />
@@ -83,7 +83,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ---
 
-**5. Text Generator** · *Reskinnable* — The player enters their name (and sometimes picks a favorite character) and gets a character-inspired name to share. Swapping the word bank and art made a new generator for any TV show: "Game of Thrones Name Generator" (250k views), "Orange Is the New Black Tattoo Generator" (180K views).
+**5. Text Generator** · *Reskinnable* — The player enters their name (and sometimes picks a favorite character) and gets a character-inspired name to share. Swapping the word bank and art made a new generator for any TV show: "Game of Thrones Name Generator" (250k views), "Orange Is the New Black Tattoo Generator" (180k views).
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-got.gif" alt="Game of Thrones Name Generator" loading="lazy" />
@@ -105,7 +105,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ### Learning
 
-- **Familiar content beats clever mechanics.** Pop culture trivia (930K) outperformed a handcrafted 20-questions game (50K) almost 20 to 1. We doubled down on the formats that worked and dropped the ones that didn't.
+- **Familiar content beats clever mechanics.** Pop culture trivia outperformed a handcrafted 20-questions game. We doubled down on the formats that worked and dropped the ones that didn't.
 - **Design the share, not just the game.** Custom result images and messaging turned every play into a post.
 - **Put the tools in editors' hands.** A game-making tool turned editors from requesters into creators, so new games no longer waited on engineering.
 - **Autonomy has a cost.** Building our own deploys, CMS, and QA let us move fast but slowed us later. Next time I'd plug into shared infrastructure sooner.
