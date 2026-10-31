@@ -14,8 +14,6 @@ seo:
 ---
 **Role:** Group Product Manager 2021-2022
 
----
-
 Medium's value starts with writers. Their stories bring readers to the platform, and a healthy creator-reader ecosystem gives both a reason to stay. When writers can connect with readers and build direct relationships, the whole community grows stronger.
 
 When I joined, Medium was losing writers. Low-quality content was crowding the platform, and its monetization model offered creators no reliable path to earnings. The CEO backed a creator-growth strategy: improve writer newsletters, create new ways to earn, help readers discover story collections, update writer profiles, and remove spam followers. The goal was to **restore trust and retain creators without sacrificing the discovery that made Medium valuable.** In under a year, we shipped changes to help creators reach, retain, and earn from their readers.

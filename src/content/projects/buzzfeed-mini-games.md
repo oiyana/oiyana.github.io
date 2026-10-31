@@ -14,8 +14,6 @@ seo:
 
 **Role:** Design Lead 2013–2015
 
----
-
 <figure class="case-study-image">
   <img src="/image-buzzfeed-games/bfgames-hero.png" alt="Barista, Sleepy Sloth Sprint, and Emoji Oracle games on mobile" class="w-full" />
 </figure>
@@ -44,11 +42,8 @@ I led design from concept through UI/UX, prototyping, and play-testing to launch
 
 The games fell on a spectrum. On one end were **handcrafted games**: one-off builds with custom art and mechanics made around a single idea. On the other were **reskinnable formats**: a proven mechanic that editors could fill with new content using an editor. Most of what scaled lived near that end.
 
----
 
-### Highlights
-
-**1. Memory Game** · *Handcrafted* — In "How Long Would You Last as a Barista?" a customer reads off a six-part coffee order. The player taps OK once they've memorized it, then rebuilds the order by tapping ingredients in the right sequence. (390K views)
+**1. Memory Game** · *Handcrafted* — In "How Long Would You Last as a Barista?" a customer reads off a six-part coffee order. The player taps OK once they've memorized it, then rebuilds the order by tapping ingredients in the right sequence. (390k views)
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-barista.gif" alt="How Long Would You Last as a Barista? memory game" loading="lazy" />
@@ -58,7 +53,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ---
 
-**2. Mix-and-match** · *In between* — The character is split into top and bottom halves. The player swipes each half independently to combine outfits (arrow keys on desktop), or hits shuffle to randomize, then pins the look. In "Can You Pick A Hipster Outfit For Snow White," she's a New Yorker living in Brooklyn. (570K views)
+**2. Mix-and-match** · *In between* — The character is split into top and bottom halves. The player swipes each half independently to combine outfits (arrow keys on desktop), or hits shuffle to randomize, then pins the look. In "Can You Pick A Hipster Outfit For Snow White," she's a New Yorker living in Brooklyn. (570k views)
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-snow-white.gif" alt="Snow White mix-and-match outfit game" loading="lazy" />
@@ -68,7 +63,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ---
 
-**3. Type-in trivia** · *Reskinnable* — The player sees a visual clue, like a movie spelled out in emoji, types the answer, and hits Guess. Built as an iframe embed with a CMS, so editors could make a new game by uploading images and entering answers. (930K views)
+**3. Type-in trivia** · *Reskinnable* — The player sees a visual clue, like a movie spelled out in emoji, types the answer, and hits Guess. Built as an iframe embed with a CMS, so editors could make a new game by uploading images and entering answers. (930k views)
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-trivia.gif" alt="Name This Movie emoji trivia game" loading="lazy" />
@@ -88,7 +83,7 @@ The games fell on a spectrum. On one end were **handcrafted games**: one-off bui
 
 ---
 
-**5. Text Generator** · *Reskinnable* — The player enters their name (and sometimes picks a favorite character) and gets a character-inspired name to share. Swapping the word bank and art made a new generator for any TV show: "Game of Thrones Name Generator" (250K views), "Orange Is the New Black Tattoo Generator" (180K views).
+**5. Text Generator** · *Reskinnable* — The player enters their name (and sometimes picks a favorite character) and gets a character-inspired name to share. Swapping the word bank and art made a new generator for any TV show: "Game of Thrones Name Generator" (250k views), "Orange Is the New Black Tattoo Generator" (180K views).
 <figure class="case-study-image">
   <div class="project-image-pair">
     <img src="/image-buzzfeed-games/bfgames-got.gif" alt="Game of Thrones Name Generator" loading="lazy" />

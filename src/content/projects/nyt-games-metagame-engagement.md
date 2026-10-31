@@ -13,10 +13,7 @@ seo:
 
 ---
 
-**Role:** Product Director, Gameplay (2022–2025), Subscriber Retention (current).  
-**Company:** NYT Games  
-
----
+**Role:** Product Director (2022–current) 
 
 ### Why did you build them
 
