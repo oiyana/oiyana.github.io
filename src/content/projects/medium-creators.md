@@ -16,16 +16,16 @@ seo:
 
 Medium's value starts with writers. Their stories bring readers to the platform, and a healthy creator-reader ecosystem gives both a reason to stay. When writers can connect with readers and build direct relationships, the whole community grows stronger.
 
-When I joined, Medium was losing writers. Low-quality content was crowding the platform, and its monetization model offered creators no reliable path to earnings. The CEO backed a creator-growth strategy: improve writer newsletters, create new ways to earn, help readers discover story collections, update writer profiles, and remove spam followers. The goal was to **restore trust and retain creators without sacrificing the discovery that made Medium valuable.** In under a year, we shipped changes to help creators reach, retain, and earn from their readers.
+When I joined, Medium was losing writers. Low-quality content was crowding the platform, and its monetization model offered creators no reliable path to earnings. The CEO backed a creator-growth strategy: improve writer newsletters, create new ways to earn, help readers discover story collections, upgrade writer profile design, and remove spam followers. The goal was to **restore trust and retain creators without sacrificing the discovery that made Medium valuable.** In under a year, we shipped changes to help creators reach, retain, and earn from their readers.
 
 ---
 
-**1. Email subscriptions** — This was a top writer request. V1 had low adoption and awareness: fewer than 10% of writers had enabled it, and 55% didn't know it existed. Yet early signals showed strong engagement: writer emails had ~40% open rates, 10 percentage points above Medium's weekly Digest, and half of email subscribers read 3+ stories from a writer within 90 days. The opportunity was clear: connect readers with writers more effectively.
+**1. Email subscription 2.0** — This was a top writer request. 1.0 had low adoption and awareness: fewer than 10% of writers had enabled it, and 55% didn't know it existed. Yet early signals showed strong engagement: writer emails had ~40% open rates, 10 percentage points above Medium's weekly Digest, and half of email subscribers read 3+ stories from a writer within 90 days. The opportunity was clear: connect readers with writers more effectively.
 
 The redesign added clearer calls to action, personalized landing pages, a simpler opt-in, reader replies, and an audience dashboard. [(Announcement)](https://medium.com/blog/helping-writers-build-an-ownable-email-audience-1730ec37917a)
 <figure class="case-study-image">
   <img src="/image-medium/medium-email-opt-in.png" alt="Email subscription opt-in" class="w-full" />
-  <figcaption>Simplify opt-in flow to autosend each story to the reader's inbox with one click.</figcaption>
+  <figcaption>Simplify opt-in flow to autosend each story to the reader's inbox.</figcaption>
 </figure>
 
 **2. Referred membership** — I partnered with the Monetization PM to build a writer signup flow and landing page that let creators earn revenue share from reader conversions, beyond traffic-based payouts. [(Announcement)](https://medium.com/blog/evolving-the-partner-program-2613708f9f3c)
@@ -56,7 +56,7 @@ The redesign added clearer calls to action, personalized landing pages, a simple
 
 ### Impact
 
-The email redesign was a success. Compared with v1, v2 delivered:
+The email redesign was a success. Compared with 1.0, 2.0 delivered:
 - **6× more active subscribers in six months**
 - **100× daily email volume**
 - **70× monthly email sends**

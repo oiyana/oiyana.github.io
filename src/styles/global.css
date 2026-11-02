@@ -228,7 +228,6 @@ html.dark .page-side-quest {
     .project-prose figcaption {
         font-family: var(--font-roboto-mono);
         font-size: 14px;
-        text-transform: uppercase;
         color: var(--text-main);
     }
 

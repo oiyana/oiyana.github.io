@@ -1,5 +1,5 @@
 ---
-title: 'BuzzFeed'
+title: 'BuzzFeed Content Distribution'
 headline: 'BuzzFeed: Turn a small team into a distribution engine with automation and ML Models.'
 description: 'Help a small publishing team to scale their output.'
 publishDate: 'Jan 01 2020'
@@ -14,7 +14,6 @@ seo:
 
 **Role:** Senior Product Manager 2018–2020
 
----
 In 2017, BuzzFeed faced audience headwinds. Social platforms were sending less traffic to publishers. The publishing team was understaffed, even as the platforms it covered grew from 3 to 6. And publishing vertical video to TikTok and Instagram was too manual to scale, which put revenue at risk.
 
 That's when I inherited PubHub, BuzzFeed's internal publishing tool. **Our bet: let automation and models handle the repetitive work, so editors could focus on judgment calls, trends, and new formats.** Over 18 months, we transformed it from a manual tool into an automated distribution **system built on four pillars:**
@@ -56,10 +55,12 @@ That's when I inherited PubHub, BuzzFeed's internal publishing tool. **Our bet: 
 ### Impact
 
 A smaller team drove more traffic and earned more revenue, across twice as many platforms.
-- 3B+ of monthly views at peak. Eight-figure annual revenue from platform video and affiliate. Fewer people, twice the platforms.
+- 3B+ of monthly views at peak. 
+- Eight-figure annual revenue from platform video and affiliate. 
 - 500% YoY increase in affiliate revenue on Instagram and TikTok
 - 300% YoY increase in pageviews from evergreen content
 - 65% of weekly publishing automated
+- Time to spin up a new recommendation bot: from 7 days to 3 days.
 - Featured in BuzzFeed's IPO deck as proof of its tech-led strategy
 - HuffPost's CMS integrated in under two months
 
