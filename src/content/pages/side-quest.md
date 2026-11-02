@@ -3,7 +3,8 @@ title: ''
 headline: "Connect one-on-one on a run."
 seo:
   title: 'Jac Yue - Side Quest'
-  description: 'Try to master running and talking at the same time'
+  description: 'Try to master running and talking at the same time
+  '
 ---
 
 Lets connect Over Easy Miles over conversational pace (9:30–10:00/mile). Daylight routes, bridges or parks, safety first. Talk about life, career moves, and pivots. I'll bring curious questions and a coaching mindset. You bring yourself.

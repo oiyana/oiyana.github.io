@@ -1,0 +1,44 @@
+---
+import GridLayout from '../layouts/GridLayout.astro';
+
+const redirectSeconds = 4;
+---
+
+<GridLayout title="Page not found" sectionLabel="404" sectionHref="/" showFooter={false}>
+    <section class="mt-12 mb-16 sm:mb-24 md:mt-16" data-not-found data-seconds={redirectSeconds}>
+        <h1 class="font-sans text-3xl leading-tight font-bold">This page no longer exists.</h1>
+        <p class="mt-4 max-w-xl font-sans text-lg leading-relaxed" aria-live="polite">
+            The link may be old or mistyped. We’ll take you home in <span data-not-found-count>{redirectSeconds}</span> <span data-not-found-unit>seconds</span>.
+        </p>
+    </section>
+</GridLayout>
+
+<script>
+    import { navigate } from 'astro:transitions/client';
+
+    let timer: number | undefined;
+
+    const initializeNotFound = () => {
+        const root = document.querySelector<HTMLElement>('[data-not-found]');
+        if (!root || root.dataset.initialized) return;
+        root.dataset.initialized = 'true';
+
+        const count = root.querySelector<HTMLElement>('[data-not-found-count]');
+        const unit = root.querySelector<HTMLElement>('[data-not-found-unit]');
+        let remaining = Number(root.dataset.seconds) || 4;
+
+        timer = window.setInterval(() => {
+            remaining -= 1;
+            if (count) count.textContent = String(remaining);
+            if (unit) unit.textContent = remaining === 1 ? 'second' : 'seconds';
+            if (remaining <= 0) {
+                window.clearInterval(timer);
+                navigate('/');
+            }
+        }, 1000);
+    };
+
+    initializeNotFound();
+    document.addEventListener('astro:page-load', initializeNotFound);
+    document.addEventListener('astro:before-swap', () => window.clearInterval(timer));
+</script>

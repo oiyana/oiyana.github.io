@@ -1,6 +1,6 @@
 ---
 
-title: 'Medium'
+title: 'Medium Creators'
 headline: 'Medium: Give writers more control to build direct audiences and a new path to earnings'
 description: Help writers to grow audiences and earnings.
 publishDate: 'May 01 2022'
@@ -46,7 +46,7 @@ The redesign added clearer calls to action, personalized landing pages, a simple
   <figcaption>Customizable profile</figcaption>
 </figure>
 
-**5. Follower quality** — After identifying the issue through data analysis, I partnered with Trust & Safety to address spam and banned accounts that inflated follower counts. I then coordinated rollout messaging with Marketing and Creator Relations. [(Announcement)](https://medium.com/blog/keeping-medium-authentic-947feaf59415)
+**5. Follower quality** — Corrected inflated follower counts for 100k writers (50%) by removing spam accounts, after tracing a 9-month discrepancy to a bot attack. Shipped the fix and announcement in 3 weeks with Trust & Safety, Marketing and Creator Relations. [(Announcement)](https://medium.com/blog/keeping-medium-authentic-947feaf59415)
 <figure class="case-study-image">
   <img src="/image-medium/medium-follower-count.png" alt="Medium blog post announcement about follower count changes and writer reactions" class="w-full" />
   <figcaption>Medium blog post announcement and writer reactions</figcaption>
