@@ -85,4 +85,4 @@ A smaller team drove more traffic and earned more revenue, across twice as many 
 
 ---
 
-<p class="project-team-line">Shoutout: Max Woolf (Data Science), Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering), Swara Kantaria (PM Lead)</p>
+<p class="project-team-line">Team: Alex Gervais (Design), Mireille Keuroghlian (APM), Kevin Merritt (Tech Lead), Andrea Handevidt (Engineering Manager), Max Woolf (Data Science), Ting Zhang (Data Engineering), Brooke Weil, Nathan O'Brien, Dominic Hanzel, Nick Gervais (Engineering)</p>

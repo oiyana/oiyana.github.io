@@ -56,14 +56,14 @@ The redesign added clearer calls to action, personalized landing pages, a simple
 
 ### Impact
 
-The email redesign was a success. Compared with 1.0, 2.0 delivered:
+The email redesign was a success. Compared with 1.0 vs 2.0:
 - **6× more active subscribers in six months**
 - **100× daily email volume**
 - **70× monthly email sends**
 - **~40% open rate at scale** — 10 points above Medium's Digest
 - **More than half of subscribers read 3+ stories** from writers they followed within 90 days
 
-The referred membership program also created a new revenue stream for roughly 20% of writers.
+The referred membership program created a new revenue path for roughly 20% of writers.
 
 Post-launch surveys showed renewed trust and positive sentiment across the creator base.
 
