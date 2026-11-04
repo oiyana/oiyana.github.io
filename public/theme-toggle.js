@@ -39,8 +39,22 @@
     document.addEventListener('click', (event) => {
         const button = event.target instanceof Element ? event.target.closest('[data-theme-toggle]') : null;
         if (!button) return;
-        const isDark = root.classList.toggle('dark');
-        storeTheme(isDark ? 'dark' : 'light');
+
+        const toggleTheme = () => {
+            const isDark = root.classList.toggle('dark');
+            storeTheme(isDark ? 'dark' : 'light');
+        };
+
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!document.startViewTransition || reduceMotion) {
+            toggleTheme();
+            return;
+        }
+
+        // Cross-fade a snapshot of the whole page, so every color changes together
+        root.classList.add('theme-switching');
+        const transition = document.startViewTransition(toggleTheme);
+        transition.finished.finally(() => root.classList.remove('theme-switching'));
     });
 
     // Set initial theme

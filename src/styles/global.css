@@ -60,6 +60,20 @@ body,
     }
 }
 
+/* Theme toggle: the view transition does the fading, so per-element transitions are paused */
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+    transition: none !important;
+}
+
+html.theme-switching::view-transition-old(root),
+html.theme-switching::view-transition-new(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: ease;
+}
+
 @theme inline {
     --font-sans: 'Libre Franklin Variable', sans-serif;
     --font-roboto-mono: 'Roboto Mono Variable', monospace;

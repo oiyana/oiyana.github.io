@@ -33,7 +33,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                     aria-label="Expand all details"
                     title="Expand all details"
                 >
-                    <span data-expand-all-icon aria-hidden="true">+</span>
+                    <span class="builder-expand-all__icon" data-expand-all-icon aria-hidden="true">+</span>
                 </button>
             </div>
         ) : title ? (
@@ -65,7 +65,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
 
         <p>
             Currently at{' '}
-            <a href="https://www.nytimes.com/crosswords/apps" class="company-link">The New York Times Games</a>, I build and lead a full stack team on{' '}
+            <a href="https://www.nytimes.com/crosswords/apps" class="company-link">The New York Times Games</a>, I lead a full stack team building the core{' '}
             <button
                 type="button"
                 class="builder-toggle wave-underline"
@@ -74,9 +74,10 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
                 data-builder-toggle
                 data-expand-image="expand-subscriber-engagement-image"
             >
-                <span class="builder-toggle__label">subscriber growth</span>
+                <span class="builder-toggle__label">player experience</span>
                 <span class="builder-toggle__icon" aria-hidden="true" data-builder-icon>+</span>
-            </button> across a portfolio of games played by millions every day.{' '}
+            </button>{' '}
+            products across a portfolio of games played by millions daily.{' '}
             <span id="expand-subscriber-engagement" class="builder-expand" data-builder-expanded hidden>
                 Together, we built the engagement loop that maximizes the player lifecycle through{' '}
                 <a href="https://www.nytco.com/press/gamify-your-gameplay-with-badges-from-new-york-times-games/" class="link-secondary" target="_blank" rel="noopener noreferrer">badges</a>,{' '}
@@ -335,6 +336,25 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         color: #4574ff;
     }
 
+    /* + turns into × by rotating; aria-expanded drives the state */
+    .builder-toggle__icon,
+    .builder-expand-all__icon {
+        display: inline-block;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .builder-toggle[aria-expanded='true'] .builder-toggle__icon,
+    .builder-expand-all[aria-expanded='true'] .builder-expand-all__icon {
+        transform: rotate(45deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .builder-toggle__icon,
+        .builder-expand-all__icon {
+            transition: none;
+        }
+    }
+
     .builder-toggle__icon {
         color: #0348de;
         font-weight: 800;
@@ -486,7 +506,6 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         if (!expanded || !icon) return;
 
         button.setAttribute('aria-expanded', String(isOpen));
-        icon.textContent = isOpen ? '×' : '+';
         expanded.hidden = !isOpen;
         if (expandImage) {
             if (isOpen) loadExpandImage(expandImage);
@@ -505,7 +524,6 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         expandAllButton.setAttribute('aria-expanded', String(allOpen));
         expandAllButton.setAttribute('aria-label', label);
         expandAllButton.title = label;
-        icon.textContent = allOpen ? '×' : '+';
     }
 
     function animateExpandAllButton() {
