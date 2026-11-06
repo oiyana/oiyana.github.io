@@ -21,7 +21,7 @@ body.bg-main {
 
 :root {
     --text-main: #171717;
-    --bg-main: rgb(255, 255, 234);
+    --bg-main: #ebebd4;
     --bg-muted: #eae9e1;
     --border-main: #171717;
     --link-underline: #ead770;
@@ -85,7 +85,7 @@ html.theme-switching::view-transition-new(root) {
 
 @keyframes side-quest-bg {
     from {
-        background-color: rgb(255, 255, 234);
+        background-color: #ebebd4;
     }
     to {
         background-color: #d2dff4;

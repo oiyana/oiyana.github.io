@@ -11,6 +11,13 @@ type Props = HeroProps;
 const { title, titleImage, subtitle, image, actions } = Astro.props;
 ---
 
+<script is:inline>
+    // Gate the scroll reveal on support, before the text paints. Without it everything stays visible.
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reveal-ready');
+    }
+</script>
+
 <section class="hero-expandable mb-16 flex w-full flex-col gap-8 sm:mb-24">
     {
         titleImage?.src ? (
@@ -408,6 +415,69 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         font-weight: 600;
     }
 
+    /* Scroll reveal: paragraphs after the intro fade in as they enter view */
+    :global(html.reveal-ready) .prose-hero > p:not(.intro-lead) {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    :global(html.reveal-ready) .prose-hero > p:not(.intro-lead).is-revealed {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Text fades off the bottom of the screen, so paragraphs ease in as they scroll up */
+    :global(html.reveal-ready::after) {
+        content: '';
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        height: clamp(120px, 26vh, 260px);
+        background: linear-gradient(to bottom, transparent, var(--bg-main));
+        pointer-events: none;
+    }
+
+    /* Site navigation waits for the + to appear */
+    :global(html.reveal-ready:not(.reveal-nav) .grid-aside),
+    :global(html.reveal-ready:not(.reveal-nav) .grid-nav-mobile) {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    :global(html.reveal-ready .grid-aside),
+    :global(html.reveal-ready .grid-nav-mobile) {
+        transition: opacity 0.8s ease, visibility 0.8s;
+    }
+
+    /* The big + beside the logo waits for the first paragraph to finish fading in */
+    :global(html.reveal-ready:not(.reveal-plus)) .builder-expand-all {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Expanded images fade in when a toggle opens them */
+    .builder-expand__figure:not([hidden]) {
+        animation: expand-figure-in 0.5s ease both;
+    }
+
+    @keyframes expand-figure-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .builder-expand__figure:not([hidden]) {
+            animation: none;
+        }
+    }
+
     :global(.prose a.link-secondary),
     :global(.prose a.link-secondary:hover) {
         text-decoration: none;
@@ -529,6 +599,9 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     function animateExpandAllButton() {
         const button = document.querySelector<HTMLButtonElement>('[data-expand-all]');
         if (!button || button.dataset.entrancePlayed || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        // Wait for the scroll reveal to release the button
+        const root = document.documentElement;
+        if (root.classList.contains('reveal-ready') && !root.classList.contains('reveal-plus')) return;
 
         button.dataset.entrancePlayed = 'true';
         requestAnimationFrame(() => {
@@ -645,6 +718,52 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
         });
     }
 
+    function initScrollReveal() {
+        const root = document.documentElement;
+        if (!root.classList.contains('reveal-ready')) return;
+
+        const paragraphs = Array.from(document.querySelectorAll<HTMLElement>('.prose-hero > p:not(.intro-lead)'));
+        if (paragraphs.length === 0 || paragraphs[0].dataset.revealBound === 'true') return;
+
+        const reveal = (el: HTMLElement, delay: number) => {
+            window.setTimeout(() => {
+                el.classList.add('is-revealed');
+                if (el !== paragraphs[0]) return;
+                // The + follows once that fade (0.8s) is done, then the nav 0.3s after the +
+                window.setTimeout(() => {
+                    root.classList.add('reveal-plus');
+                    animateExpandAllButton();
+                    window.setTimeout(() => root.classList.add('reveal-nav'), 300);
+                }, 850);
+            }, delay);
+        };
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                // Stagger paragraphs that appear together, e.g. on tall screens
+                // The first paragraph holds back 0.45s so it doesn't pop in with the page
+                const hasFirst = entries.some((e) => e.isIntersecting && e.target === paragraphs[0]);
+                let order = 0;
+                entries.forEach((entry) => {
+                    const el = entry.target as HTMLElement;
+                    // Already scrolled past (e.g. restored scroll position): show without waiting
+                    const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+                    if (!entry.isIntersecting && !passed) return;
+                    observer.unobserve(el);
+                    reveal(el, passed ? 0 : (hasFirst ? 750 : 0) + order++ * 180);
+                });
+            },
+            // Reveal once a paragraph is 12% above the bottom edge, so one or a few are lit at a time
+            { rootMargin: '0px 0px -12% 0px', threshold: 0.1 }
+        );
+
+        paragraphs.forEach((el) => {
+            el.dataset.revealBound = 'true';
+            observer.observe(el);
+        });
+    }
+
+    initScrollReveal();
     initBuilderToggles();
     initWaveUnderlines();
     initEmailCopy();
@@ -653,6 +772,7 @@ const { title, titleImage, subtitle, image, actions } = Astro.props;
     else window.addEventListener('load', animateExpandAllButton, { once: true });
     document.addEventListener('astro:page-load', animateExpandAllButton);
     document.addEventListener('astro:page-load', () => {
+        initScrollReveal();
         initBuilderToggles();
         initWaveUnderlines();
         initEmailCopy();

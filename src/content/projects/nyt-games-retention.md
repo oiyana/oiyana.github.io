@@ -1,6 +1,6 @@
 ---
-title: 'NYT Games'
-headline: 'NYT Games: Layer long-term value on top of a portfolio of free-to-play games'
+title: 'The New York Times Games'
+headline: 'NYT Games: Deliver long-term value on top of free-to-play games'
 description: Transform a portfolio of free-to-play games into a long-term player values.
 publishDate: 'Jan 01 2025'
 isFeatured: true
